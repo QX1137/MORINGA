@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
+/*
+ * Brand tokens extracted from gomoringa.in/css/main.css
+ *   #5dad46 — primary green (24 uses in current CSS)
+ *   #78c144 — secondary green
+ *   #058742 — deep accent
+ *   #f3f5ed — cream background
+ *   #1f1f1f — dark text
+ *   #ff250c — alert/CTA accent
+ * Fonts: Fira Sans (body), Sacramento (script accent)
+ */
+
+@theme {
+  --color-brand-50: #f1f8ee;
+  --color-brand-100: #def0d3;
+  --color-brand-200: #c2e2ac;
+  --color-brand-300: #9fcf7e;
+  --color-brand-400: #82c258;
+  --color-brand-500: #5dad46;
+  --color-brand-600: #4b9036;
+  --color-brand-700: #3c722d;
+  --color-brand-800: #305a24;
+  --color-brand-900: #234119;
+
+  --color-cream-50: #fbfcf7;
+  --color-cream-100: #f3f5ed;
+  --color-cream-200: #e7ecd9;
+
+  --color-ink-900: #1f1f1f;
+  --color-ink-700: #404040;
+  --color-ink-500: #6b6b6b;
+
+  --color-accent-coral: #ff250c;
+  --color-accent-amber: #f7bd01;
+
+  --font-sans: "Fira Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Sacramento", cursive;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--color-ink-900);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utility: brand gradient used on hero + CTAs */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
+}
+
+/* Sticky floating CTA bar — leaves space at bottom on mobile */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
 }

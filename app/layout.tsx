@@ -1,24 +1,30 @@
 import type { Metadata } from "next";
-import { Fira_Sans, Sacramento, Geist } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ANALYTICS, SITE } from "@/lib/site";
 import { FloatingCTA } from "@/app/components/FloatingCTA";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const firaSans = Fira_Sans({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-fira",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const sacramento = Sacramento({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-sacramento",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -60,7 +66,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", firaSans.variable, sacramento.variable, "font-sans", geist.variable)}
+      className={cn(
+        "h-full antialiased",
+        fraunces.variable,
+        inter.variable,
+        jetbrains.variable,
+      )}
     >
       <head>
         {/* GA4 — same property as live site, no measurement gap */}
@@ -75,7 +86,7 @@ export default function RootLayout({
             gtag('config', '${ANALYTICS.ga4Id}');`}
         </Script>
       </head>
-      <body className="min-h-full flex flex-col font-sans text-ink-900 bg-white">
+      <body className="min-h-full flex flex-col font-sans text-ink bg-paper">
         {children}
         <FloatingCTA />
       </body>

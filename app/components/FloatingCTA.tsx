@@ -17,57 +17,57 @@ function track(event: string, label: string) {
 }
 
 /**
- * Sticky bottom CTA on mobile + floating round buttons on desktop.
- * Two-button design: WhatsApp (primary in India), tel: fallback.
+ * Editorial-restrained floating CTAs.
+ * - Mobile bottom bar: ink + clay duotone, no "shouting" colors
+ * - Desktop floating buttons: small, restrained, signature mark adjacent
  */
 export function FloatingCTA() {
   return (
     <>
-      {/* Mobile bottom bar — full width */}
-      <div className="fixed bottom-0 inset-x-0 z-50 flex md:hidden border-t border-ink-900/10 shadow-lg bg-white">
+      {/* Mobile bottom bar */}
+      <div className="fixed bottom-0 inset-x-0 z-50 flex md:hidden border-t border-[#d8c8a8]/80 shadow-[0_-4px_20px_-8px_rgba(31,22,18,0.15)] bg-paper">
         <a
           href={whatsappUrl()}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("whatsapp_click", "floating_mobile")}
-          className="flex-1 flex items-center justify-center gap-2 py-3 font-medium text-white"
-          style={{ backgroundColor: "#25D366" }}
+          className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-medium text-ink"
           aria-label="Chat on WhatsApp"
         >
-          <WhatsAppIcon className="size-5" />
+          <WhatsAppIcon className="size-4 text-clay" />
           <span>WhatsApp</span>
         </a>
+        <div className="w-px bg-[#d8c8a8]/80" />
         <a
           href={phoneUrl()}
           onClick={() => track("phone_click", "floating_mobile")}
-          className="flex-1 flex items-center justify-center gap-2 py-3 font-medium text-white bg-brand-600"
+          className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-medium text-paper bg-ink"
           aria-label={`Call ${CONTACT.phone}`}
         >
-          <PhoneIcon className="size-5" />
-          <span>Call Now</span>
+          <PhoneIcon className="size-4" />
+          <span>Call clinic</span>
         </a>
       </div>
 
-      {/* Desktop floating buttons — bottom right */}
-      <div className="hidden md:flex fixed bottom-6 right-6 z-50 flex-col gap-3">
+      {/* Desktop floating — restrained, small, ink-on-paper */}
+      <div className="hidden md:flex fixed bottom-7 right-7 z-50 flex-col gap-2.5">
         <a
           href={whatsappUrl()}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("whatsapp_click", "floating_desktop")}
-          className="size-14 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-105 transition"
-          style={{ backgroundColor: "#25D366" }}
+          className="group size-12 rounded-full bg-paper hover:bg-paper-dark border border-[#d8c8a8] flex items-center justify-center text-ink shadow-lg shadow-warm-900/10 hover:scale-105 transition"
           aria-label="Chat on WhatsApp"
         >
-          <WhatsAppIcon className="size-7" />
+          <WhatsAppIcon className="size-5 text-clay group-hover:scale-110 transition" />
         </a>
         <a
           href={phoneUrl()}
           onClick={() => track("phone_click", "floating_desktop")}
-          className="size-14 rounded-full flex items-center justify-center text-white bg-brand-600 shadow-lg hover:scale-105 transition"
+          className="group size-12 rounded-full bg-ink hover:bg-ink-deep flex items-center justify-center text-paper shadow-lg shadow-warm-900/15 hover:scale-105 transition"
           aria-label={`Call ${CONTACT.phone}`}
         >
-          <PhoneIcon className="size-7" />
+          <PhoneIcon className="size-5 group-hover:scale-110 transition" />
         </a>
       </div>
     </>

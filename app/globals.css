@@ -1,23 +1,60 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-/*
- ---break---
- */
+/* ---break--- */
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Brand tokens extracted from gomoringa.in/css/main.css
- *   #5dad46 — primary green (24 uses in current CSS)
- *   #78c144 — secondary green
- *   #058742 — deep accent
- *   #f3f5ed — cream background
- *   #1f1f1f — dark text
- *   #ff250c — alert/CTA accent
- * Fonts: Fira Sans (body), Sacramento (script accent)
+ * GO MORINGA — DIRECTION D: Editorial-Clinical
+ *
+ * Palette philosophy: warm Indian craft, not Western wellness.
+ *   #F2EDE3  paper       — khadi-cream main background
+ *   #E8DDC5  paper-dark  — alternate cream for layered sections
+ *   #163E2E  ink         — manuscript-green-ink for type
+ *   #2D5642  ink-soft    — lighter ink for secondary text
+ *   #B5663A  clay        — brick terracotta accent (Indian earth, not Western gold)
+ *   #D89466  clay-soft   — softer clay for backgrounds
+ *   #C9A961  brass       — aged brass for fine accents
+ *   #1F1612  charcoal    — warm dark, never pure black
+ *   #3D2F26  warm-700    — body text on cream
+ *   #6B5B4E  warm-500    — muted text
+ *   #E5D9C5  warm-100    — subtle borders, dividers
+ *
+ * Typography:
+ *   --font-display      Fraunces (variable, italic + opsz axes) — headlines
+ *   --font-sans         Inter — body text
+ *   --font-mono         JetBrains Mono — editorial provenance metadata
+ *
+ * (Brand-green tokens from the prior iteration are kept as legacy variables
+ *  in case any component still references them; they are not the primary identity.)
  */
 
 @theme {
+  /* === Direction D primary palette === */
+  --color-paper: #f2ede3;
+  --color-paper-dark: #e8ddc5;
+  --color-paper-deep: #dfd2b8;
+
+  --color-ink: #163e2e;
+  --color-ink-soft: #2d5642;
+  --color-ink-deep: #0e2a1e;
+
+  --color-clay: #b5663a;
+  --color-clay-soft: #d89466;
+  --color-clay-deep: #8a4d2b;
+
+  --color-brass: #c9a961;
+  --color-brass-deep: #a48648;
+
+  --color-charcoal: #1f1612;
+  --color-warm-900: #1f1612;
+  --color-warm-700: #3d2f26;
+  --color-warm-500: #6b5b4e;
+  --color-warm-300: #b8a896;
+  --color-warm-100: #e5d9c5;
+  --color-warm-50: #f5f0e6;
+
+  /* === Legacy brand-green tokens (preserved for backward compatibility) === */
   --color-brand-50: #f1f8ee;
   --color-brand-100: #def0d3;
   --color-brand-200: #c2e2ac;
@@ -29,34 +66,57 @@
   --color-brand-800: #305a24;
   --color-brand-900: #234119;
 
+  /* === Legacy cream/ink kept as aliases === */
   --color-cream-50: #fbfcf7;
   --color-cream-100: #f3f5ed;
   --color-cream-200: #e7ecd9;
-
   --color-ink-900: #1f1f1f;
   --color-ink-700: #404040;
   --color-ink-500: #6b6b6b;
 
+  /* === Accents === */
   --color-accent-coral: #ff250c;
   --color-accent-amber: #f7bd01;
 
-  --font-sans: "Fira Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* === Typography === */
+  --font-display: var(--font-fraunces), "Fraunces", "GT Super", "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --font-script: "Sacramento", cursive;
+  --font-fira: "Fira Sans", sans-serif;
 }
 
+/* === Global base === */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Utility: brand gradient used on hero + CTAs */
+/* Editorial gradients used on hero sections */
+.bg-paper-grain {
+  background-color: var(--color-paper);
+  background-image:
+    radial-gradient(at 85% 15%, rgba(181, 102, 58, 0.06) 0%, transparent 50%),
+    radial-gradient(at 15% 85%, rgba(22, 62, 46, 0.04) 0%, transparent 50%);
+}
+
 .bg-brand-gradient {
-  background: linear-gradient(135deg, var(--color-brand-500) 0%, var(--color-brand-700) 100%);
+  /* legacy — referenced by previous components until refactored */
+  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-ink-deep) 100%);
+}
+
+/* Editorial rule — thin terracotta line */
+.editorial-rule {
+  height: 1px;
+  background: var(--color-clay);
+  opacity: 0.4;
 }
 
 /* Sticky floating CTA bar — leaves space at bottom on mobile */
@@ -65,12 +125,10 @@ body {
     padding-bottom: 64px;
   }
 }
-/*
- ---break---
- */
+
+/* ---break--- */
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-sans);
+  --font-heading: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -110,87 +168,84 @@ body {
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 }
+
+/* ---break--- */
 /*
- ---break---
- */
-/*
- * shadcn semantic variables mapped to our Go Moringa brand tokens.
- * shadcn primitives (Button, Card, Input, etc.) read these — by overriding here,
- * every shadcn component automatically uses our brand identity.
+ * shadcn semantic variables mapped to Direction D.
+ * Every shadcn primitive (Button, Card, Input, etc.) automatically uses
+ * the editorial-clinical identity through these CSS variables.
  */
 :root {
-  --background: #ffffff;
-  --foreground: #1f1f1f;
-  --card: #ffffff;
-  --card-foreground: #1f1f1f;
-  --popover: #ffffff;
-  --popover-foreground: #1f1f1f;
-  --primary: #4b9036;
-  --primary-foreground: #ffffff;
-  --secondary: #f3f5ed;
-  --secondary-foreground: #1f1f1f;
-  --muted: #f3f5ed;
-  --muted-foreground: #6b6b6b;
-  --accent: #def0d3;
-  --accent-foreground: #234119;
-  --destructive: #ff250c;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #5dad46;
-  --chart-1: #5dad46;
-  --chart-2: #4b9036;
-  --chart-3: #3c722d;
-  --chart-4: #f7bd01;
-  --chart-5: #ff250c;
-  --radius: 0.625rem;
-  --sidebar: #fbfcf7;
-  --sidebar-foreground: #1f1f1f;
-  --sidebar-primary: #4b9036;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f3f5ed;
-  --sidebar-accent-foreground: #234119;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: #5dad46;
+  --background: #f2ede3;
+  --foreground: #163e2e;
+  --card: #fbfaf5;
+  --card-foreground: #163e2e;
+  --popover: #fbfaf5;
+  --popover-foreground: #163e2e;
+  --primary: #163e2e;
+  --primary-foreground: #f2ede3;
+  --secondary: #e8ddc5;
+  --secondary-foreground: #163e2e;
+  --muted: #e8ddc5;
+  --muted-foreground: #6b5b4e;
+  --accent: #b5663a;
+  --accent-foreground: #f2ede3;
+  --destructive: #b5663a;
+  --border: #d8c8a8;
+  --input: #d8c8a8;
+  --ring: #b5663a;
+  --chart-1: #163e2e;
+  --chart-2: #2d5642;
+  --chart-3: #b5663a;
+  --chart-4: #c9a961;
+  --chart-5: #d89466;
+  --radius: 0.5rem;
+  --sidebar: #e8ddc5;
+  --sidebar-foreground: #163e2e;
+  --sidebar-primary: #163e2e;
+  --sidebar-primary-foreground: #f2ede3;
+  --sidebar-accent: #b5663a;
+  --sidebar-accent-foreground: #f2ede3;
+  --sidebar-border: #d8c8a8;
+  --sidebar-ring: #b5663a;
 }
-/*
- ---break---
- */
+
+/* ---break--- */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: #1f1612;
+  --foreground: #f2ede3;
+  --card: #2a1f1a;
+  --card-foreground: #f2ede3;
+  --popover: #2a1f1a;
+  --popover-foreground: #f2ede3;
+  --primary: #f2ede3;
+  --primary-foreground: #163e2e;
+  --secondary: #3d2f26;
+  --secondary-foreground: #f2ede3;
+  --muted: #3d2f26;
+  --muted-foreground: #b8a896;
+  --accent: #b5663a;
+  --accent-foreground: #f2ede3;
+  --destructive: #d89466;
+  --border: rgba(232, 221, 197, 0.12);
+  --input: rgba(232, 221, 197, 0.18);
+  --ring: #b5663a;
+  --chart-1: #5dad46;
+  --chart-2: #82c258;
+  --chart-3: #b5663a;
+  --chart-4: #c9a961;
+  --chart-5: #d89466;
+  --sidebar: #2a1f1a;
+  --sidebar-foreground: #f2ede3;
+  --sidebar-primary: #c9a961;
+  --sidebar-primary-foreground: #1f1612;
+  --sidebar-accent: #3d2f26;
+  --sidebar-accent-foreground: #f2ede3;
+  --sidebar-border: rgba(232, 221, 197, 0.12);
+  --sidebar-ring: #b5663a;
 }
-/*
- ---break---
- */
+
+/* ---break--- */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -199,6 +254,44 @@ body {
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    font-family: var(--font-sans);
   }
+
+  /* Editorial display headings — Fraunces serif by default */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+/* === Editorial utility classes === */
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+.font-script { font-family: var(--font-script); }
+.font-fira { font-family: var(--font-fira); }
+
+.text-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.text-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Italic emphasis used in headlines — terracotta colored */
+.italic-clay {
+  font-style: italic;
+  color: var(--color-clay);
+  font-weight: 400;
 }

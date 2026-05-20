@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Fira_Sans, Sacramento } from "next/font/google";
+import { Fira_Sans, Sacramento, Geist } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { ANALYTICS, SITE } from "@/lib/site";
 import { FloatingCTA } from "@/app/components/FloatingCTA";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const firaSans = Fira_Sans({
   subsets: ["latin"],
@@ -57,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${firaSans.variable} ${sacramento.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", firaSans.variable, sacramento.variable, "font-sans", geist.variable)}
     >
       <head>
         {/* GA4 — same property as live site, no measurement gap */}

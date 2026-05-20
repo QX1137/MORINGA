@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
+import { MoringaMark } from "./MoringaMark";
 import { ArticleBody } from "./ArticleBody";
+import { AuthorBioBlock, LastUpdated, MedicalDisclaimer } from "./aeo";
 import type { BlogMeta } from "@/lib/blogs";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import {
@@ -11,6 +13,8 @@ import {
   localBusinessSchema,
   personSchema,
 } from "@/lib/schema";
+
+const LAST_REVIEWED = "May 2026";
 
 function articleSchema(b: BlogMeta) {
   return {
@@ -32,10 +36,9 @@ type Props = { blog: BlogMeta; related: BlogMeta[] };
 export function BlogPage({ blog, related }: Props) {
   const breadcrumb = breadcrumbSchema([
     { name: "Home", url: SITE.url },
-    { name: "Blog", url: `${SITE.url}/blog.php` },
+    { name: "Journal", url: `${SITE.url}/blog.php` },
     { name: blog.h1 || blog.title, url: `${SITE.url}${blog.phpPath}` },
   ]);
-
   const schemas = [
     localBusinessSchema(),
     personSchema(),
@@ -43,71 +46,142 @@ export function BlogPage({ blog, related }: Props) {
     breadcrumb,
   ];
 
+  const readMins = Math.max(2, Math.ceil(blog.wordCount / 200));
+
   return (
     <>
       <JsonLd data={schemas} />
       <Header />
 
-      <section className="bg-gradient-to-b from-cream-100 to-white border-b border-ink-900/5">
-        <div className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-          <nav aria-label="Breadcrumb" className="text-sm text-ink-500 mb-4">
-            <Link href="/" className="hover:text-brand-600">Home</Link>
-            <span aria-hidden="true"> / </span>
-            <Link href="/blog.php" className="hover:text-brand-600">Blog</Link>
-          </nav>
-          <h1 className="text-3xl md:text-5xl font-bold text-ink-900 leading-tight">{blog.h1 || blog.title}</h1>
+      {/* ═══════════════════════════════════════════════ ARTICLE HEAD */}
+      <section className="bg-paper-grain border-b border-[#d8c8a8]/80">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6">
+          <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-[#d8c8a8]/80 text-eyebrow text-warm-500">
+            <nav aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-clay transition">Home</Link>
+              <span className="mx-3 opacity-50">/</span>
+              <Link href="/blog.php" className="hover:text-clay transition">Journal</Link>
+              <span className="mx-3 opacity-50">/</span>
+              <span className="text-clay">Article</span>
+            </nav>
+            <span className="hidden md:inline">Journal · {readMins} min read · {PERSON.name}</span>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 py-14 md:py-20">
+          <LastUpdated date={LAST_REVIEWED} reviewer={PERSON.name} />
+          <div className="text-eyebrow text-clay mb-5 flex items-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            Journal
+          </div>
+
+          <h1
+            className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.98]"
+            style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)" }}
+          >
+            {blog.h1 || blog.title}
+          </h1>
+
           {blog.metaDescription && (
-            <p className="mt-4 text-lg text-ink-700 leading-relaxed">{blog.metaDescription}</p>
+            <p className="mt-6 text-xl leading-[1.55] text-warm-700 font-display italic max-w-3xl">
+              {blog.metaDescription}
+            </p>
           )}
-          <div className="mt-6 flex items-center gap-3 text-sm text-ink-500">
-            <div className="relative size-10 rounded-full overflow-hidden bg-cream-100">
-              <Image src="/assets/diet-img/priyatma.jpg" alt={PERSON.name} fill className="object-cover" sizes="40px" />
+
+          <div className="mt-10 flex items-center gap-4 pt-6 border-t border-[#d8c8a8]/60">
+            <div className="relative size-12 rounded-full overflow-hidden border border-ink/20 shrink-0">
+              <Image
+                src="/assets/diet-img/priyatma.jpg"
+                alt={PERSON.name}
+                fill
+                className="object-cover"
+                style={{ filter: "saturate(0.88) contrast(1.04)" }}
+                sizes="48px"
+              />
             </div>
             <div>
-              <div className="font-medium text-ink-900">{PERSON.name}</div>
-              <div className="text-xs">Clinical Dietitian, Gurgaon &middot; {PERSON.yearsExperience}+ years</div>
+              <div className="font-display text-base font-medium text-ink">{PERSON.name}</div>
+              <div className="text-eyebrow text-warm-500">
+                Clinical Dietitian · {readMins} min read · Reviewed {LAST_REVIEWED}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <article className="max-w-4xl mx-auto px-4 py-10">
-        <ArticleBody slug={blog.slug} folder="blog" />
+      {/* ═══════════════════════════════════════════════ ARTICLE BODY */}
+      <article className="bg-paper py-14 md:py-20">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <ArticleBody slug={blog.slug} folder="blog" />
+        </div>
       </article>
 
-      <section className="bg-cream-50 border-t border-ink-900/5">
-        <div className="max-w-4xl mx-auto px-4 py-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-ink-900">Want a personalised plan?</h2>
-          <p className="mt-3 text-ink-700 max-w-2xl mx-auto">
-            Articles are general guidance. {PERSON.name} designs custom plans for your specific body, goal, and medical context.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3 justify-center">
-            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="px-7 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold transition">
-              WhatsApp Dt. Priyatama
-            </a>
-            <a href={`tel:${CONTACT.phoneTel}`} className="px-7 py-3 rounded-full bg-white border border-ink-900/10 text-ink-900 hover:bg-cream-100 font-semibold transition">
-              Call {CONTACT.phone}
-            </a>
-          </div>
-          <p className="mt-4 text-sm text-ink-500">★ {REVIEWS.practo.rating} on Practo &middot; {PERSON.clientCount} clients</p>
+      {/* ═══════════════════════════════════════════════ AUTHOR BIO */}
+      <section className="bg-paper">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <AuthorBioBlock reviewedDate={LAST_REVIEWED} />
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════ DISCLAIMER */}
+      <section className="bg-paper">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <MedicalDisclaimer />
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════ CTA */}
+      <section className="bg-paper-dark py-16 border-y border-[#d8c8a8]/60">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <MoringaMark className="size-10 text-clay mx-auto mb-4" />
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink leading-tight">
+            Want a <em className="italic-clay">personalised plan</em>?
+          </h2>
+          <p className="mt-4 text-base text-warm-700 max-w-xl mx-auto">
+            Articles are general guidance. Dt. Priyatama designs plans built around your specific body, goal and family kitchen.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 justify-center">
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 text-base font-medium text-ink">
+              <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">
+                Begin a consultation
+              </span>
+              <span className="text-clay" aria-hidden="true">→</span>
+            </a>
+            <a href={`tel:${CONTACT.phoneTel}`} className="text-base font-medium text-ink/70 hover:text-ink transition">
+              or call {CONTACT.phone}
+            </a>
+          </div>
+          <p className="mt-4 text-eyebrow text-warm-500">★ {REVIEWS.practo.rating} Practo · {PERSON.clientCount} clients</p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════ RELATED */}
       {related.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 py-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-ink-900 text-center mb-8">More from the blog</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {related.map((b) => (
-              <Link key={b.slug} href={b.phpPath} className="group block bg-white border border-ink-900/10 rounded-2xl overflow-hidden hover:shadow-lg hover:border-brand-300 transition">
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-ink-900 group-hover:text-brand-600 transition line-clamp-2">{b.h1 || b.title}</h3>
-                  <p className="mt-2 text-sm text-ink-700 line-clamp-3">{b.metaDescription}</p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-brand-600 text-sm font-medium">
-                    Read more <span aria-hidden="true">→</span>
-                  </span>
-                </div>
-              </Link>
-            ))}
+        <section className="bg-paper py-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+              <span className="block h-px w-10 bg-clay" />
+              From the journal
+            </div>
+            <h2 className="font-display text-2xl md:text-3xl font-medium text-ink leading-tight mb-10">
+              More to <em className="italic-clay">read</em>.
+            </h2>
+            <div className="grid md:grid-cols-3 gap-x-8 gap-y-10">
+              {related.map((b, i) => (
+                <Link key={b.slug} href={b.phpPath} className="group">
+                  <div className="text-eyebrow text-clay mb-3 font-mono">
+                    No. {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="font-display text-xl md:text-2xl font-medium text-ink group-hover:text-clay transition leading-tight line-clamp-3">
+                    {b.h1 || b.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-warm-700 line-clamp-3 leading-relaxed">{b.metaDescription}</p>
+                  <div className="mt-4 text-eyebrow text-warm-500">
+                    {Math.ceil(b.wordCount / 200)} min read
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       )}

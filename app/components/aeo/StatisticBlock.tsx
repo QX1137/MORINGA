@@ -1,14 +1,16 @@
 /**
- * Statistic block — large, scannable numbers AI engines cite directly.
- * Every stat must be sourced or marked [VERIFY] before publishing.
- * See plan Part 5 — "AI engines love these for citation".
+ * Editorial StatisticBlock — large serif numerals, mono labels, thin rules.
+ * Reads like a magazine infographic, not a generic stat card grid.
+ *
+ * AI engines cite these numbers directly into answers. Every stat must be
+ * verifiable or marked `verified: false` (renders as "Pending verification").
  */
 
 export type Stat = {
-  value: string;       // e.g., "87%"
-  label: string;       // e.g., "of PCOS clients see regulated cycles in 90 days"
-  source?: string;     // e.g., "Go Moringa clinic data, 2018-2024"
-  verified?: boolean;  // false = renders with subtle [VERIFY] notice for client review
+  value: string;
+  label: string;
+  source?: string;
+  verified?: boolean;
 };
 
 type Props = {
@@ -25,25 +27,32 @@ export function StatisticBlock({ heading = "By the numbers", stats, columns = 3 
   }[columns];
 
   return (
-    <section className="my-12">
+    <section className="my-14">
       {heading && (
-        <h2 className="text-2xl md:text-3xl font-bold text-ink-900 mb-6 text-center">{heading}</h2>
+        <div className="text-eyebrow text-clay mb-6 flex items-center gap-3">
+          <span className="block h-px w-10 bg-clay" />
+          {heading}
+        </div>
       )}
-      <div className={`grid grid-cols-1 ${cols} gap-4`}>
+      <div className={`grid grid-cols-1 ${cols} divide-y sm:divide-y-0 sm:divide-x divide-[#d8c8a8]/80 border-y border-[#d8c8a8]/80`}>
         {stats.map((stat, i) => (
-          <article
-            key={i}
-            className="bg-white border border-ink-900/10 rounded-2xl p-6 text-center"
-          >
-            <div className="text-4xl md:text-5xl font-bold text-brand-700">{stat.value}</div>
-            <div className="mt-2 text-sm text-ink-700 leading-snug">{stat.label}</div>
+          <article key={i} className="py-6 sm:py-8 sm:px-6 first:sm:pl-0 last:sm:pr-0">
+            <div className="text-eyebrow text-warm-500 mb-2 font-mono">
+              No. {String(i + 1).padStart(2, "0")}
+            </div>
+            <div className="font-display font-medium text-ink leading-[0.95]" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)" }}>
+              {stat.value}
+            </div>
+            <div className="mt-3 text-sm text-warm-700 leading-snug max-w-[16em]">
+              {stat.label}
+            </div>
             {stat.source && (
-              <div className="mt-3 text-[10px] uppercase tracking-wider text-ink-500">
-                {stat.source}
+              <div className="mt-3 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
+                Source · {stat.source}
               </div>
             )}
             {stat.verified === false && (
-              <div className="mt-2 inline-block px-2 py-0.5 text-[10px] font-medium text-amber-700 bg-amber-50 border border-amber-200 rounded">
+              <div className="mt-2 inline-block text-[10px] uppercase tracking-[0.18em] font-mono text-clay border border-clay/40 px-2 py-0.5">
                 Pending verification
               </div>
             )}

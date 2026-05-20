@@ -1,23 +1,22 @@
 /**
- * Last-updated date stamp — Google E-E-A-T signal that content is current.
- * Render at top of every content page.
+ * LastUpdated — small mono date stamp at the top of every content page.
+ * Google E-E-A-T signal that the page is maintained.
  */
 
 type Props = {
-  date: string;           // e.g., "May 2026" or ISO date
-  reviewer?: string;      // who reviewed
+  date: string;
+  reviewer?: string;
 };
 
 export function LastUpdated({ date, reviewer }: Props) {
   return (
-    <div className="text-xs text-ink-500 mb-4 flex flex-wrap gap-x-4 gap-y-1">
-      <span>
-        <span className="font-medium text-ink-700">Last updated:</span> <time>{date}</time>
+    <div className="text-[11px] uppercase tracking-[0.18em] font-mono text-warm-500 mb-4 flex flex-wrap items-center gap-x-4 gap-y-1">
+      <span className="flex items-center gap-2">
+        <span className="block w-3 h-px bg-clay" aria-hidden="true" />
+        Last reviewed · <time>{date}</time>
       </span>
       {reviewer && (
-        <span>
-          <span className="font-medium text-ink-700">Reviewed by:</span> {reviewer}
-        </span>
+        <span>by {reviewer}</span>
       )}
     </div>
   );

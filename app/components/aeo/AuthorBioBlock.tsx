@@ -1,61 +1,83 @@
 /**
- * Author bio block — appears at the bottom of every content page.
- * Critical for E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
- * which Google uses for YMYL (Your Money Your Life) health content ranking.
- * See plan Part 5 — Author bio block.
+ * Editorial AuthorBio — appears at the bottom of every YMYL content page.
+ * Reads like a magazine bylined-author block. Critical for E-E-A-T.
  */
 
 import Image from "next/image";
 import Link from "next/link";
+import { MoringaMark } from "../MoringaMark";
 import { PERSON, REVIEWS, SOCIAL } from "@/lib/site";
 
 type Props = {
-  reviewedDate?: string;       // e.g., "May 2026" — when content was last reviewed
-  topicNote?: string;          // optional one-liner about Priyatama's specific expertise on this topic
+  reviewedDate?: string;
+  topicNote?: string;
 };
 
 export function AuthorBioBlock({ reviewedDate, topicNote }: Props) {
   return (
     <section
-      className="my-12 bg-cream-50 border border-ink-900/10 rounded-2xl p-6 md:p-8"
+      className="my-16 border-t border-b border-[#d8c8a8]/80 py-10 md:py-12"
       aria-label="About the author"
     >
-      <div className="flex flex-col md:flex-row gap-5 md:gap-7">
-        <div className="relative size-24 md:size-32 rounded-2xl overflow-hidden bg-cream-100 shrink-0 mx-auto md:mx-0">
-          <Image
-            src="/assets/diet-img/priyatma.jpg"
-            alt={PERSON.name}
-            fill
-            className="object-cover"
-            sizes="(min-width: 768px) 128px, 96px"
-          />
-        </div>
-        <div className="flex-1">
-          <div className="flex items-baseline gap-2 flex-wrap">
-            <h2 className="text-xl font-bold text-ink-900">Reviewed by {PERSON.name}</h2>
-            <span className="text-xs uppercase tracking-wider text-brand-700 font-semibold">
-              {PERSON.role}
-            </span>
+      <div className="text-eyebrow text-clay mb-5 flex items-center gap-3">
+        <span className="block h-px w-10 bg-clay" />
+        Reviewed and approved by
+      </div>
+      <div className="flex flex-col md:flex-row gap-7 md:gap-10 items-start">
+        {/* Portrait — press-print framed */}
+        <div className="shrink-0">
+          <div className="relative size-28 md:size-36 overflow-hidden border border-ink/25">
+            <Image
+              src="/assets/diet-img/priyatma.jpg"
+              alt={PERSON.name}
+              fill
+              className="object-cover"
+              style={{ filter: "saturate(0.88) contrast(1.04)" }}
+              sizes="(min-width: 768px) 144px, 112px"
+            />
           </div>
-          <p className="mt-2 text-ink-700 leading-relaxed">
+        </div>
+
+        {/* Bio */}
+        <div className="flex-1 min-w-0">
+          <h2 className="font-display text-2xl md:text-3xl font-medium text-ink leading-tight">
+            {PERSON.name}
+          </h2>
+          <p className="mt-2 font-display italic text-clay text-lg">
+            {PERSON.role} · {PERSON.yearsExperience}+ years
+          </p>
+
+          <p className="mt-4 text-base text-warm-700 leading-[1.7] max-w-2xl">
             {PERSON.yearsExperience}+ years of clinical practice in Gurgaon. {PERSON.clientCount} clients across India and worldwide.
             {topicNote && ` ${topicNote}`}
           </p>
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-sm text-ink-700">
-            <span>★ {REVIEWS.practo.rating} on Practo ({REVIEWS.practo.count} reviews)</span>
-            <span>★ {REVIEWS.justdial.rating} on Justdial ({REVIEWS.justdial.count} reviews)</span>
+
+          {/* Verification line */}
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px] uppercase tracking-[0.15em] font-mono text-warm-700">
+            <span>★ Practo {REVIEWS.practo.rating} · {REVIEWS.practo.count}</span>
+            <span>★ Justdial {REVIEWS.justdial.rating} · {REVIEWS.justdial.count}</span>
           </div>
-          <div className="mt-3 flex flex-wrap gap-3 text-sm">
-            <Link href="/priyatama-srivastava.php" className="text-brand-700 hover:underline">
-              Full bio →
+
+          {/* Inline links — editorial */}
+          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <Link href="/priyatama-srivastava.php" className="text-ink hover:text-clay transition border-b border-clay/40 hover:border-clay pb-px">
+              Full practice profile
             </Link>
-            <a href={REVIEWS.practo.url} target="_blank" rel="noopener noreferrer" className="text-brand-700 hover:underline">Practo profile</a>
-            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-brand-700 hover:underline">Instagram</a>
-            <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" className="text-brand-700 hover:underline">YouTube</a>
+            <a href={REVIEWS.practo.url} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-clay transition border-b border-clay/40 hover:border-clay pb-px">
+              Practo
+            </a>
+            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-clay transition border-b border-clay/40 hover:border-clay pb-px">
+              Instagram
+            </a>
+            <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-clay transition border-b border-clay/40 hover:border-clay pb-px">
+              YouTube
+            </a>
           </div>
+
           {reviewedDate && (
-            <p className="mt-4 text-xs text-ink-500">
-              Last clinically reviewed: <time>{reviewedDate}</time>
+            <p className="mt-5 flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] font-mono text-warm-500">
+              <MoringaMark className="size-4 text-clay" />
+              Clinically reviewed · <time>{reviewedDate}</time>
             </p>
           )}
         </div>

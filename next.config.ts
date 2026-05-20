@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "www.gomoringa.in" },
       { protocol: "https", hostname: "gomoringa.in" },
+      // Curated Unsplash photography — see lib/images.ts. Will be swapped
+      // for Priyatama's clinic photography when she sends them.
+      { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
 

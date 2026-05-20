@@ -15,6 +15,7 @@ import {
 } from "@/lib/schema";
 import { SERVICE_LIST } from "@/lib/services";
 import { TREATMENT_LIST } from "@/lib/treatments";
+import { PHOTOS } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Best Dietician In Gurgaon, India | Nutritionist, Weight Loss Expert",
@@ -29,28 +30,13 @@ export const metadata: Metadata = {
 };
 
 const FEATURED_TREATMENTS = TREATMENT_LIST.filter((t) =>
-  ["diabetes", "pcod-pcos", "thyroid", "high-blood-pressure", "heart-disease", "osteoporosis"].includes(t.slug)
+  ["diabetes", "pcod-pcos", "thyroid", "high-blood-pressure", "heart-disease", "osteoporosis"].includes(t.slug),
 );
 
 const TESTIMONIALS = [
-  {
-    name: "Anjali",
-    locality: "Sector 49, Gurugram",
-    outcome: "Lost 18 kg · 6 months",
-    quote: "Priyatama&rsquo;s plans were practical — I could eat dal-roti, no boring meal-replacement shakes. Lost the weight and kept it off.",
-  },
-  {
-    name: "Rohit",
-    locality: "DLF Phase 3",
-    outcome: "Reversed pre-diabetes",
-    quote: "My HbA1c came down from 6.4 to 5.6 in 4 months. No medication. Just disciplined eating with her plan.",
-  },
-  {
-    name: "Meera",
-    locality: "Sushant Lok",
-    outcome: "PCOS managed without hormones",
-    quote: "Regular cycles for the first time in years. Skin cleared up. Lost 9 kg as a bonus.",
-  },
+  { name: "Anjali", locality: "Sector 49, Gurugram", outcome: "Lost 18 kg · 6 months", quote: "Priyatama's plans were practical — I could eat dal-roti, no boring meal-replacement shakes. Lost the weight and kept it off." },
+  { name: "Rohit", locality: "DLF Phase 3", outcome: "Reversed pre-diabetes", quote: "My HbA1c came down from 6.4 to 5.6 in 4 months. No medication. Just disciplined eating with her plan." },
+  { name: "Meera", locality: "Sushant Lok", outcome: "PCOS managed without hormones", quote: "Regular cycles for the first time in years. Skin cleared up. Lost 9 kg as a bonus." },
 ];
 
 const FAQS = [
@@ -64,22 +50,16 @@ const FAQS = [
 
 export default function HomePage() {
   const breadcrumb = breadcrumbSchema([{ name: "Home", url: SITE.url }]);
-  const schemas = [
-    localBusinessSchema(),
-    personSchema(),
-    websiteSchema(),
-    faqSchema(FAQS),
-    breadcrumb,
-  ];
+  const schemas = [localBusinessSchema(), personSchema(), websiteSchema(), faqSchema(FAQS), breadcrumb];
 
   return (
     <>
       <JsonLd data={schemas} />
       <Header />
 
-      {/* ═══════════════════════════════════════════════ HERO */}
+      {/* ═════════════════════════════════════════════════ HERO */}
       <section className="relative overflow-hidden bg-paper-grain">
-        {/* Editorial provenance band */}
+        {/* Provenance band */}
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-6">
           <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-[#d8c8a8]/80">
             <div className="text-eyebrow text-clay">
@@ -91,18 +71,15 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Hero grid */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-12 md:pt-20 pb-16 md:pb-24 grid md:grid-cols-12 gap-x-8 gap-y-12 items-start">
+        {/* Hero grid — type-led with press-print portrait + small ambient image */}
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-12 md:pt-20 pb-10 md:pb-16 grid md:grid-cols-12 gap-x-8 gap-y-12 items-start">
           <div className="md:col-span-7">
             <div className="text-eyebrow text-clay mb-6 flex items-center gap-3">
               <span className="block h-px w-10 bg-clay" />
               The dietitian Gurgaon trusts
             </div>
 
-            <h1
-              className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.95]"
-              style={{ fontSize: "clamp(2.6rem, 6.5vw, 5.5rem)" }}
-            >
+            <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.95]" style={{ fontSize: "clamp(2.6rem, 6.5vw, 5.5rem)" }}>
               The dietitian{" "}
               <em className="italic-clay">Gurgaon writes</em>{" "}
               back to.
@@ -113,55 +90,36 @@ export default function HomePage() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <a
-                href={whatsappUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 text-base font-medium text-ink"
-              >
-                <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">
-                  Begin a consultation
-                </span>
+              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 text-base font-medium text-ink">
+                <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">Begin a consultation</span>
                 <span className="text-clay" aria-hidden="true">→</span>
               </a>
-              <Link
-                href={`tel:${CONTACT.phoneTel}`}
-                className="text-base font-medium text-ink/70 hover:text-ink transition"
-              >
+              <Link href={`tel:${CONTACT.phoneTel}`} className="text-base font-medium text-ink/70 hover:text-ink transition">
                 or call {CONTACT.phone}
               </Link>
             </div>
 
             {/* Stat band */}
             <div className="mt-14 grid grid-cols-3 gap-x-6 gap-y-2 max-w-xl py-6 border-y border-[#d8c8a8]/80">
-              <div>
-                <div className="font-display font-medium text-ink leading-none" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-                  {PERSON.yearsExperience}<em className="italic-clay">+</em>
+              {[
+                { value: `${PERSON.yearsExperience}`, mark: "+", label: "Years in\npractice" },
+                { value: "10,000", mark: "+", label: "Clients\ntransformed" },
+                { value: `${REVIEWS.practo.rating}`, mark: "★", label: `Practo · ${REVIEWS.practo.count}\nreviews` },
+              ].map((s) => (
+                <div key={s.label}>
+                  <div className="font-display font-medium text-ink leading-none" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                    {s.value}<em className="italic-clay">{s.mark}</em>
+                  </div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] mt-3 leading-snug font-mono text-warm-700" style={{ whiteSpace: "pre-line" }}>
+                    {s.label}
+                  </div>
                 </div>
-                <div className="text-[10px] uppercase tracking-[0.18em] mt-3 leading-snug font-mono text-warm-700">
-                  Years in<br />practice
-                </div>
-              </div>
-              <div>
-                <div className="font-display font-medium text-ink leading-none" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-                  10,000<em className="italic-clay">+</em>
-                </div>
-                <div className="text-[10px] uppercase tracking-[0.18em] mt-3 leading-snug font-mono text-warm-700">
-                  Clients<br />transformed
-                </div>
-              </div>
-              <div>
-                <div className="font-display font-medium text-ink leading-none" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-                  {REVIEWS.practo.rating}<em className="italic-clay">★</em>
-                </div>
-                <div className="text-[10px] uppercase tracking-[0.18em] mt-3 leading-snug font-mono text-warm-700">
-                  Practo · {REVIEWS.practo.count}<br />reviews
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          <div className="md:col-span-5 md:pt-4">
+          <div className="md:col-span-5 md:pt-4 space-y-6">
+            {/* Main portrait */}
             <figure>
               <figcaption className="text-eyebrow text-clay mb-4 flex items-center gap-3">
                 <span className="block h-px w-6 bg-clay" />
@@ -186,10 +144,27 @@ export default function HomePage() {
                 <MoringaMark className="size-8 text-clay opacity-70" />
               </div>
             </figure>
+
+            {/* Small ambient inset — botanical close-up */}
+            <figure className="hidden md:block ml-auto max-w-[180px]">
+              <div className="relative aspect-square overflow-hidden border border-clay/40">
+                <Image
+                  src={PHOTOS.moringaLeaves.url}
+                  alt={PHOTOS.moringaLeaves.alt}
+                  fill
+                  className="object-cover"
+                  style={{ filter: "saturate(0.92) contrast(1.02)" }}
+                  sizes="180px"
+                />
+              </div>
+              <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500 text-right">
+                Moringa oleifera · {PHOTOS.moringaLeaves.credit.photographer}
+              </figcaption>
+            </figure>
           </div>
         </div>
 
-        {/* Closing motto */}
+        {/* Closing rule */}
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pb-10">
           <div className="border-t border-[#d8c8a8]/80 pt-5 flex items-center justify-between flex-wrap gap-3 text-eyebrow text-warm-500">
             <span>Sec 49, Gurugram · Mon–Sat · 10–7</span>
@@ -201,26 +176,190 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ APPROACH (definition block) */}
+      {/* ═════════════════════════════════════════════════ APPROACH (with drop cap + thali photo) */}
       <section className="bg-paper py-20 md:py-28">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
-          <div className="text-eyebrow text-clay flex items-center justify-center gap-3 mb-6">
-            <span className="block h-px w-10 bg-clay" />
-            The approach
-            <span className="block h-px w-10 bg-clay" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-start">
+          {/* Type column with drop cap */}
+          <div className="md:col-span-7 md:order-2 relative">
+            <div className="text-eyebrow text-clay mb-4 flex items-center gap-3">
+              <span className="block h-px w-10 bg-clay" />
+              The approach
+            </div>
+            <h2 className="font-display font-medium text-ink leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)" }}>
+              We design diets the way <em className="italic-clay">a tailor</em> measures a kurta.
+            </h2>
+
+            {/* Drop cap paragraph */}
+            <div className="mt-8 text-lg leading-[1.7] text-warm-700 max-w-2xl">
+              <p>
+                <span
+                  className="font-display text-clay float-left mr-3 leading-[0.85]"
+                  style={{ fontSize: "5.5rem", fontWeight: 500 }}
+                >
+                  T
+                </span>
+                here is no programme that works for everyone. Bodies arrive with their own labs, family meal habits, office schedules, and quiet histories of every diet they have tried before. A plan that ignores any of those will fail in three weeks — sometimes faster.
+              </p>
+              <p className="mt-5">
+                What works, year after year, is structured Indian eating — bajra phulka, dal, paneer, ghee in measured spoons, fruit by the season. Calibrated to your goal and the labs we can move. <em>Not glamorous. Documentable.</em>
+              </p>
+            </div>
+
+            {/* Marginal annotation */}
+            <aside className="mt-8 border-l-2 border-clay pl-5 max-w-md">
+              <p className="text-sm text-warm-700 italic font-display leading-relaxed">
+                We have written approximately 22,000 plans across two decades. Each one is a single document. None of them are copy-pasted.
+              </p>
+              <p className="mt-2 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
+                Note from the clinic
+              </p>
+            </aside>
           </div>
-          <h2 className="font-display font-medium text-ink leading-[1.1] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)" }}>
-            We design diets the way <em className="italic-clay">a tailor</em> measures a kurta —<br className="hidden md:inline" />
-            for the body, the day, and the family already at the table.
-          </h2>
-          <p className="mt-8 text-lg leading-[1.7] text-warm-700 max-w-3xl mx-auto">
-            No banned food groups. No keto crash. No protein-powder pyramid scheme. Just structured Indian eating — bajra, dal, paneer, ghee in measured spoons — calibrated to your goal and the labs we can move.
-          </p>
+
+          {/* Thali photo */}
+          <div className="md:col-span-5 md:order-1">
+            <figure>
+              <figcaption className="text-eyebrow text-clay mb-4 flex items-center gap-3">
+                <span className="block h-px w-6 bg-clay" />
+                A working Indian thali
+              </figcaption>
+              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+                <Image
+                  src={PHOTOS.indianThali.url}
+                  alt={PHOTOS.indianThali.alt}
+                  fill
+                  className="object-cover"
+                  style={{ filter: "saturate(0.92) contrast(1.03)" }}
+                  sizes="(min-width: 768px) 40vw, 90vw"
+                />
+              </div>
+              <figcaption className="mt-3 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
+                {PHOTOS.indianThali.caption} · Photograph: {PHOTOS.indianThali.credit.photographer}
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ SERVICES (editorial grid) */}
+      {/* ═════════════════════════════════════════════════ PANTRY (new — magazine spread) */}
       <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <header className="grid md:grid-cols-12 gap-8 items-end mb-12">
+            <div className="md:col-span-7">
+              <div className="text-eyebrow text-clay mb-4">From the pantry · what a plan is built from</div>
+              <h2 className="font-display font-medium text-ink leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)" }}>
+                Spice, leaf, lentil. <em className="italic-clay">Measured</em>.
+              </h2>
+            </div>
+            <div className="md:col-span-5 md:text-right">
+              <p className="text-warm-700 text-base leading-relaxed">
+                Every plan begins with what is already in your kitchen — and what should be. Daily haldi, weekly fish, never-skipped greens, the seasonal fruit your grandmother named.
+              </p>
+            </div>
+          </header>
+
+          {/* Asymmetric photo grid */}
+          <div className="grid grid-cols-12 gap-x-6 gap-y-8">
+            <figure className="col-span-12 md:col-span-7 lg:col-span-6">
+              <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
+                <Image
+                  src={PHOTOS.indianSpicesWhite.url}
+                  alt={PHOTOS.indianSpicesWhite.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 50vw, (min-width: 768px) 60vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
+                <span>Mise en place · daily spice palette</span>
+                <span className="italic font-display normal-case tracking-normal text-clay">No. 01</span>
+              </figcaption>
+            </figure>
+
+            <figure className="col-span-6 md:col-span-5 lg:col-span-3 md:mt-12">
+              <div className="relative aspect-[3/4] overflow-hidden border border-ink/15">
+                <Image
+                  src={PHOTOS.spicesOnSpoons.url}
+                  alt={PHOTOS.spicesOnSpoons.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                />
+              </div>
+              <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
+                <span>Turmeric · daily</span>
+                <span className="italic font-display normal-case tracking-normal text-clay">No. 02</span>
+              </figcaption>
+            </figure>
+
+            <figure className="col-span-6 md:col-span-12 lg:col-span-3 lg:mt-24">
+              <div className="relative aspect-[3/4] lg:aspect-square overflow-hidden border border-ink/15">
+                <Image
+                  src={PHOTOS.washedSpinach.url}
+                  alt={PHOTOS.washedSpinach.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                />
+              </div>
+              <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
+                <span>Spinach · iron</span>
+                <span className="italic font-display normal-case tracking-normal text-clay">No. 03</span>
+              </figcaption>
+            </figure>
+
+            <figure className="col-span-12 md:col-span-7 lg:col-span-5 lg:-mt-6">
+              <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
+                <Image
+                  src={PHOTOS.freshGreens.url}
+                  alt={PHOTOS.freshGreens.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 40vw, (min-width: 768px) 60vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
+                <span>Market morning · sabzi mandi</span>
+                <span className="italic font-display normal-case tracking-normal text-clay">No. 04</span>
+              </figcaption>
+            </figure>
+
+            <figure className="col-span-12 md:col-span-5 lg:col-span-4 lg:mt-12">
+              <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
+                <Image
+                  src={PHOTOS.spiceBowls.url}
+                  alt={PHOTOS.spiceBowls.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 40vw, 100vw"
+                />
+              </div>
+              <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
+                <span>Photographed in Goa</span>
+                <span className="italic font-display normal-case tracking-normal text-clay">No. 05</span>
+              </figcaption>
+            </figure>
+
+            <div className="col-span-12 lg:col-span-3 lg:mt-12 flex flex-col justify-between bg-paper border border-clay/40 p-6">
+              <div>
+                <MoringaMark className="size-8 text-clay" />
+                <p className="mt-4 font-display italic text-xl text-ink leading-snug">
+                  Every plan begins in a real Indian kitchen.
+                </p>
+                <p className="mt-3 text-sm text-warm-700 leading-relaxed">
+                  Not a lab. Not a meal-kit subscription. Your kitchen, your time, your family at the table.
+                </p>
+              </div>
+              <p className="mt-6 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
+                — The clinic
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═════════════════════════════════════════════════ SERVICES (editorial grid) */}
+      <section className="bg-paper py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <header className="grid md:grid-cols-12 gap-8 items-end mb-12">
             <div className="md:col-span-7">
@@ -236,7 +375,7 @@ export default function HomePage() {
             </div>
           </header>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
             {SERVICE_LIST.map((s, i) => (
               <Link key={s.slug} href={s.phpPath} className="group">
                 <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 mb-5">
@@ -250,12 +389,8 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="text-eyebrow text-clay mb-2">No. {String(i + 1).padStart(2, "0")}</div>
-                <h3 className="font-display text-2xl font-medium text-ink group-hover:text-clay transition leading-tight">
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-sm text-warm-700 leading-relaxed line-clamp-3">
-                  {s.heroSubhead}
-                </p>
+                <h3 className="font-display text-2xl font-medium text-ink group-hover:text-clay transition leading-tight">{s.title}</h3>
+                <p className="mt-2 text-sm text-warm-700 leading-relaxed line-clamp-3">{s.heroSubhead}</p>
                 <div className="mt-3 text-sm text-ink/70 group-hover:text-clay transition flex items-center gap-2">
                   Read more <span aria-hidden="true">→</span>
                 </div>
@@ -265,8 +400,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ CONDITIONS (type-led list) */}
-      <section className="bg-paper py-20 md:py-24">
+      {/* ═════════════════════════════════════════════════ CONDITIONS (type-led list) */}
+      <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <div className="text-eyebrow text-clay mb-4">Conditions we manage</div>
@@ -276,10 +411,25 @@ export default function HomePage() {
             <p className="mt-6 text-warm-700 leading-relaxed">
               Each treatment page documents the dietary approach, the foods we include and avoid, a sample Indian-meal day, expected timeline, and FAQs answered by a clinical dietitian.
             </p>
+
+            {/* Botanical anchor */}
+            <figure className="mt-8 max-w-[260px]">
+              <div className="relative aspect-square overflow-hidden border border-clay/40">
+                <Image
+                  src={PHOTOS.greenLeafBranch.url}
+                  alt={PHOTOS.greenLeafBranch.alt}
+                  fill
+                  className="object-cover"
+                  sizes="260px"
+                />
+              </div>
+              <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
+                Pinnate leaves · botanical close-up
+              </figcaption>
+            </figure>
+
             <Link href="/treatment.php" className="mt-8 inline-flex items-center gap-3 text-base font-medium text-ink">
-              <span className="relative pb-1 border-b-2 border-clay">
-                See all 20 conditions
-              </span>
+              <span className="relative pb-1 border-b-2 border-clay">See all 20 conditions</span>
               <span className="text-clay" aria-hidden="true">→</span>
             </Link>
           </div>
@@ -288,17 +438,13 @@ export default function HomePage() {
             <ol className="space-y-0">
               {FEATURED_TREATMENTS.map((t, i) => (
                 <li key={t.slug} className="group">
-                  <Link href={t.phpPath} className="flex items-baseline gap-5 py-5 border-b border-[#d8c8a8]/60 transition hover:bg-paper-dark/50 px-2 -mx-2">
+                  <Link href={t.phpPath} className="flex items-baseline gap-5 py-5 border-b border-[#d8c8a8]/60 transition hover:bg-paper px-2 -mx-2">
                     <span className="text-eyebrow text-warm-500 shrink-0 w-8 font-mono">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div className="flex-1">
-                      <h3 className="font-display text-xl md:text-2xl font-medium text-ink group-hover:text-clay transition">
-                        {t.title}
-                      </h3>
-                      <p className="mt-1 text-sm text-warm-700 line-clamp-1">
-                        {t.introLead}
-                      </p>
+                      <h3 className="font-display text-xl md:text-2xl font-medium text-ink group-hover:text-clay transition">{t.title}</h3>
+                      <p className="mt-1 text-sm text-warm-700 line-clamp-1">{t.introLead}</p>
                     </div>
                     <span className="text-clay opacity-0 group-hover:opacity-100 transition" aria-hidden="true">→</span>
                   </Link>
@@ -309,8 +455,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ ABOUT PREVIEW (press feature) */}
-      <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
+      {/* ═════════════════════════════════════════════════ ABOUT (press feature) */}
+      <section className="bg-paper py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <figure>
@@ -339,13 +485,27 @@ export default function HomePage() {
               Practising clinical dietitian for {PERSON.yearsExperience} years
             </p>
 
-            <p className="mt-7 text-base leading-[1.7] text-warm-700">
-              Priyatama Srivastava has practised in Gurgaon since 2005, working with corporate professionals, post-natal mothers, pre-wedding brides, and clients on long therapeutic protocols. She has guided more than 10,000 clients through diet-led management of weight, hormones, glucose, lipids, thyroid and pregnancy nutrition — coordinating with cardiologists, endocrinologists and obstetricians across the NCR&rsquo;s major hospital systems.
-            </p>
+            <div className="mt-7 text-base leading-[1.7] text-warm-700 space-y-4">
+              <p>
+                <span
+                  className="font-display text-clay float-left mr-3 leading-[0.85]"
+                  style={{ fontSize: "4.5rem", fontWeight: 500 }}
+                >
+                  P
+                </span>
+                riyatama Srivastava has practised in Gurgaon since 2005. Her clients are mostly people who have already tried — the gym, the keto plan, the 21-day cleanse, the influencer&rsquo;s pdf — and arrive with the same question. <em>What actually works, year after year?</em>
+              </p>
+              <p>
+                Her answer, in two decades, has not changed: a documented, family-meal-shaped plan, a weekly review, lab work every quarter, and the patience that this is a long road. Ten thousand clients later, that answer has held.
+              </p>
+            </div>
 
             <blockquote className="mt-8 border-l-2 border-clay pl-5 italic font-display text-lg text-ink leading-relaxed">
               &ldquo;The right plan is not what is in fashion. It is what fits your body, your kitchen, your week — and what your lab work will say in three months.&rdquo;
             </blockquote>
+            <p className="mt-2 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500 pl-5">
+              — Dt. Priyatama
+            </p>
 
             <Link href="/priyatama-srivastava.php" className="mt-8 inline-flex items-center gap-3 text-base font-medium text-ink">
               <span className="relative pb-1 border-b-2 border-clay">Read her full practice</span>
@@ -355,8 +515,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ TESTIMONIALS (pull-quotes) */}
-      <section className="bg-paper py-20 md:py-24">
+      {/* ═════════════════════════════════════════════════ TESTIMONIALS */}
+      <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <header className="text-center max-w-3xl mx-auto mb-14">
             <div className="text-eyebrow text-clay mb-4">Field notes from clients</div>
@@ -369,16 +529,18 @@ export default function HomePage() {
           </header>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((t) => (
-              <article key={t.name} className="bg-paper-dark border border-[#d8c8a8]/80 p-7 md:p-8">
+            {TESTIMONIALS.map((t, i) => (
+              <article key={t.name} className="bg-paper border border-[#d8c8a8]/80 p-7 md:p-8 relative">
                 <div className="text-eyebrow text-clay mb-5">{t.outcome}</div>
-                <blockquote
-                  className="font-display italic text-xl leading-[1.4] text-ink"
-                  dangerouslySetInnerHTML={{ __html: `&ldquo;${t.quote}&rdquo;` }}
-                />
-                <footer className="mt-6 pt-5 border-t border-[#d8c8a8]/80">
-                  <div className="font-display text-base font-medium text-ink">{t.name}</div>
-                  <div className="text-sm text-warm-500 italic">{t.locality}</div>
+                <blockquote className="font-display italic text-xl leading-[1.4] text-ink">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <footer className="mt-6 pt-5 border-t border-[#d8c8a8]/80 flex items-baseline justify-between">
+                  <div>
+                    <div className="font-display text-base font-medium text-ink">{t.name}</div>
+                    <div className="text-sm text-warm-500 italic">{t.locality}</div>
+                  </div>
+                  <span className="text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">No. {String(i + 1).padStart(2, "0")}</span>
                 </footer>
               </article>
             ))}
@@ -394,8 +556,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ FAQ */}
-      <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
+      {/* ═════════════════════════════════════════════════ FAQ */}
+      <section className="bg-paper py-20 md:py-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <header className="mb-12 text-center">
             <div className="text-eyebrow text-clay mb-4">Before you book</div>
@@ -416,18 +578,17 @@ export default function HomePage() {
                   </span>
                   <span className="text-clay text-xl shrink-0 transition group-open:rotate-45" aria-hidden="true">＋</span>
                 </summary>
-                <div className="mt-3 pl-12 text-base text-warm-700 leading-[1.7]">
-                  {f.a}
-                </div>
+                <div className="mt-3 pl-12 text-base text-warm-700 leading-[1.7]">{f.a}</div>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ CLOSING CTA */}
-      <section className="bg-ink text-paper py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      {/* ═════════════════════════════════════════════════ CLOSING CTA */}
+      <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #C9A961 0%, transparent 40%)" }} aria-hidden="true" />
+        <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <MoringaMark className="size-12 text-clay mx-auto mb-6" />
           <div className="text-eyebrow text-clay mb-5">Begin</div>
           <h2 className="font-display font-medium leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)" }}>
@@ -437,26 +598,23 @@ export default function HomePage() {
             Fifteen minutes on WhatsApp to understand your goal — no commitment, no payment upfront. We&rsquo;ll tell you honestly whether dietary intervention is appropriate for what you&rsquo;re working on.
           </p>
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 justify-center items-center">
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 text-base font-medium text-paper"
-            >
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 text-base font-medium text-paper">
               <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">
                 Begin on WhatsApp
               </span>
               <span className="text-clay" aria-hidden="true">→</span>
             </a>
-            <a
-              href={`tel:${CONTACT.phoneTel}`}
-              className="text-base font-medium text-paper/75 hover:text-paper transition"
-            >
+            <a href={`tel:${CONTACT.phoneTel}`} className="text-base font-medium text-paper/75 hover:text-paper transition">
               or call {CONTACT.phone}
             </a>
           </div>
         </div>
       </section>
+
+      {/* Photography credits (tiny, editorial) */}
+      <div className="bg-ink-deep text-paper/40 py-4 text-center text-[10px] uppercase tracking-[0.18em] font-mono">
+        Photography: {PHOTOS.indianThali.credit.photographer} · {PHOTOS.indianSpicesWhite.credit.photographer} · {PHOTOS.spicesOnSpoons.credit.photographer} · {PHOTOS.spiceBowls.credit.photographer} · {PHOTOS.washedSpinach.credit.photographer} · {PHOTOS.freshGreens.credit.photographer} · {PHOTOS.moringaLeaves.credit.photographer} · via Unsplash
+      </div>
 
       <Footer />
     </>

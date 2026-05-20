@@ -115,6 +115,46 @@ export const LOCATIONS: Record<string, LocationData> = {
     ],
   },
 
+  "dietician-in-noida": {
+    slug: "dietician-in-noida",
+    phpPath: "/dietician-in-noida.php",
+    city: "Noida",
+    title: "Dietician in Noida",
+    h1: "Best Dietician for Noida Residents",
+    metaTitle: "Best Dietician for Noida | Online Diet Consultation | Go Moringa",
+    metaDescription: "Best dietician for Noida residents — Dt. Priyatama Srivastava offers online consultation + Sector 49 Gurugram clinic. 20 years experience, 5★ Practo.",
+    heroSubhead: "Online diet consultation for Noida residents + Sector 49 Gurugram clinic — weight loss, PCOS, diabetes, thyroid, therapeutic diets.",
+    heroImage: "/assets/services/dietician-in-delhi.jpeg",
+    introLead: "Noida and Greater Noida have grown into major NCR residential and tech hubs, but quality clinical-nutrition care has lagged behind population growth. Dt. Priyatama Srivastava's Go Moringa Clinic in Sector 49 Gurugram serves Noida clients via online consultation (the majority) or in-clinic visits for those who prefer face-to-face care.",
+    whyPickUs: [
+      { title: "Online consultation made for distance", body: "Noida to Sector 49 Gurugram is approximately 60-75 minutes by road via DND or Yamuna Expressway. Most Noida clients use online consultation — the clinical depth is identical to in-person, and weekly follow-ups happen via WhatsApp." },
+      { title: "Tech professional + corporate workforce", body: "Noida's corporate clients face the same patterns as Gurgaon's — long sedentary hours, late dinners, irregular meal timing, lifestyle disease creep in the 30s. Our plans accommodate these realities." },
+      { title: "Coordination with Noida physicians", body: "We coordinate with specialists across Noida and Greater Noida — Fortis, Max, Jaypee, Kailash — when clients are under their care." },
+      { title: "20 years + 10,000 clients across NCR", body: "Verifiable on Practo (5.0/279) and Justdial (4.9/699). Tested track record across all four NCR pockets." },
+    ],
+    localContext: [
+      { title: "Tech professional lifestyle", body: "Noida's tech employees in Sectors 18, 62, 125, 128 face the same Gurgaon-style schedule pressure — long hours, food delivery, irregular sleep. Our protocols accommodate these realities rather than fight them." },
+      { title: "Greater Noida residential growth", body: "Greater Noida West and Yamuna Expressway-side residents face longer commutes and family meal management challenges. We design plans that integrate with family meal patterns." },
+      { title: "PCOS, thyroid, diabetes — same NCR demographics", body: "Same chronic-condition rates as Gurgaon/Delhi. Same dietary protocols apply, calibrated to the individual." },
+    ],
+    servesAreas: [
+      "Sector 1-168 Noida",
+      "Greater Noida (West, Central, Yamuna Expressway side)",
+      "Noida Extension",
+      "Sector 18 (commercial)",
+      "Sector 62, 125, 128 (tech corridor)",
+      "Mahagun + Eldeco + Jaypee complexes",
+      "Greater Noida West",
+    ],
+    travelDistance: "Sector 49 Gurugram is approximately 60-75 minutes from Noida via DND Expressway.",
+    faqs: [
+      { q: "Do you have a clinic in Noida?", a: "Our physical clinic is in Sector 49, Gurugram — approximately 60-75 minutes from Noida. Most Noida clients use online consultation to save the commute. Clinical depth is identical." },
+      { q: "Can I do the entire program online from Noida?", a: "Yes. Initial video assessment + customised diet plan + WhatsApp follow-ups. Many of our Noida clients have completed entire programs without an in-clinic visit." },
+      { q: "Will the diet plan account for Noida tech lifestyle?", a: "Yes. Long hours, food delivery, irregular sleep, business travel — all built into the plan. We work with your reality." },
+      { q: "Who is the best dietitian for Noida residents?", a: "Dt. Priyatama Srivastava of Go Moringa — 20 years of experience, 10,000+ clients across NCR, 5.0★ on Practo. Online consultation works equally well as in-person." },
+    ],
+  },
+
   "dietitian-in-faridabad": {
     slug: "dietitian-in-faridabad",
     phpPath: "/dietitian-in-faridabad.php",

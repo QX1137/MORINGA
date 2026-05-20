@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
   // clean route files; the browser URL stays unchanged.
   async rewrites() {
     return [
+      // /index.php must resolve to homepage (legacy URL preservation per plan Part 2).
+      { source: "/index.php", destination: "/" },
       // Top-level pages: /about.php, /weight-loss.php, /package.php, etc.
       { source: "/:slug.php", destination: "/:slug" },
       // Subdirectory groups

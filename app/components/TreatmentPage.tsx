@@ -3,8 +3,18 @@ import Link from "next/link";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
+import {
+  AuthorBioBlock,
+  ComparisonTable,
+  DefinitionBlock,
+  LastUpdated,
+  MedicalDisclaimer,
+  StatisticBlock,
+  TimelineBlock,
+} from "./aeo";
 import type { TreatmentData } from "@/lib/treatments";
 import { getTreatment } from "@/lib/treatments";
+import { getTreatmentAeo } from "@/lib/aeo-content";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import {
   breadcrumbSchema,
@@ -12,6 +22,8 @@ import {
   localBusinessSchema,
   personSchema,
 } from "@/lib/schema";
+
+const LAST_REVIEWED = "May 2026";
 
 function medicalConditionSchema(t: TreatmentData) {
   return {
@@ -32,6 +44,7 @@ function medicalConditionSchema(t: TreatmentData) {
 }
 
 export function TreatmentPage({ treatment }: { treatment: TreatmentData }) {
+  const aeo = getTreatmentAeo(treatment.slug);
   const breadcrumb = breadcrumbSchema([
     { name: "Home", url: SITE.url },
     { name: "Treatment", url: `${SITE.url}/treatment.php` },
@@ -83,6 +96,25 @@ export function TreatmentPage({ treatment }: { treatment: TreatmentData }) {
           </div>
         </div>
       </section>
+
+      {/* ===== AEO Definition block (AI engines lift this verbatim) ===== */}
+      {aeo?.definitionShort && (
+        <div className="max-w-4xl mx-auto px-4 pt-10">
+          <LastUpdated date={LAST_REVIEWED} reviewer={PERSON.name} />
+          <DefinitionBlock
+            term={treatment.title}
+            definition={aeo.definitionShort}
+            alsoKnownAs={aeo.alsoKnownAs}
+          />
+        </div>
+      )}
+
+      {/* ===== Statistic block ===== */}
+      {aeo?.stats && aeo.stats.length > 0 && (
+        <div className="max-w-5xl mx-auto px-4">
+          <StatisticBlock stats={aeo.stats} columns={aeo.stats.length >= 4 ? 4 : 3} />
+        </div>
+      )}
 
       {/* ===== About condition ===== */}
       <section className="max-w-4xl mx-auto px-4 py-14">
@@ -144,6 +176,26 @@ export function TreatmentPage({ treatment }: { treatment: TreatmentData }) {
         </section>
       )}
 
+      {/* ===== Comparison table (AI engines extract directly) ===== */}
+      {aeo?.comparison && (
+        <div className="max-w-5xl mx-auto px-4">
+          <ComparisonTable
+            heading={aeo.comparison.heading}
+            optionALabel={aeo.comparison.optionALabel}
+            optionBLabel={aeo.comparison.optionBLabel}
+            rows={aeo.comparison.rows}
+            caption={aeo.comparison.caption}
+          />
+        </div>
+      )}
+
+      {/* ===== "What to expect" timeline ===== */}
+      {aeo?.timeline && aeo.timeline.length > 0 && (
+        <div className="max-w-5xl mx-auto px-4">
+          <TimelineBlock milestones={aeo.timeline} />
+        </div>
+      )}
+
       {/* ===== Trust line ===== */}
       <section className="max-w-5xl mx-auto px-4 py-12">
         <div className="bg-brand-50 border border-brand-200 rounded-2xl p-8 md:p-10 text-center">
@@ -191,6 +243,19 @@ export function TreatmentPage({ treatment }: { treatment: TreatmentData }) {
           </div>
         </section>
       )}
+
+      {/* ===== Author bio (E-E-A-T) ===== */}
+      <div className="max-w-5xl mx-auto px-4">
+        <AuthorBioBlock
+          reviewedDate={LAST_REVIEWED}
+          topicNote={aeo?.authorTopicNote}
+        />
+      </div>
+
+      {/* ===== Medical disclaimer (YMYL) ===== */}
+      <div className="max-w-5xl mx-auto px-4">
+        <MedicalDisclaimer />
+      </div>
 
       {/* ===== Final CTA ===== */}
       <section className="bg-ink-900 text-white">

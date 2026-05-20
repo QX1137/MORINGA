@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { JsonLd } from "@/app/components/JsonLd";
@@ -7,7 +8,7 @@ import { breadcrumbSchema, localBusinessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Payment Methods | Go Moringa Diet Clinic",
-  description: "Payment options for Go Moringa diet packages — bank transfer (HDFC, ICICI), UPI, and online payment. Confirm package selection with us first.",
+  description: "Payment options for Go Moringa diet packages — bank transfer (HDFC, ICICI). Confirm package selection first.",
   alternates: { canonical: "/payment.php" },
 };
 
@@ -23,76 +24,109 @@ export default function PaymentPage() {
       <JsonLd data={schemas} />
       <Header />
 
-      <section className="relative bg-brand-gradient text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" aria-hidden="true" />
-        <div className="relative max-w-5xl mx-auto px-4 py-16 md:py-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">Payment Methods</h1>
-          <p className="mt-4 text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Bank transfer details for completing your package payment.
-          </p>
-        </div>
-      </section>
-
-      <section className="max-w-3xl mx-auto px-4 py-10">
-        <div className="bg-brand-50 border border-brand-200 rounded-xl p-5 text-ink-900">
-          <strong>Please confirm your package selection with us before transferring.</strong>
-          <p className="mt-2 text-sm text-ink-700">
-            WhatsApp <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-brand-700 underline">+91-9910922899</a> or call to confirm your programme and amount. Once confirmed, you can use any of the methods below.
-          </p>
-        </div>
-      </section>
-
-      <section className="max-w-5xl mx-auto px-4 py-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-ink-900 text-center mb-8">Bank account details</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <article className="bg-white border border-ink-900/10 rounded-2xl p-6">
-            <div className="flex items-baseline gap-2">
-              <h3 className="text-xl font-bold text-ink-900">HDFC Bank</h3>
-              <span className="text-sm text-ink-500">— primary</span>
-            </div>
-            <dl className="mt-4 space-y-2 text-sm">
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">Account Name</dt><dd className="text-ink-900">Go Moringa Nutri Diet &amp; Food Clinic</dd></div>
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">Account No.</dt><dd className="text-ink-900 font-mono">50200003984211</dd></div>
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">IFSC Code</dt><dd className="text-ink-900 font-mono">HDFC0000572</dd></div>
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">Branch</dt><dd className="text-ink-900">Sector 53, Gurgaon</dd></div>
-            </dl>
-          </article>
-
-          <article className="bg-white border border-ink-900/10 rounded-2xl p-6">
-            <div className="flex items-baseline gap-2">
-              <h3 className="text-xl font-bold text-ink-900">ICICI Bank</h3>
-              <span className="text-sm text-ink-500">— alternate</span>
-            </div>
-            <dl className="mt-4 space-y-2 text-sm">
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">Account Name</dt><dd className="text-ink-900">Go Moringa Nutri Diet &amp; Food Clinic</dd></div>
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">Account No.</dt><dd className="text-ink-900 font-mono">244705500019</dd></div>
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">IFSC Code</dt><dd className="text-ink-900 font-mono">ICIC0002447</dd></div>
-              <div className="flex"><dt className="font-medium text-ink-700 w-32">Branch</dt><dd className="text-ink-900">Malibu Towne, Sector 50, Gurgaon 122011</dd></div>
-            </dl>
-          </article>
-        </div>
-
-        <div className="mt-8 bg-cream-50 border border-ink-900/10 rounded-xl p-6">
-          <h3 className="font-semibold text-ink-900">After making the payment</h3>
-          <ol className="mt-3 space-y-2 text-sm text-ink-700 list-decimal pl-5">
-            <li>Take a screenshot of the transaction confirmation</li>
-            <li>Send it via WhatsApp to <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-brand-700 underline">{CONTACT.phone}</a></li>
-            <li>We confirm receipt and schedule your initial consultation</li>
-          </ol>
-        </div>
-      </section>
-
-      <section className="bg-ink-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 py-14 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold">Questions about payment?</h2>
-          <div className="mt-5 flex flex-wrap gap-3 justify-center">
-            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="px-7 py-3 rounded-full bg-brand-500 hover:bg-brand-600 font-semibold transition">
-              Chat on WhatsApp
-            </a>
-            <a href={`tel:${CONTACT.phoneTel}`} className="px-7 py-3 rounded-full bg-white text-ink-900 hover:bg-cream-100 font-semibold transition">
-              Call {CONTACT.phone}
-            </a>
+      <section className="bg-paper-grain">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6">
+          <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-[#d8c8a8]/80 text-eyebrow text-warm-500">
+            <nav aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-clay transition">Home</Link>
+              <span className="mx-3 opacity-50">/</span>
+              <span className="text-clay">Payment</span>
+            </nav>
+            <span className="hidden md:inline">Account details · HDFC · ICICI</span>
           </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 pt-14 md:pt-20 pb-10 text-center">
+          <div className="text-eyebrow text-clay mb-5 flex items-center justify-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            Payment
+            <span className="block h-px w-10 bg-clay" />
+          </div>
+          <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.98]" style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)" }}>
+            Account <em className="italic-clay">details</em>.
+          </h1>
+          <p className="mt-6 text-lg text-warm-700 max-w-2xl mx-auto leading-relaxed">
+            Confirm your package on WhatsApp first. Then transfer to either account below — both are active.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-paper py-12">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <aside className="border-l-2 border-clay pl-6 py-2">
+            <div className="text-eyebrow text-clay mb-2">Please note</div>
+            <p className="text-base text-warm-700 leading-relaxed">
+              Confirm your package selection with us before transferring. WhatsApp <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-clay border-b border-clay/40 hover:border-clay">{CONTACT.phone}</a> or call to confirm your programme and amount.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section className="bg-paper-dark py-14 md:py-16 border-y border-[#d8c8a8]/60">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            Bank accounts
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-10">
+            Two <em className="italic-clay">active</em> accounts.
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <article className="p-7 border border-[#d8c8a8]/70 bg-paper">
+              <div className="text-eyebrow text-clay mb-2">No. 01 · Primary</div>
+              <h3 className="font-display text-2xl font-medium text-ink leading-tight">HDFC Bank</h3>
+              <dl className="mt-5 space-y-3 text-sm">
+                <div className="grid grid-cols-12 gap-x-3 border-b border-[#d8c8a8]/40 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">Account Name</dt>
+                  <dd className="col-span-7 text-ink font-display">Go Moringa Nutri Diet &amp; Food Clinic</dd>
+                </div>
+                <div className="grid grid-cols-12 gap-x-3 border-b border-[#d8c8a8]/40 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">Account No.</dt>
+                  <dd className="col-span-7 text-ink font-mono">50200003984211</dd>
+                </div>
+                <div className="grid grid-cols-12 gap-x-3 border-b border-[#d8c8a8]/40 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">IFSC</dt>
+                  <dd className="col-span-7 text-ink font-mono">HDFC0000572</dd>
+                </div>
+                <div className="grid grid-cols-12 gap-x-3 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">Branch</dt>
+                  <dd className="col-span-7 text-ink font-display">Sector 53, Gurgaon</dd>
+                </div>
+              </dl>
+            </article>
+
+            <article className="p-7 border border-[#d8c8a8]/70 bg-paper">
+              <div className="text-eyebrow text-clay mb-2">No. 02 · Alternate</div>
+              <h3 className="font-display text-2xl font-medium text-ink leading-tight">ICICI Bank</h3>
+              <dl className="mt-5 space-y-3 text-sm">
+                <div className="grid grid-cols-12 gap-x-3 border-b border-[#d8c8a8]/40 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">Account Name</dt>
+                  <dd className="col-span-7 text-ink font-display">Go Moringa Nutri Diet &amp; Food Clinic</dd>
+                </div>
+                <div className="grid grid-cols-12 gap-x-3 border-b border-[#d8c8a8]/40 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">Account No.</dt>
+                  <dd className="col-span-7 text-ink font-mono">244705500019</dd>
+                </div>
+                <div className="grid grid-cols-12 gap-x-3 border-b border-[#d8c8a8]/40 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">IFSC</dt>
+                  <dd className="col-span-7 text-ink font-mono">ICIC0002447</dd>
+                </div>
+                <div className="grid grid-cols-12 gap-x-3 pb-2">
+                  <dt className="col-span-5 text-eyebrow text-warm-500 font-mono pt-1">Branch</dt>
+                  <dd className="col-span-7 text-ink font-display">Malibu Towne, Sec 50, Gurgaon</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+
+          <aside className="mt-10 p-6 border border-[#d8c8a8]/70 bg-paper">
+            <div className="text-eyebrow text-clay mb-2">After making the payment</div>
+            <ol className="space-y-2 text-base text-warm-700">
+              <li className="flex gap-3"><span className="text-clay font-mono">01</span> Take a screenshot of the transaction confirmation</li>
+              <li className="flex gap-3"><span className="text-clay font-mono">02</span> Send it via WhatsApp to <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="text-clay border-b border-clay/40 hover:border-clay ml-1">{CONTACT.phone}</a></li>
+              <li className="flex gap-3"><span className="text-clay font-mono">03</span> We confirm receipt and schedule your initial consultation</li>
+            </ol>
+          </aside>
         </div>
       </section>
 

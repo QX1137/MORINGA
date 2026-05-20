@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
+import { MoringaMark } from "@/app/components/MoringaMark";
 import { CONTACT, whatsappUrl } from "@/lib/site";
 
 export const metadata = {
@@ -23,42 +24,45 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <section className="max-w-3xl mx-auto px-4 py-20 text-center">
-        <div className="text-7xl font-bold text-brand-600">404</div>
-        <h1 className="mt-4 text-3xl md:text-4xl font-bold text-ink-900">Page not found</h1>
-        <p className="mt-3 text-ink-700">
-          The page you&rsquo;re looking for isn&rsquo;t here. It may have moved, or the URL might be slightly off. Try one of these popular pages instead.
-        </p>
+      <section className="bg-paper-grain py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <MoringaMark className="size-12 text-clay mx-auto mb-6" />
+          <div className="text-eyebrow text-clay mb-3">Error · 404</div>
+          <div className="font-display font-medium text-clay leading-none" style={{ fontSize: "clamp(5rem, 12vw, 8rem)" }}>
+            404
+          </div>
+          <h1 className="mt-4 font-display text-3xl md:text-4xl font-medium text-ink leading-tight">
+            This page is <em className="italic-clay">not here</em>.
+          </h1>
+          <p className="mt-4 text-warm-700 text-lg leading-relaxed max-w-xl mx-auto">
+            It may have moved, or the URL might be slightly off. Try one of these popular pages instead.
+          </p>
 
-        <div className="mt-8 flex flex-wrap gap-2 justify-center">
-          {QUICK_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="px-4 py-2 rounded-full bg-cream-100 hover:bg-brand-100 border border-ink-900/10 text-ink-900 hover:text-brand-700 transition"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
+          <div className="mt-10 flex flex-wrap gap-2 justify-center">
+            {QUICK_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="px-4 py-2 border border-[#d8c8a8]/70 hover:border-clay text-ink hover:text-clay transition text-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
 
-        <div className="mt-10 pt-10 border-t border-ink-900/10">
-          <p className="text-sm text-ink-700">Or get in touch directly:</p>
-          <div className="mt-3 flex flex-wrap gap-3 justify-center">
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2 rounded-full bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium transition"
-            >
-              WhatsApp us
-            </a>
-            <a
-              href={`tel:${CONTACT.phoneTel}`}
-              className="px-5 py-2 rounded-full bg-white border border-ink-900/10 text-ink-900 hover:bg-cream-50 text-sm font-medium transition"
-            >
-              Call {CONTACT.phone}
-            </a>
+          <div className="mt-12 pt-10 border-t border-[#d8c8a8]/60">
+            <p className="text-sm text-warm-700 mb-4">Or get in touch directly:</p>
+            <div className="flex flex-wrap gap-x-8 gap-y-3 justify-center">
+              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 text-base font-medium text-ink">
+                <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">
+                  WhatsApp us
+                </span>
+                <span className="text-clay" aria-hidden="true">→</span>
+              </a>
+              <a href={`tel:${CONTACT.phoneTel}`} className="text-base font-medium text-ink/70 hover:text-ink transition">
+                or call {CONTACT.phone}
+              </a>
+            </div>
           </div>
         </div>
       </section>

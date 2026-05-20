@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { JsonLd } from "@/app/components/JsonLd";
+import { MoringaMark } from "@/app/components/MoringaMark";
 import { CONTACT, REVIEWS, SITE, SOCIAL, whatsappUrl } from "@/lib/site";
 import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schema";
 
@@ -23,94 +25,110 @@ export default function ContactPage() {
       <JsonLd data={schemas} />
       <Header />
 
-      <section className="relative bg-brand-gradient text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" aria-hidden="true" />
-        <div className="relative max-w-5xl mx-auto px-4 py-16 md:py-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">Contact Us</h1>
-          <p className="mt-4 text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Three ways to reach Go Moringa Diet Clinic — pick whichever fits you.
+      <section className="bg-paper-grain">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6">
+          <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-[#d8c8a8]/80 text-eyebrow text-warm-500">
+            <nav aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-clay transition">Home</Link>
+              <span className="mx-3 opacity-50">/</span>
+              <span className="text-clay">Contact</span>
+            </nav>
+            <span className="hidden md:inline">{CONTACT.hours.days} · {CONTACT.hours.open}–{CONTACT.hours.close}</span>
+          </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 pt-14 md:pt-20 pb-10 text-center">
+          <div className="text-eyebrow text-clay mb-5 flex items-center justify-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            Reach out
+            <span className="block h-px w-10 bg-clay" />
+          </div>
+          <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.98] mx-auto max-w-4xl" style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)" }}>
+            Three ways to <em className="italic-clay">begin</em>.
+          </h1>
+          <p className="mt-6 text-lg text-warm-700 max-w-2xl mx-auto leading-relaxed">
+            Pick whichever fits you. The first conversation is free, 15 minutes, no commitment.
           </p>
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 py-14">
-        <div className="grid md:grid-cols-3 gap-6">
-          <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group block bg-white border border-ink-900/10 rounded-2xl p-6 hover:border-brand-300 hover:shadow-md transition">
-            <div className="size-12 rounded-full bg-brand-100 flex items-center justify-center text-2xl" style={{ backgroundColor: "#25D366" }}>
-              <svg viewBox="0 0 24 24" fill="white" className="size-7" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-              </svg>
-            </div>
-            <h2 className="mt-4 text-xl font-semibold text-ink-900 group-hover:text-brand-600">WhatsApp (fastest)</h2>
-            <p className="mt-2 text-sm text-ink-700">Click to start a conversation. We respond during clinic hours.</p>
-            <p className="mt-3 text-brand-700 font-medium">{CONTACT.phone}</p>
+      {/* 3 channels */}
+      <section className="bg-paper py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-6 md:gap-8">
+          <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group block p-7 border border-[#d8c8a8]/70 hover:border-clay transition">
+            <div className="text-eyebrow text-clay mb-3">No. 01</div>
+            <h2 className="font-display text-2xl font-medium text-ink group-hover:text-clay transition">WhatsApp · fastest</h2>
+            <p className="mt-3 text-sm text-warm-700 leading-relaxed">Most clients start here. A few hours response during clinic hours.</p>
+            <p className="mt-4 font-display text-lg text-clay border-b border-clay inline-block pb-0.5">{CONTACT.phone}</p>
           </a>
 
-          <a href={`tel:${CONTACT.phoneTel}`} className="group block bg-white border border-ink-900/10 rounded-2xl p-6 hover:border-brand-300 hover:shadow-md transition">
-            <div className="size-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-700">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="size-7" aria-hidden="true">
-                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05l-2.21 2.16z" />
-              </svg>
-            </div>
-            <h2 className="mt-4 text-xl font-semibold text-ink-900 group-hover:text-brand-600">Call</h2>
-            <p className="mt-2 text-sm text-ink-700">Direct call during clinic hours, Monday to Saturday.</p>
-            <p className="mt-3 text-brand-700 font-medium">{CONTACT.phone}</p>
+          <a href={`tel:${CONTACT.phoneTel}`} className="group block p-7 border border-[#d8c8a8]/70 hover:border-clay transition">
+            <div className="text-eyebrow text-clay mb-3">No. 02</div>
+            <h2 className="font-display text-2xl font-medium text-ink group-hover:text-clay transition">Call</h2>
+            <p className="mt-3 text-sm text-warm-700 leading-relaxed">Direct line. {CONTACT.hours.days}, {CONTACT.hours.open}–{CONTACT.hours.close}.</p>
+            <p className="mt-4 font-display text-lg text-clay border-b border-clay inline-block pb-0.5">{CONTACT.phone}</p>
           </a>
 
-          <a href={`mailto:${CONTACT.email}`} className="group block bg-white border border-ink-900/10 rounded-2xl p-6 hover:border-brand-300 hover:shadow-md transition">
-            <div className="size-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-700">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="size-7" aria-hidden="true">
-                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-              </svg>
-            </div>
-            <h2 className="mt-4 text-xl font-semibold text-ink-900 group-hover:text-brand-600">Email</h2>
-            <p className="mt-2 text-sm text-ink-700">For detailed queries that need a full reply.</p>
-            <p className="mt-3 text-brand-700 font-medium break-all">{CONTACT.email}</p>
+          <a href={`mailto:${CONTACT.email}`} className="group block p-7 border border-[#d8c8a8]/70 hover:border-clay transition">
+            <div className="text-eyebrow text-clay mb-3">No. 03</div>
+            <h2 className="font-display text-2xl font-medium text-ink group-hover:text-clay transition">Email</h2>
+            <p className="mt-3 text-sm text-warm-700 leading-relaxed">For detailed queries that need a longer reply.</p>
+            <p className="mt-4 font-display text-base text-clay border-b border-clay inline-block pb-0.5 break-all">{CONTACT.email}</p>
           </a>
         </div>
       </section>
 
-      <section className="bg-cream-50 border-y border-ink-900/5">
-        <div className="max-w-5xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10">
+      {/* Clinic details */}
+      <section className="bg-paper-dark py-16 md:py-20 border-y border-[#d8c8a8]/60">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-ink-900">Visit the clinic</h2>
-            <address className="not-italic mt-4 text-ink-700 leading-relaxed text-lg">
-              <strong className="block text-ink-900">Go Moringa Nutri Diet &amp; Food Clinic</strong>
+            <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+              <span className="block h-px w-10 bg-clay" />
+              Visit the clinic
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-6">
+              Sector 49, <em className="italic-clay">Gurugram</em>.
+            </h2>
+            <address className="not-italic text-lg text-warm-700 leading-relaxed font-display">
+              <strong className="font-medium text-ink block">Go Moringa Nutri Diet &amp; Food Clinic</strong>
               {CONTACT.address.street}<br />
               {CONTACT.address.locality}<br />
               {CONTACT.address.city}, {CONTACT.address.region} {CONTACT.address.postalCode}<br />
               {CONTACT.address.countryName}
             </address>
-            <div className="mt-5">
-              <h3 className="font-semibold text-ink-900">Clinic hours</h3>
-              <p className="text-ink-700 mt-1">{CONTACT.hours.days}, {CONTACT.hours.open} AM - {CONTACT.hours.close} PM</p>
-              <p className="text-ink-700 text-sm mt-1 italic">Closed Sundays. Online consultations available anytime by booking.</p>
-            </div>
-            <div className="mt-5">
-              <h3 className="font-semibold text-ink-900">Follow on social</h3>
-              <div className="mt-2 flex flex-wrap gap-3 text-sm">
-                <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-brand-700 hover:underline">Instagram</a>
-                <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="text-brand-700 hover:underline">Facebook</a>
-                <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" className="text-brand-700 hover:underline">YouTube</a>
-                <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer" className="text-brand-700 hover:underline">Twitter</a>
-              </div>
+            <div className="mt-6 border-t border-[#d8c8a8]/60 pt-4 space-y-1">
+              <div className="text-eyebrow text-clay">Clinic hours</div>
+              <p className="font-display text-base text-ink mt-1">{CONTACT.hours.days} · {CONTACT.hours.open} AM – {CONTACT.hours.close} PM</p>
+              <p className="text-sm italic text-warm-500 font-display">Closed Sundays. Online consultation available any day by appointment.</p>
             </div>
           </div>
+
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-ink-900">Reviews from verified clients</h2>
-            <div className="mt-4 space-y-3">
-              <a href={REVIEWS.practo.url} target="_blank" rel="noopener noreferrer" className="block bg-white border border-ink-900/10 rounded-xl p-4 hover:border-brand-300 transition">
-                <div className="font-semibold text-ink-900">Practo — {REVIEWS.practo.rating}★</div>
-                <div className="text-sm text-ink-700">{REVIEWS.practo.count} verified patient reviews</div>
+            <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+              <span className="block h-px w-10 bg-clay" />
+              Verified on
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-6">
+              Reviews <em className="italic-clay">from clients</em>.
+            </h2>
+            <div className="space-y-3">
+              <a href={REVIEWS.practo.url} target="_blank" rel="noopener noreferrer" className="block p-4 border border-[#d8c8a8]/70 hover:border-clay transition">
+                <div className="font-display text-xl font-medium text-ink">Practo · {REVIEWS.practo.rating}★</div>
+                <div className="text-sm text-warm-500 mt-1">{REVIEWS.practo.count} verified patient reviews</div>
               </a>
-              <a href={REVIEWS.justdial.url} target="_blank" rel="noopener noreferrer" className="block bg-white border border-ink-900/10 rounded-xl p-4 hover:border-brand-300 transition">
-                <div className="font-semibold text-ink-900">Justdial — {REVIEWS.justdial.rating}★</div>
-                <div className="text-sm text-ink-700">{REVIEWS.justdial.count} ratings &amp; reviews</div>
+              <a href={REVIEWS.justdial.url} target="_blank" rel="noopener noreferrer" className="block p-4 border border-[#d8c8a8]/70 hover:border-clay transition">
+                <div className="font-display text-xl font-medium text-ink">Justdial · {REVIEWS.justdial.rating}★</div>
+                <div className="text-sm text-warm-500 mt-1">{REVIEWS.justdial.count} ratings &amp; reviews</div>
               </a>
-              <a href={REVIEWS.lybrate.url} target="_blank" rel="noopener noreferrer" className="block bg-white border border-ink-900/10 rounded-xl p-4 hover:border-brand-300 transition">
-                <div className="font-semibold text-ink-900">Lybrate</div>
-                <div className="text-sm text-ink-700">Professional healthcare profile</div>
-              </a>
+            </div>
+            <div className="mt-6 border-t border-[#d8c8a8]/60 pt-4">
+              <div className="text-eyebrow text-clay mb-2">Follow on social</div>
+              <div className="flex flex-wrap gap-x-5 gap-y-1.5 font-display text-base">
+                <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-clay transition">Instagram</a>
+                <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-clay transition">Facebook</a>
+                <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-clay transition">YouTube</a>
+                <a href={SOCIAL.twitter} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-clay transition">Twitter</a>
+              </div>
             </div>
           </div>
         </div>

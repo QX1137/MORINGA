@@ -3,17 +3,17 @@ import Link from "next/link";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { JsonLd } from "@/app/components/JsonLd";
+import { MoringaMark } from "@/app/components/MoringaMark";
 import { CONTACT, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Diet Package Pricing | Go Moringa Diet Clinic Gurgaon",
-  description: "Diet plan packages at Go Moringa — 1, 3, 6, and 12 month options for clients in India and worldwide. Customised plans by Dt. Priyatama Srivastava.",
+  description: "Diet plan packages at Go Moringa — 1, 3, 6, and 12 month options for India and worldwide clients. Customised by Dt. Priyatama Srivastava.",
   alternates: { canonical: "/package.php" },
 };
 
 type Pkg = { duration: string; priceIN: string; priceINTL: string; popular?: boolean };
-
 const PACKAGES: Pkg[] = [
   { duration: "1 Month", priceIN: "5,999", priceINTL: "7,500" },
   { duration: "3 Months", priceIN: "13,999", priceINTL: "17,000", popular: true },
@@ -44,48 +44,64 @@ export default function PackagePage() {
       <JsonLd data={schemas} />
       <Header />
 
-      <section className="relative bg-brand-gradient text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" aria-hidden="true" />
-        <div className="relative max-w-5xl mx-auto px-4 py-16 md:py-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">Package Pricing</h1>
-          <p className="mt-4 text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Four programme durations — pick what fits your goal. Longer programmes give better per-month value because sustained results need time.
+      <section className="bg-paper-grain">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6">
+          <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-[#d8c8a8]/80 text-eyebrow text-warm-500">
+            <nav aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-clay transition">Home</Link>
+              <span className="mx-3 opacity-50">/</span>
+              <span className="text-clay">Package</span>
+            </nav>
+            <span className="hidden md:inline">Programme durations · 1 · 3 · 6 · 12 months</span>
+          </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 pt-14 md:pt-20 pb-10 text-center">
+          <div className="text-eyebrow text-clay mb-5 flex items-center justify-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            Pricing
+            <span className="block h-px w-10 bg-clay" />
+          </div>
+          <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.98] mx-auto max-w-4xl" style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)" }}>
+            Four programme <em className="italic-clay">durations</em>.
+          </h1>
+          <p className="mt-6 text-lg text-warm-700 max-w-2xl mx-auto leading-relaxed">
+            Longer programmes give better per-month value — because sustained results need time.
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-14">
-        <h2 className="text-2xl md:text-3xl font-bold text-ink-900 text-center mb-8">Pricing for India</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PACKAGES.map((p) => (
-            <article key={p.duration} className={`relative bg-white rounded-2xl p-6 border-2 ${p.popular ? "border-brand-500 shadow-lg" : "border-ink-900/10"} flex flex-col`}>
-              {p.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-brand-500 text-white text-xs font-semibold rounded-full">
-                  POPULAR
-                </div>
-              )}
-              <div className="text-ink-700 font-medium">{p.duration}</div>
-              <div className="mt-2 text-4xl font-bold text-ink-900">₹{p.priceIN}</div>
-              <div className="mt-1 text-xs text-ink-500">Inclusive of consultation + plan + follow-ups</div>
-              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={`mt-5 w-full text-center px-4 py-2.5 rounded-full font-semibold transition ${p.popular ? "bg-brand-600 hover:bg-brand-700 text-white" : "bg-cream-100 hover:bg-brand-50 text-ink-900"}`}>
-                Buy Now
-              </a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-cream-50 border-y border-ink-900/5">
-        <div className="max-w-7xl mx-auto px-4 py-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-ink-900 text-center mb-8">Pricing for outside India</h2>
+      {/* India pricing */}
+      <section className="bg-paper py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            For India
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-8">
+            Pricing <em className="italic-clay">in INR</em>.
+          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PACKAGES.map((p) => (
-              <article key={p.duration} className={`bg-white rounded-2xl p-6 border ${p.popular ? "border-brand-300" : "border-ink-900/10"} flex flex-col`}>
-                <div className="text-ink-700 font-medium">{p.duration}</div>
-                <div className="mt-2 text-4xl font-bold text-ink-900">₹{p.priceINTL}</div>
-                <div className="mt-1 text-xs text-ink-500">For clients consulting from outside India</div>
-                <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-5 w-full text-center px-4 py-2.5 rounded-full font-semibold bg-cream-100 hover:bg-brand-50 text-ink-900 transition">
-                  Buy Now
+            {PACKAGES.map((p, i) => (
+              <article key={p.duration} className={`relative p-7 border ${p.popular ? "border-clay" : "border-[#d8c8a8]/70"} flex flex-col`}>
+                {p.popular && (
+                  <div className="absolute -top-3 left-7 px-2.5 py-0.5 bg-clay text-paper text-eyebrow">
+                    Popular
+                  </div>
+                )}
+                <div className="text-eyebrow text-warm-500 mb-2 font-mono">No. {String(i + 1).padStart(2, "0")}</div>
+                <div className="font-display text-base text-ink/70">{p.duration}</div>
+                <div className="font-display font-medium text-ink mt-3 leading-none" style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)" }}>
+                  ₹{p.priceIN}
+                </div>
+                <div className="mt-4 text-xs text-warm-500 leading-relaxed flex-1">
+                  Consultation + customised plan + weekly follow-ups
+                </div>
+                <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-6 group inline-flex items-center gap-2 text-base font-medium text-ink">
+                  <span className={`relative pb-1 border-b-2 transition-all group-hover:border-b-[3px] ${p.popular ? "border-clay" : "border-[#d8c8a8]"}`}>
+                    Begin on WhatsApp
+                  </span>
+                  <span className="text-clay" aria-hidden="true">→</span>
                 </a>
               </article>
             ))}
@@ -93,40 +109,87 @@ export default function PackagePage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-4 py-14">
-        <h2 className="text-2xl md:text-3xl font-bold text-ink-900 text-center mb-8">What is included in every package</h2>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {INCLUDED.map((item) => (
-            <div key={item} className="flex gap-3 bg-white border border-ink-900/10 rounded-xl p-4">
-              <span className="text-brand-600 font-bold" aria-hidden="true">✓</span>
-              <span className="text-ink-900">{item}</span>
-            </div>
-          ))}
+      {/* International pricing */}
+      <section className="bg-paper-dark py-14 md:py-16 border-y border-[#d8c8a8]/60">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            For outside India
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-8">
+            Pricing <em className="italic-clay">for international clients</em>.
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {PACKAGES.map((p, i) => (
+              <article key={p.duration} className="p-7 border border-[#d8c8a8]/70 bg-paper flex flex-col">
+                <div className="text-eyebrow text-warm-500 mb-2 font-mono">No. {String(i + 1).padStart(2, "0")}</div>
+                <div className="font-display text-base text-ink/70">{p.duration}</div>
+                <div className="font-display font-medium text-ink mt-3 leading-none" style={{ fontSize: "clamp(2rem, 3.5vw, 2.75rem)" }}>
+                  ₹{p.priceINTL}
+                </div>
+                <div className="mt-4 text-xs text-warm-500 leading-relaxed flex-1">
+                  For clients consulting from outside India
+                </div>
+                <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-6 group inline-flex items-center gap-2 text-base font-medium text-ink">
+                  <span className="relative pb-1 border-b-2 border-[#d8c8a8] transition-all group-hover:border-b-[3px] group-hover:border-clay">
+                    Begin on WhatsApp
+                  </span>
+                  <span className="text-clay" aria-hidden="true">→</span>
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-brand-50 border-y border-brand-200">
-        <div className="max-w-4xl mx-auto px-4 py-10 text-center">
-          <h2 className="text-xl md:text-2xl font-bold text-ink-900">Not sure which programme fits?</h2>
-          <p className="mt-2 text-ink-700">WhatsApp us to discuss your goal — we will recommend the right package in a 15-minute call. No commitment.</p>
-          <div className="mt-5 flex flex-wrap gap-3 justify-center">
-            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="px-7 py-3 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold transition">
-              WhatsApp Us
+      {/* What's included */}
+      <section className="bg-paper py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            What is included
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-8">
+            In <em className="italic-clay">every</em> package.
+          </h2>
+          <ul className="border-t border-[#d8c8a8]/60">
+            {INCLUDED.map((item, i) => (
+              <li key={item} className="flex gap-5 py-3 border-b border-[#d8c8a8]/40 text-base text-warm-700 leading-snug">
+                <span className="text-eyebrow text-clay shrink-0 w-8 font-mono pt-0.5">{String(i + 1).padStart(2, "0")}</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-ink text-paper py-20 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #C9A961 0%, transparent 40%)" }} aria-hidden="true" />
+        <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <MoringaMark className="size-12 text-clay mx-auto mb-6" />
+          <div className="text-eyebrow text-clay mb-4">Not sure which to pick?</div>
+          <h2 className="font-display font-medium leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)" }}>
+            We will tell you <em className="italic" style={{ color: "#C9A961" }}>honestly</em>.
+          </h2>
+          <p className="mt-6 text-base text-paper/85 leading-relaxed max-w-2xl mx-auto">
+            Fifteen minutes on WhatsApp to discuss your goal — we will recommend the right programme. No commitment.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4 justify-center items-center">
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 text-base font-medium text-paper">
+              <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">
+                Begin on WhatsApp
+              </span>
+              <span className="text-clay" aria-hidden="true">→</span>
             </a>
-            <a href={`tel:${CONTACT.phoneTel}`} className="px-7 py-3 rounded-full bg-white border border-ink-900/10 text-ink-900 hover:bg-cream-50 font-semibold transition">
-              Call {CONTACT.phone}
+            <a href={`tel:${CONTACT.phoneTel}`} className="text-base font-medium text-paper/75 hover:text-paper transition">
+              or call {CONTACT.phone}
             </a>
           </div>
-          <p className="mt-4 text-sm text-ink-500">
-            See our reviews on <a href={REVIEWS.practo.url} target="_blank" rel="noopener noreferrer" className="underline">Practo</a> and <a href={REVIEWS.justdial.url} target="_blank" rel="noopener noreferrer" className="underline">Justdial</a>.
+          <p className="mt-6 text-eyebrow text-paper/60">
+            ★ {REVIEWS.practo.rating} Practo · ★ {REVIEWS.justdial.rating} Justdial · 20+ years
           </p>
         </div>
-      </section>
-
-      <section className="max-w-3xl mx-auto px-4 py-10 text-sm text-ink-500">
-        <p className="text-center italic">
-          <Link href="/payment.php" className="text-brand-700 underline">View payment methods →</Link>
-        </p>
       </section>
 
       <Footer />

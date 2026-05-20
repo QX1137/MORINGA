@@ -1,79 +1,143 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { JsonLd } from "@/app/components/JsonLd";
+import { MoringaMark } from "@/app/components/MoringaMark";
 import { BLOGS } from "@/lib/blogs";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
-import {
-  breadcrumbSchema,
-  localBusinessSchema,
-  personSchema,
-} from "@/lib/schema";
+import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Blog | Go Moringa | Nutri Diet Clinic In Gurgaon",
-  description: "Explore Go Moringa's blog for expert diet tips, healthy eating guides, and personalised nutrition advice from the top diet clinic in Gurgaon.",
+  title: "Journal | Go Moringa | Nutri Diet Clinic In Gurgaon",
+  description: "Expert diet tips, healthy eating guides, and clinical nutrition advice from Dt. Priyatama Srivastava and Go Moringa.",
   alternates: { canonical: "/blog.php" },
 };
 
 export default function BlogIndex() {
   const breadcrumb = breadcrumbSchema([
     { name: "Home", url: SITE.url },
-    { name: "Blog", url: `${SITE.url}/blog.php` },
+    { name: "Journal", url: `${SITE.url}/blog.php` },
   ]);
   const schemas = [localBusinessSchema(), personSchema(), breadcrumb];
+
+  // Sort by word count desc to surface the longest/richest articles first
+  const sortedBlogs = [...BLOGS].sort((a, b) => b.wordCount - a.wordCount);
+  const [featured, ...rest] = sortedBlogs;
 
   return (
     <>
       <JsonLd data={schemas} />
       <Header />
 
-      <section className="relative bg-brand-gradient text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" aria-hidden="true" />
-        <div className="relative max-w-5xl mx-auto px-4 py-16 md:py-20 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">Blog</h1>
-          <p className="mt-4 text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Expert diet tips, healthy eating guides, and clinical nutrition advice from Dt. Priyatama Srivastava and the Go Moringa team.
+      <section className="bg-paper-grain">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6">
+          <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-[#d8c8a8]/80 text-eyebrow text-warm-500">
+            <nav aria-label="Breadcrumb">
+              <Link href="/" className="hover:text-clay transition">Home</Link>
+              <span className="mx-3 opacity-50">/</span>
+              <span className="text-clay">Journal</span>
+            </nav>
+            <span className="hidden md:inline">{BLOGS.length} articles · clinical nutrition writing</span>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-14 md:pt-20 pb-10">
+          <div className="text-eyebrow text-clay mb-5 flex items-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            Journal · Issue 01
+          </div>
+          <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.98]" style={{ fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)" }}>
+            The journal of <em className="italic-clay">a working clinic</em>.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-warm-700 leading-relaxed">
+            Writings from {PERSON.name} on nutrition, diet, chronic conditions, recipes, and the everyday questions clients bring to the clinic.
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-14">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {BLOGS.map((b) => (
-            <Link key={b.slug} href={b.phpPath} className="group block bg-white border border-ink-900/10 rounded-2xl overflow-hidden hover:shadow-lg hover:border-brand-300 transition">
-              <div className="p-5">
-                <h2 className="text-lg font-semibold text-ink-900 group-hover:text-brand-600 transition line-clamp-3">{b.h1 || b.title}</h2>
-                {b.metaDescription && (
-                  <p className="mt-2 text-sm text-ink-700 line-clamp-3">{b.metaDescription}</p>
+      {/* Featured article */}
+      {featured && (
+        <section className="bg-paper py-14 border-t border-[#d8c8a8]/80">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+              <span className="block h-px w-10 bg-clay" />
+              Featured · longest article
+            </div>
+            <Link href={featured.phpPath} className="group grid md:grid-cols-12 gap-x-8 gap-y-6 items-end border-b border-[#d8c8a8]/60 pb-10">
+              <div className="md:col-span-8">
+                <h2 className="font-display font-medium text-ink group-hover:text-clay transition leading-[1.05]" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+                  {featured.h1 || featured.title}
+                </h2>
+                {featured.metaDescription && (
+                  <p className="mt-4 text-lg text-warm-700 leading-[1.6] max-w-2xl">
+                    {featured.metaDescription}
+                  </p>
                 )}
-                <div className="mt-4 flex items-center justify-between text-xs text-ink-500">
-                  <span>{Math.ceil(b.wordCount / 200)} min read</span>
-                  <span className="inline-flex items-center gap-1 text-brand-600 font-medium">
-                    Read article <span aria-hidden="true">→</span>
-                  </span>
+              </div>
+              <div className="md:col-span-4 md:text-right">
+                <div className="text-eyebrow text-warm-500">{Math.ceil(featured.wordCount / 200)} min read</div>
+                <div className="mt-2 inline-flex items-center gap-2 text-base text-clay">
+                  Read article <span aria-hidden="true">→</span>
                 </div>
               </div>
             </Link>
-          ))}
+          </div>
+        </section>
+      )}
+
+      <section className="bg-paper py-14 md:py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+            <span className="block h-px w-10 bg-clay" />
+            All articles
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-10">
+            From the <em className="italic-clay">clinic</em>.
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            {rest.map((b, i) => (
+              <Link key={b.slug} href={b.phpPath} className="group">
+                <div className="text-eyebrow text-clay mb-3 font-mono">No. {String(i + 2).padStart(2, "0")}</div>
+                <h3 className="font-display text-xl md:text-2xl font-medium text-ink group-hover:text-clay transition leading-tight line-clamp-3">
+                  {b.h1 || b.title}
+                </h3>
+                {b.metaDescription && (
+                  <p className="mt-3 text-sm text-warm-700 line-clamp-3 leading-relaxed">{b.metaDescription}</p>
+                )}
+                <div className="mt-4 flex items-center justify-between text-eyebrow text-warm-500">
+                  <span>{Math.ceil(b.wordCount / 200)} min read</span>
+                  <span className="text-clay">→</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-ink-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 py-14 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold">Want personalised guidance?</h2>
-          <p className="mt-3 text-white/80">Articles are general — Dt. Priyatama designs plans for your specific needs.</p>
-          <div className="mt-5 flex flex-wrap gap-3 justify-center">
-            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="px-7 py-3 rounded-full bg-brand-500 hover:bg-brand-600 font-semibold transition">
-              WhatsApp Us
+      <section className="bg-ink text-paper py-20 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #C9A961 0%, transparent 40%)" }} aria-hidden="true" />
+        <div className="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <MoringaMark className="size-12 text-clay mx-auto mb-6" />
+          <div className="text-eyebrow text-clay mb-4">Want personalised guidance?</div>
+          <h2 className="font-display font-medium leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)" }}>
+            Articles are <em className="italic" style={{ color: "#C9A961" }}>general</em>.
+          </h2>
+          <p className="mt-6 text-base text-paper/85 leading-relaxed max-w-2xl mx-auto">
+            For a plan built around your specific body, goal and family kitchen, the first conversation is free.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-x-8 gap-y-4 justify-center items-center">
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 text-base font-medium text-paper">
+              <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">
+                Begin on WhatsApp
+              </span>
+              <span className="text-clay" aria-hidden="true">→</span>
             </a>
-            <a href={`tel:${CONTACT.phoneTel}`} className="px-7 py-3 rounded-full bg-white text-ink-900 hover:bg-cream-100 font-semibold transition">
-              Call {CONTACT.phone}
+            <a href={`tel:${CONTACT.phoneTel}`} className="text-base font-medium text-paper/75 hover:text-paper transition">
+              or call {CONTACT.phone}
             </a>
           </div>
-          <p className="mt-4 text-sm text-white/60">★ {REVIEWS.practo.rating} on Practo ({REVIEWS.practo.count} reviews)</p>
+          <p className="mt-6 text-eyebrow text-paper/60">★ {REVIEWS.practo.rating} Practo ({REVIEWS.practo.count})</p>
         </div>
       </section>
 

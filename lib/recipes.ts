@@ -1078,3 +1078,10 @@ export function getRecipe(slug: string): RecipeData | undefined {
 export function getRecipesByCategory(category: RecipeCategory): RecipeData[] {
   return RECIPE_LIST.filter((r) => r.category === category);
 }
+
+// ─── Old-site image purge (2026-05-21) ──────────────────────────────────────
+// Recipe heroes now use thematic Unsplash photos via photo-strategy.
+import { heroForRecipe } from "./photo-strategy";
+for (const slug of Object.keys(RECIPES)) {
+  RECIPES[slug].heroImage = heroForRecipe(slug);
+}

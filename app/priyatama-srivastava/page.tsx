@@ -5,6 +5,7 @@ import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { JsonLd } from "@/app/components/JsonLd";
 import { MoringaMark } from "@/app/components/MoringaMark";
+import { PersonBadge } from "@/app/components/PersonBadge";
 import { LastUpdated } from "@/app/components/aeo";
 import { CONTACT, PERSON, REVIEWS, SITE, SOCIAL, whatsappUrl } from "@/lib/site";
 import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schema";
@@ -95,9 +96,7 @@ export default function PriyatamaPage() {
                 <span className="block h-px w-6 bg-clay" />
                 Photographed in clinic · 2024
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
-                <Image src="/assets/diet-img/priyatma.jpg" alt={PERSON.name} fill priority className="object-cover" style={{ filter: "saturate(0.88) contrast(1.04)" }} sizes="(min-width: 768px) 40vw, 90vw" />
-              </div>
+              <PersonBadge variant="hero" alt={PERSON.name} />
               <div className="mt-4 flex items-baseline justify-between">
                 <div className="font-display">
                   <div className="text-base font-medium text-ink">{PERSON.name}</div>

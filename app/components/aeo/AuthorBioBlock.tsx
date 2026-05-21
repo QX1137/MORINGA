@@ -3,9 +3,9 @@
  * Reads like a magazine bylined-author block. Critical for E-E-A-T.
  */
 
-import Image from "next/image";
 import Link from "next/link";
 import { MoringaMark } from "../MoringaMark";
+import { PersonBadge } from "../PersonBadge";
 import { PERSON, REVIEWS, SOCIAL } from "@/lib/site";
 
 type Props = {
@@ -24,17 +24,10 @@ export function AuthorBioBlock({ reviewedDate, topicNote }: Props) {
         Reviewed and approved by
       </div>
       <div className="flex flex-col md:flex-row gap-7 md:gap-10 items-start">
-        {/* Portrait — press-print framed */}
+        {/* Portrait — press-print framed (PersonBadge while real clinic photo is pending) */}
         <div className="shrink-0">
-          <div className="relative size-28 md:size-36 overflow-hidden border border-ink/25">
-            <Image
-              src="/assets/diet-img/priyatma.jpg"
-              alt={PERSON.name}
-              fill
-              className="object-cover"
-              style={{ filter: "saturate(0.88) contrast(1.04)" }}
-              sizes="(min-width: 768px) 144px, 112px"
-            />
+          <div className="size-28 md:size-36 overflow-hidden border border-ink/25">
+            <PersonBadge variant="card" alt={PERSON.name} />
           </div>
         </div>
 

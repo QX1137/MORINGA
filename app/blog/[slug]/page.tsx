@@ -10,7 +10,7 @@ export async function generateStaticParams(): Promise<Params[]> {
   return BLOGS.map((b) => ({ slug: b.slug }));
 }
 
-const DEFAULT_OG_IMAGE = `${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`;
+import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
 
 // Fallback meta description for ~12 blog posts where the original PHP source had
 // no <meta name="description">. Synthesised from the H1 + standard byline so

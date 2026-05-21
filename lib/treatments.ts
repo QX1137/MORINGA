@@ -810,3 +810,13 @@ export const TREATMENT_LIST = Object.values(TREATMENTS);
 export function getTreatment(slug: string): TreatmentData | undefined {
   return TREATMENTS[slug];
 }
+
+// ─── Old-site image purge (2026-05-21) ──────────────────────────────────────
+// Every treatment heroImage now resolves to a curated free Unsplash photo via
+// lib/photo-strategy. The /assets/treatment/* paths above remain in source for
+// audit history but are never served. PersonBadge replaces Priyatama portrait
+// references elsewhere; this file does not reference the portrait directly.
+import { heroForTreatment } from "./photo-strategy";
+for (const slug of Object.keys(TREATMENTS)) {
+  TREATMENTS[slug].heroImage = heroForTreatment(slug);
+}

@@ -6,6 +6,7 @@ import { JsonLd } from "@/app/components/JsonLd";
 import { MoringaMark } from "@/app/components/MoringaMark";
 import { LeadForm } from "./LeadForm";
 import { CONTACT, PERSON, REVIEWS, SITE } from "@/lib/site";
+import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
 import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     title: "Free Diet Type Report — Go Moringa",
     description: "Indian-population BMI reading + a programme match from Dt. Priyatama Srivastava's practice.",
     url: `${SITE.url}/diet-type-report`,
-    images: [`${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`],
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 

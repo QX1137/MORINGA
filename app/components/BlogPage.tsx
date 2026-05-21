@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
 import { MoringaMark } from "./MoringaMark";
+import { PersonBadge } from "./PersonBadge";
 import { ArticleBody } from "./ArticleBody";
 import { AuthorBioBlock, LastUpdated, MedicalDisclaimer } from "./aeo";
 import type { BlogMeta } from "@/lib/blogs";
@@ -13,6 +13,7 @@ import {
   localBusinessSchema,
   personSchema,
 } from "@/lib/schema";
+import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
 
 const LAST_REVIEWED = "May 2026";
 
@@ -23,7 +24,7 @@ function articleSchema(b: BlogMeta) {
     "@id": `${SITE.url}${b.phpPath}#article`,
     headline: b.h1 || b.title,
     description: b.metaDescription,
-    image: b.ogImage || `${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`,
+    image: b.ogImage || DEFAULT_OG_IMAGE,
     author: { "@id": `${SITE.url}/#person-priyatama` },
     publisher: { "@id": `${SITE.url}/#business` },
     mainEntityOfPage: `${SITE.url}${b.phpPath}`,
@@ -89,15 +90,8 @@ export function BlogPage({ blog, related }: Props) {
           )}
 
           <div className="mt-10 flex items-center gap-4 pt-6 border-t border-[#d8c8a8]/60">
-            <div className="relative size-12 rounded-full overflow-hidden border border-ink/20 shrink-0">
-              <Image
-                src="/assets/diet-img/priyatma.jpg"
-                alt={PERSON.name}
-                fill
-                className="object-cover"
-                style={{ filter: "saturate(0.88) contrast(1.04)" }}
-                sizes="48px"
-              />
+            <div className="size-12 rounded-full overflow-hidden border border-ink/20 shrink-0">
+              <PersonBadge variant="card" alt={PERSON.name} />
             </div>
             <div>
               <div className="font-display text-base font-medium text-ink">{PERSON.name}</div>

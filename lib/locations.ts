@@ -202,3 +202,9 @@ export const LOCATION_LIST = Object.values(LOCATIONS);
 export function getLocation(slug: string): LocationData | undefined {
   return LOCATIONS[slug];
 }
+
+// ─── Old-site image purge (2026-05-21) ──────────────────────────────────────
+import { heroForLocation } from "./photo-strategy";
+for (const slug of Object.keys(LOCATIONS)) {
+  LOCATIONS[slug].heroImage = heroForLocation(slug);
+}

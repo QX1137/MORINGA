@@ -5,7 +5,9 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { JsonLd } from "./components/JsonLd";
 import { MoringaMark } from "./components/MoringaMark";
+import { PersonBadge } from "./components/PersonBadge";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
+import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Dietician In Gurgaon, India | Nutritionist, Weight Loss Expert",
     url: SITE.url,
-    images: [`${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`],
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -132,17 +134,8 @@ export default function HomePage() {
                 <span className="block h-px w-6 bg-clay" />
                 Photographed in clinic · 2024
               </figcaption>
-              <div className="relative aspect-[3/4] overflow-hidden border border-ink/20">
-                <Image
-                  src="/assets/diet-img/priyatma.jpg"
-                  alt={`${PERSON.name} — clinical dietitian`}
-                  fill
-                  priority
-                  className="object-cover"
-                  style={{ filter: "saturate(0.88) contrast(1.04)" }}
-                  sizes="(min-width: 768px) 40vw, 90vw"
-                />
-              </div>
+              <PersonBadge variant="hero" alt={`${PERSON.name} — clinical dietitian`} />
+              {/* Portrait pending real clinic photography (see lib/photo-strategy.ts). */}
               <div className="mt-4 flex items-baseline justify-between">
                 <div className="font-display">
                   <div className="text-lg font-medium text-ink">{PERSON.name}</div>
@@ -467,18 +460,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <figure>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
-                <Image
-                  src="/assets/diet-img/priyatma.jpg"
-                  alt={PERSON.name}
-                  fill
-                  className="object-cover"
-                  style={{ filter: "saturate(0.85) contrast(1.04)" }}
-                  sizes="(min-width: 768px) 40vw, 90vw"
-                />
-              </div>
+              <PersonBadge variant="hero" alt={PERSON.name} />
               <figcaption className="mt-3 text-eyebrow text-warm-500">
-                Portrait · Clinical session · Sector 49
+                Portrait pending · Clinical session · Sector 49
               </figcaption>
             </figure>
           </div>

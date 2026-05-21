@@ -5,6 +5,13 @@
  */
 
 import { CONTACT, PERSON, REVIEWS, SITE, SOCIAL } from "./site";
+import { PHOTOS } from "./images";
+
+// Curated image URLs used in schema. The old gomoringa.in /assets/* paths are
+// intentionally NOT used. Person.image is omitted entirely until the client
+// provides a real clinic photo — Google + AI engines tolerate this; a fake
+// stock photo would be deceptive E-E-A-T.
+const BUSINESS_IMAGE_URL = PHOTOS.indianThali.url;
 
 const sameAs = [SOCIAL.facebook, SOCIAL.instagram, SOCIAL.twitter, SOCIAL.youtube];
 
@@ -19,8 +26,9 @@ export function localBusinessSchema() {
     url: SITE.url,
     telephone: CONTACT.phone,
     email: CONTACT.email,
-    image: `${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`,
-    logo: `${SITE.url}/assets/logo/logo.png`,
+    image: BUSINESS_IMAGE_URL,
+    // logo intentionally omitted — Schema.org `logo` is optional and a
+    // mock wordmark would be misleading. Restore once a real logo asset exists.
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",
@@ -64,7 +72,9 @@ export function personSchema() {
     "@id": `${SITE.url}/#person-priyatama`,
     name: PERSON.name,
     jobTitle: PERSON.role,
-    image: `${SITE.url}/assets/diet-img/priyatma.jpg`,
+    // Person.image intentionally omitted until a real clinic photo exists.
+    // PersonBadge renders a monogram placeholder on the visual surface; we do
+    // not falsify the schema with a stock photo.
     url: `${SITE.url}/priyatama-srivastava.php`,
     worksFor: { "@id": `${SITE.url}/#business` },
     knowsAbout: [

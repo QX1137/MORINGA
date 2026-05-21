@@ -6,6 +6,7 @@ import { ANALYTICS, SITE } from "@/lib/site";
 import { FloatingCTA } from "@/app/components/FloatingCTA";
 import { ExitIntentPopup } from "@/app/components/ExitIntentPopup";
 import { cn } from "@/lib/utils";
+import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     // Without this, secondary pages (about, contact, package, etc.) render no og:image.
     images: [
       {
-        url: `${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`,
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Go Moringa Diet Clinic — Best Dietitian in Gurgaon",
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Best Dietician In Gurgaon, India",
     description: SITE.defaultDescription,
-    images: [`${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`],
+    images: [DEFAULT_OG_IMAGE],
   },
   alternates: {
     canonical: "/",

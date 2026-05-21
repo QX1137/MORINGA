@@ -303,3 +303,12 @@ export const SERVICE_LIST = Object.values(SERVICES);
 export function getService(slug: string): ServiceData | undefined {
   return SERVICES[slug];
 }
+
+// ─── Old-site image purge (2026-05-21) ──────────────────────────────────────
+// Override every heroImage with the curated Unsplash mapping. The /assets/...
+// paths above are kept in source for change-history visibility, but never
+// reach the client. See lib/photo-strategy.ts.
+import { heroForService } from "./photo-strategy";
+for (const slug of Object.keys(SERVICES)) {
+  SERVICES[slug].heroImage = heroForService(slug);
+}

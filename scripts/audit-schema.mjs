@@ -14,7 +14,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { performance } from "node:perf_hooks";
 
 const BASE = (process.env.BASE_URL || "http://localhost:3000").replace(/\/$/, "");
-const URLS_PATH = new URL("../../inventory/urls.txt", import.meta.url);
+const URLS_PATH = new URL("../inventory/urls.txt", import.meta.url);
 
 function loadUrls() {
   try {
@@ -200,7 +200,7 @@ async function run() {
   });
   lines.push("");
 
-  writeFileSync(new URL("../../inventory/audit-report.md", import.meta.url), lines.join("\n"));
+  writeFileSync(new URL("../inventory/audit-report.md", import.meta.url), lines.join("\n"));
 
   console.log("");
   console.log("========== SUMMARY ==========");

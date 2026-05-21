@@ -50,11 +50,22 @@ export const metadata: Metadata = {
     url: SITE.url,
     title: "Best Dietician In Gurgaon, India",
     description: SITE.defaultDescription,
+    // Default OG image — every page that doesn't override its own falls back here.
+    // Without this, secondary pages (about, contact, package, etc.) render no og:image.
+    images: [
+      {
+        url: `${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Go Moringa Diet Clinic — Best Dietitian in Gurgaon",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Best Dietician In Gurgaon, India",
     description: SITE.defaultDescription,
+    images: [`${SITE.url}/assets/banner/best-dietician-in-gurgaon.jpg`],
   },
   alternates: {
     canonical: "/",

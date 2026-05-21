@@ -5,3 +5,4 @@ export { TimelineBlock, type Milestone } from "./TimelineBlock";
 export { AuthorBioBlock } from "./AuthorBioBlock";
 export { MedicalDisclaimer } from "./MedicalDisclaimer";
 export { LastUpdated } from "./LastUpdated";
+export { Citations } from "./Citations";

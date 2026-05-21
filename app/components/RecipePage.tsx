@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
 import { MoringaMark } from "./MoringaMark";
+import { RelatedReading } from "./RelatedReading";
 import { AuthorBioBlock, LastUpdated } from "./aeo";
 import type { RecipeData } from "@/lib/recipes";
 import { getTreatment } from "@/lib/treatments";
@@ -316,6 +317,9 @@ export function RecipePage({ recipe }: { recipe: RecipeData }) {
           <AuthorBioBlock reviewedDate={LAST_REVIEWED} />
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════ RELATED READING (cross-cluster) */}
+      <RelatedReading slug={recipe.slug} cluster="recipe" />
 
       {/* ═══════════════════════════════════════════════ CTA */}
       <section className="bg-paper-dark py-14 border-t border-[#d8c8a8]/60">

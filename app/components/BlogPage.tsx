@@ -4,6 +4,7 @@ import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
 import { MoringaMark } from "./MoringaMark";
 import { PersonBadge } from "./PersonBadge";
+import { RelatedReading } from "./RelatedReading";
 import { ArticleBody } from "./ArticleBody";
 import { AuthorBioBlock, LastUpdated, MedicalDisclaimer } from "./aeo";
 import type { BlogMeta } from "@/lib/blogs";
@@ -107,6 +108,35 @@ export function BlogPage({ blog, related }: Props) {
       <article className="bg-paper py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <ArticleBody slug={blog.slug} folder="blog" />
+
+          {/* Editorial framing block — adds clinical context after every article body.
+              Particularly helps shorter posts cross the thin-content threshold while
+              adding genuine value: every reader gets the clinic's stance on the topic
+              + a thread back to live consultation. */}
+          <aside className="mt-12 pt-10 border-t border-clay/40">
+            <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
+              <span className="block h-px w-10 bg-clay" />
+              Note from the clinic
+            </div>
+            <p className="font-display text-xl text-ink italic leading-snug">
+              Articles document what works for many. Plans are designed for <em className="not-italic font-medium">you</em>.
+            </p>
+            <p className="mt-4 text-base text-warm-700 leading-[1.7]">
+              Reading is the easy part. Behaviour change — the actual moving of lab values, the actual loss of inches, the regulation of cycles — needs a plan that knows your body, your kitchen and your week. That is what {PERSON.name} does in {PERSON.yearsExperience} years of clinical practice across {PERSON.clientCount} clients: she does not treat a topic, she treats a person.
+            </p>
+            <p className="mt-4 text-base text-warm-700 leading-[1.7]">
+              If anything in this article applies to you and you want it built into a written, weekly-followed plan, the first conversation is free. Fifteen minutes on WhatsApp. No payment upfront, no commitment. We tell you honestly whether dietary intervention is appropriate for what you are working on — and if it is not, we say so.
+            </p>
+            <Link
+              href="/diet-type-report"
+              className="mt-5 inline-flex items-center gap-3 text-base font-medium text-ink group"
+            >
+              <span className="relative pb-1 border-b-2 border-clay group-hover:border-b-[3px] transition-all">
+                Or take the 90-second Diet Type Report first
+              </span>
+              <span className="text-clay" aria-hidden="true">→</span>
+            </Link>
+          </aside>
         </div>
       </article>
 
@@ -149,7 +179,10 @@ export function BlogPage({ blog, related }: Props) {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════ RELATED */}
+      {/* ═══════════════════════════════════════════════ CROSS-CLUSTER RELATED READING */}
+      <RelatedReading slug={blog.slug} cluster="blog" />
+
+      {/* ═══════════════════════════════════════════════ MORE BLOG (same cluster, original behaviour) */}
       {related.length > 0 && (
         <section className="bg-paper py-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">

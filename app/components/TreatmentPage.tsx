@@ -4,8 +4,10 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
 import { MoringaMark } from "./MoringaMark";
+import { RelatedReading } from "./RelatedReading";
 import {
   AuthorBioBlock,
+  Citations,
   ComparisonTable,
   DefinitionBlock,
   LastUpdated,
@@ -343,6 +345,13 @@ export function TreatmentPage({ treatment }: { treatment: TreatmentData }) {
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════ CITATIONS / REFERENCES (E-E-A-T) */}
+      <section className="bg-paper">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <Citations slug={treatment.slug} />
+        </div>
+      </section>
+
       {/* ═══════════════════════════════════════════════ AUTHOR BIO (AEO) */}
       <section className="bg-paper">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
@@ -395,6 +404,9 @@ export function TreatmentPage({ treatment }: { treatment: TreatmentData }) {
           </div>
         </section>
       )}
+
+      {/* ═══════════════════════════════════════════════ RELATED READING (cross-cluster) */}
+      <RelatedReading slug={treatment.slug} cluster="treatment" />
 
       {/* ═══════════════════════════════════════════════ CLOSING CTA */}
       <section className="bg-ink text-paper py-20 md:py-24 relative overflow-hidden">

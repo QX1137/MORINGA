@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
 import { MoringaMark } from "./MoringaMark";
+import { RelatedReading } from "./RelatedReading";
 import { AuthorBioBlock, MedicalDisclaimer, LastUpdated } from "./aeo";
 import type { ServiceData } from "@/lib/services";
 import { getService } from "@/lib/services";
@@ -343,6 +344,9 @@ export function ServicePage({ service }: { service: ServiceData }) {
           </div>
         </section>
       )}
+
+      {/* ═══════════════════════════════════════════════ RELATED READING (cross-cluster) */}
+      <RelatedReading slug={service.slug} cluster="service" />
 
       {/* ═══════════════════════════════════════════════ CLOSING CTA */}
       <section className="bg-ink text-paper py-20 md:py-24 relative overflow-hidden">

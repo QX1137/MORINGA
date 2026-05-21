@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { JsonLd } from "./JsonLd";
 import { MoringaMark } from "./MoringaMark";
+import { RelatedReading } from "./RelatedReading";
 import { AuthorBioBlock, LastUpdated, MedicalDisclaimer } from "./aeo";
 import type { LocationData } from "@/lib/locations";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
@@ -270,6 +271,9 @@ export function LocationPage({ location }: { location: LocationData }) {
           <MedicalDisclaimer />
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════ RELATED READING (cross-cluster) */}
+      <RelatedReading slug={location.slug} cluster="location" />
 
       {/* ═══════════════════════════════════════════════ CTA */}
       <section className="bg-ink text-paper py-20 md:py-24 relative overflow-hidden">

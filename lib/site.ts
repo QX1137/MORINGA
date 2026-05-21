@@ -66,6 +66,10 @@ export const CHAT = {
 export const ANALYTICS = {
   ga4Id: "G-ZCGZ47YZ53",
   googleSiteVerification: "dpa0YfZa6HX9RUj1HsYd7DUmEKdrnj58Sq6_gvckE9g",
+  // Microsoft Clarity project ID. Set via NEXT_PUBLIC_CLARITY_ID env in Vercel,
+  // OR replace the fallback once Priyatama provides a real Clarity project.
+  // To create: https://clarity.microsoft.com/ → New project → copy the project ID.
+  clarityId: process.env.NEXT_PUBLIC_CLARITY_ID ?? "",
 } as const;
 
 export const whatsappUrl = () =>

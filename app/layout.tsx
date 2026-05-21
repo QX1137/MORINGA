@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { ANALYTICS, SITE } from "@/lib/site";
 import { FloatingCTA } from "@/app/components/FloatingCTA";
+import { ExitIntentPopup } from "@/app/components/ExitIntentPopup";
 import { cn } from "@/lib/utils";
 
 const fraunces = Fraunces({
@@ -85,10 +86,23 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', '${ANALYTICS.ga4Id}');`}
         </Script>
+
+        {/* Microsoft Clarity — heatmaps + session recordings. Only loads when an
+            ID is configured (NEXT_PUBLIC_CLARITY_ID env). No-op until set. */}
+        {ANALYTICS.clarityId ? (
+          <Script id="clarity-init" strategy="afterInteractive">
+            {`(function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${ANALYTICS.clarityId}");`}
+          </Script>
+        ) : null}
       </head>
       <body className="min-h-full flex flex-col font-sans text-ink bg-paper">
         {children}
         <FloatingCTA />
+        <ExitIntentPopup />
       </body>
     </html>
   );

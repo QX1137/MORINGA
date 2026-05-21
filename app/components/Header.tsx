@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MoringaMark } from "./MoringaMark";
+import { LiveAvailability } from "./LiveAvailability";
 import { CONTACT, PERSON, phoneUrl } from "@/lib/site";
 
 const NAV = [
@@ -22,7 +23,10 @@ export function Header() {
             <span className="opacity-50">·</span>
             <span>Sector 49, Gurugram</span>
             <span className="opacity-50 hidden md:inline">·</span>
-            <span className="hidden md:inline">{PERSON.yearsExperience}+ years of clinical practice</span>
+            <span className="hidden md:inline text-paper">
+              {/* Live clinic status — replaces static hours text */}
+              <LiveAvailability variant="compact" />
+            </span>
           </div>
           <a
             href={phoneUrl()}

@@ -99,6 +99,13 @@ export default function HomePage() {
               </Link>
             </div>
 
+            <p className="mt-5 text-eyebrow text-warm-500">
+              Not ready to talk yet?{" "}
+              <Link href="/diet-type-report" className="text-clay border-b border-clay/40 hover:border-clay">
+                Try the free Diet Type Report →
+              </Link>
+            </p>
+
             {/* Stat band */}
             <div className="mt-14 grid grid-cols-3 gap-x-6 gap-y-2 max-w-xl py-6 border-y border-[#d8c8a8]/80">
               {[

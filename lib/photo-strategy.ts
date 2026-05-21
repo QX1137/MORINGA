@@ -113,6 +113,68 @@ export const LOCATION_HEROES: Record<string, string> = {
   "dietitian-in-faridabad": PHOTOS.freshGreens.url,
 };
 
+// ─────────── Blog hero image mapping (per-slug, with topical fallback) ───────────
+// Each post's hero is chosen by explicit slug match first, then by topic-keyword
+// heuristics against the slug. This replaces the legacy ogImage field which
+// pointed to a single shared old-CDN banner that now 404s.
+export const BLOG_HEROES: Record<string, string> = {
+  "10-sustainable-weight-loss-strategies": PHOTOS.freshGreens.url,
+  "1500-calorie-indian-diet-plan-for-weight-loss": PHOTOS.indianThali.url,
+  "2025-new-year-resolution-get-healthy-lifestyle": PHOTOS.freshGreens.url,
+  "8-winter-healthcare-tips": PHOTOS.spiceBowls.url,
+  "best-dietitian-for-pcos-thyroid-diabetes-priyatama-srivastava": REAL.clinicReception,
+  "best-pre-wedding-dietitian-gurgaon-priyatama-srivastava": REAL.clinicConsultation,
+  "boost-your-gut-health": PHOTOS.spiceBowls.url,
+  "bridal-glow-tips-by-dietitian-priyatama": PHOTOS.washedSpinach.url,
+  "bridal-skincare-diet-by-go-moringa": PHOTOS.washedSpinach.url,
+  "can-diabetics-eat-carrots-and-beetroot-safely": PHOTOS.spicesOnSpoons.url,
+  "diet-for-breastfeeding": PHOTOS.moringaLeaves.url,
+  "diet-for-cancer": PHOTOS.moringaLeaves.url,
+  "diet-for-depression-what-how-much-to-eat-during-anxiety": PHOTOS.moringaLeaves.url,
+  "diet-for-thyroid": PHOTOS.indianSpicesWhite.url,
+  "drink-milk-everyday": PHOTOS.indianThali.url,
+  "effective-weight-loss-strategies-for-a-healthier-way": PHOTOS.freshGreens.url,
+  "essential-nutrients-for-bone-and-joint-health": PHOTOS.washedSpinach.url,
+  "exploring-nutritional-power-desi-superfoods-pregnant-women": PHOTOS.moringaLeaves.url,
+  "food-to-boost-vitamin-naturally": PHOTOS.washedSpinach.url,
+  "foods-to-avoid-during-periods": PHOTOS.indianSpicesWhite.url,
+  "foods-to-reduce-hair-fall-and-boost-hair-growth": PHOTOS.washedSpinach.url,
+  "how-weight-loss-changes-your-life": PHOTOS.freshGreens.url,
+  "how-women-overcome-iron-deficiency-foods": PHOTOS.washedSpinach.url,
+  "intermittent-fasting-vs-keto-vs-vegan-diets": PHOTOS.indianThali.url,
+  "is-carrot-and-beetroot-juice-good-for-diabetes": PHOTOS.spicesOnSpoons.url,
+  "morning-protein-chilla-tips-healthy-weight-loss": PHOTOS.indianThali.url,
+  "natural-cholesterol-control-with-lemongrass-oil": PHOTOS.greenLeafBranch.url,
+  "natural-home-remedies-for-diabetes-high-low-sugar": PHOTOS.spicesOnSpoons.url,
+  "new-year-new-beginnings-overcoming-medical-burdens": PHOTOS.freshGreens.url,
+  "pcos-pcod-diet-treatment-for-vegetarians": PHOTOS.indianSpicesWhite.url,
+  "role-of-nutrition-in-boosting-athletic-performance": PHOTOS.freshGreens.url,
+  "spinach-smoothies-for-weight-loss": PHOTOS.washedSpinach.url,
+  "super-fruits-for-super-health": PHOTOS.spicesOnSpoons.url,
+  "top-10-warning-signs-of-diabetes": PHOTOS.spicesOnSpoons.url,
+  "what-to-eat-after-c-section-for-fast-recovery": PHOTOS.moringaLeaves.url,
+  "why-healthy-diet-matters-nutrition-tips-dietician-priyatama": REAL.clinicConsultation,
+};
+
+// Inline-image rotation for mid-article placements. The article HTML's old
+// /assets/services/* and /assets/logo/* paths are sanitized out by ArticleBody
+// (those paths were purged in commit 7cc8a63). Instead, BlogPage inserts a
+// single contextual photo after the first <h2>, picked from this pool by slug
+// hash so the same slug always gets the same pairing.
+const INLINE_POOL = [
+  PHOTOS.indianThali.url,
+  PHOTOS.washedSpinach.url,
+  PHOTOS.spiceBowls.url,
+  PHOTOS.moringaLeaves.url,
+  PHOTOS.greenLeafBranch.url,
+] as const;
+
+function hashSlug(slug: string): number {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
 // ─────────── Default OG / banner image (used everywhere as fallback) ───────────
 // Swapped to the real reception photo (with the Go Moringa logo on the wall)
 // now that we have authentic clinic photography.
@@ -130,4 +192,21 @@ export function heroForRecipe(slug: string): string {
 }
 export function heroForLocation(slug: string): string {
   return LOCATION_HEROES[slug] ?? PHOTOS.indianThali.url;
+}
+export function heroForBlog(slug: string): string {
+  if (BLOG_HEROES[slug]) return BLOG_HEROES[slug];
+  // Topical fallback by keyword matching against the slug
+  const s = slug.toLowerCase();
+  if (/weight-loss|calorie|chilla|protein|athletic|performance/.test(s)) return PHOTOS.freshGreens.url;
+  if (/diabetes|sugar|carrot|beetroot|fruit/.test(s)) return PHOTOS.spicesOnSpoons.url;
+  if (/pcos|pcod|thyroid|period|menstrual/.test(s)) return PHOTOS.indianSpicesWhite.url;
+  if (/diet-plan|meal|thali|keto|vegan|fasting|milk/.test(s)) return PHOTOS.indianThali.url;
+  if (/pregnan|breastfeed|c-section|cancer|depression|anxiety|cholesterol/.test(s)) return PHOTOS.moringaLeaves.url;
+  if (/skin|glow|hair|vitamin|iron|bone|joint|nutrient|deficiency/.test(s)) return PHOTOS.washedSpinach.url;
+  if (/gut|winter|cold|healthcare|smoothie|juice|drink|spinach/.test(s)) return PHOTOS.spiceBowls.url;
+  if (/bridal|wedding|pre-wedding|new-year|resolution|lifestyle/.test(s)) return PHOTOS.freshGreens.url;
+  return PHOTOS.indianThali.url;
+}
+export function inlinePhotoForBlog(slug: string): string {
+  return INLINE_POOL[hashSlug(slug) % INLINE_POOL.length];
 }

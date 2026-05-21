@@ -289,6 +289,205 @@ body {
   text-transform: uppercase;
 }
 
+/* Editorial article body — used by ArticleBody and any pre-extracted HTML.
+   Replaces the generic Tailwind .prose plugin styling with a Direction D
+   reading experience: Fraunces headings, drop-cap first paragraph, pull-quote
+   blockquotes, hairline rules, ink-green typography on khadi paper.
+
+   Mobile-first sizes: body type 17px on phones, 18px on tablets+ for comfort.
+   Headings ramp up at md: breakpoint to give long-form reading rhythm. */
+.article-prose {
+  font-family: var(--font-sans);
+  color: var(--color-warm-700);
+  font-size: 17px;
+  line-height: 1.75;
+}
+@media (min-width: 768px) {
+  .article-prose { font-size: 18px; }
+}
+.article-prose > * + * { margin-top: 1.25em; }
+
+.article-prose h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.article-prose h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+.article-prose h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--color-ink);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Drop cap on the very first paragraph — magazine-spread opening. */
+.article-prose > p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  color: var(--color-clay);
+  font-size: 4.5rem;
+  line-height: 0.85;
+  font-weight: 500;
+  float: left;
+  padding-right: 0.65rem;
+  padding-top: 0.35rem;
+}
+
+.article-prose a {
+  color: var(--color-clay);
+  text-decoration: underline;
+  text-decoration-color: rgba(181, 102, 58, 0.4);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s;
+}
+.article-prose a:hover {
+  text-decoration-color: var(--color-clay);
+}
+.article-prose strong { color: var(--color-ink); font-weight: 500; }
+.article-prose em { font-style: italic; }
+
+.article-prose blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  line-height: 1.35;
+  color: var(--color-ink);
+  margin: 3rem 0;
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  border-left: 2px solid var(--color-clay);
+  position: relative;
+}
+.article-prose blockquote::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -1px;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--color-clay);
+}
+.article-prose blockquote p { margin: 0; }
+.article-prose blockquote p + p { margin-top: 0.75em; }
+
+.article-prose ul,
+.article-prose ol {
+  margin: 1.25em 0;
+  padding-left: 0;
+}
+.article-prose ul > li,
+.article-prose ol > li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin: 0.6em 0;
+  list-style: none;
+  color: var(--color-warm-700);
+}
+.article-prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.65em;
+  width: 0.5rem;
+  height: 1px;
+  background: var(--color-clay);
+}
+.article-prose ol {
+  counter-reset: list-counter;
+}
+.article-prose ol > li {
+  counter-increment: list-counter;
+}
+.article-prose ol > li::before {
+  content: counter(list-counter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-clay);
+}
+
+.article-prose hr {
+  border: 0;
+  border-top: 1px solid rgba(181, 102, 58, 0.3);
+  margin: 3rem auto;
+  max-width: 60%;
+}
+
+.article-prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 2.5rem 0;
+  border: 1px solid rgba(22, 62, 46, 0.15);
+}
+
+/* Mid-article photo break — magazine-spread treatment with editorial caption */
+.article-prose .article-inline-figure {
+  margin: 3.5rem -1rem;
+  border-top: 1px solid rgba(216, 200, 168, 0.6);
+  border-bottom: 1px solid rgba(216, 200, 168, 0.6);
+  padding: 1.5rem 0;
+}
+@media (min-width: 768px) {
+  .article-prose .article-inline-figure { margin: 4rem -2rem; }
+}
+.article-prose .article-inline-figure img {
+  margin: 0;
+  border: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.article-prose .article-inline-figure figcaption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-500);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* End-of-article signature ornament — a centered hairline rule with the
+   moringa-mark glyph, marking reader completion the way Harper's and
+   The Atlantic close pieces. */
+.article-end-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 4rem auto 0;
+  max-width: 220px;
+  color: var(--color-clay);
+}
+.article-end-mark::before,
+.article-end-mark::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(181, 102, 58, 0.4);
+}
+
 /* Italic emphasis used in headlines — terracotta colored */
 .italic-clay {
   font-style: italic;

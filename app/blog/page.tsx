@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
@@ -7,6 +8,7 @@ import { MoringaMark } from "@/app/components/MoringaMark";
 import { BLOGS } from "@/lib/blogs";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schema";
+import { heroForBlog } from "@/lib/photo-strategy";
 
 export const metadata: Metadata = {
   title: "Journal | Go Moringa | Nutri Diet Clinic In Gurgaon",
@@ -56,7 +58,7 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      {/* Featured article */}
+      {/* Featured article — now leads with a magazine-cover image */}
       {featured && (
         <section className="bg-paper py-14 border-t border-[#d8c8a8]/80">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -64,8 +66,24 @@ export default function BlogIndex() {
               <span className="block h-px w-10 bg-clay" />
               Featured · longest article
             </div>
-            <Link href={featured.phpPath} className="group grid md:grid-cols-12 gap-x-8 gap-y-6 items-end border-b border-[#d8c8a8]/60 pb-10">
-              <div className="md:col-span-8">
+            <Link href={featured.phpPath} className="group grid md:grid-cols-12 gap-x-8 gap-y-6 items-center border-b border-[#d8c8a8]/60 pb-10">
+              <figure className="md:col-span-6 md:order-2">
+                <div className="relative aspect-[4/3] overflow-hidden border border-ink/15">
+                  <Image
+                    src={heroForBlog(featured.slug)}
+                    alt={featured.h1 || featured.title}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    style={{ filter: "saturate(0.95) contrast(1.02)" }}
+                    priority
+                  />
+                </div>
+                <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
+                  Plate · Featured entry
+                </figcaption>
+              </figure>
+              <div className="md:col-span-6 md:order-1">
                 <h2 className="font-display font-medium text-ink group-hover:text-clay transition leading-[1.05]" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
                   {featured.h1 || featured.title}
                 </h2>
@@ -74,11 +92,9 @@ export default function BlogIndex() {
                     {featured.metaDescription}
                   </p>
                 )}
-              </div>
-              <div className="md:col-span-4 md:text-right">
-                <div className="text-eyebrow text-warm-500">{Math.ceil(featured.wordCount / 200)} min read</div>
-                <div className="mt-2 inline-flex items-center gap-2 text-base text-clay">
-                  Read article <span aria-hidden="true">→</span>
+                <div className="mt-5 flex items-center gap-5 text-eyebrow text-warm-500">
+                  <span>{Math.ceil(featured.wordCount / 200)} min read</span>
+                  <span className="text-clay">Read article →</span>
                 </div>
               </div>
             </Link>
@@ -95,9 +111,19 @@ export default function BlogIndex() {
           <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-10">
             From the <em className="italic-clay">clinic</em>.
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
             {rest.map((b, i) => (
               <Link key={b.slug} href={b.phpPath} className="group">
+                <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 mb-5">
+                  <Image
+                    src={heroForBlog(b.slug)}
+                    alt={b.h1 || b.title}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ filter: "saturate(0.95) contrast(1.02)" }}
+                  />
+                </div>
                 <div className="text-eyebrow text-clay mb-3 font-mono">No. {String(i + 2).padStart(2, "0")}</div>
                 <h3 className="font-display text-xl md:text-2xl font-medium text-ink group-hover:text-clay transition leading-tight line-clamp-3">
                   {b.h1 || b.title}

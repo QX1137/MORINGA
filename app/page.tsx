@@ -75,31 +75,59 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Hero grid — type-led with press-print portrait + small ambient image */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-12 md:pt-20 pb-10 md:pb-16 grid md:grid-cols-12 gap-x-8 gap-y-12 items-start">
+        {/* Hero grid — type-led with press-print portrait + small ambient image.
+            Mobile-first: tighter pt-6 (was pt-12), smaller H1 floor (2.1rem
+            from 2.6rem) so the long phrase doesn't wrap awkwardly on iPhone SE,
+            primary WhatsApp CTA renders as a tappable button below md (still
+            an editorial text-link from md upward to preserve the print feel). */}
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-6 md:pt-20 pb-8 md:pb-16 grid md:grid-cols-12 gap-x-8 gap-y-10 md:gap-y-12 items-start">
           <div className="md:col-span-7">
-            <div className="text-eyebrow text-clay mb-6 flex items-center gap-3">
-              <span className="block h-px w-10 bg-clay" />
+            <div className="text-eyebrow text-clay mb-4 md:mb-6 flex items-center gap-3">
+              <span className="block h-px w-8 md:w-10 bg-clay" />
               The dietitian Gurgaon trusts
             </div>
 
-            <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.95]" style={{ fontSize: "clamp(2.6rem, 6.5vw, 5.5rem)" }}>
+            <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.95]" style={{ fontSize: "clamp(2.1rem, 6.5vw, 5.5rem)" }}>
               The dietitian{" "}
               <em className="italic-clay">Gurgaon writes</em>{" "}
               back to.
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-[1.65] text-warm-700">
+            <p className="mt-5 md:mt-7 max-w-xl text-base md:text-lg leading-[1.6] md:leading-[1.65] text-warm-700">
               Twenty years of clinical practice. Ten thousand stories, written one meal at a time. <em className="not-italic font-medium text-ink">Dt. Priyatama Srivastava</em> builds personalised Indian-meal plans for the people you actually live with — weight, PCOS, diabetes, thyroid, pregnancy, the slow battles.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 text-base font-medium text-ink">
+            {/* CTAs — mobile renders WhatsApp as a tappable ink button (the
+                FloatingCTA bar at the bottom is identical, but in-flow primary
+                affordance reduces "thumb travel" friction above the fold).
+                From md: upward, switches to the editorial text-link style. */}
+            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-x-8 sm:gap-y-4">
+              {/* Mobile button */}
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:hidden inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-ink hover:bg-ink-deep text-paper text-base font-medium transition rounded-sm"
+              >
+                Begin a consultation
+                <span aria-hidden="true">→</span>
+              </a>
+              {/* Desktop editorial link */}
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex group items-center gap-3 text-base font-medium text-ink"
+              >
                 <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">Begin a consultation</span>
                 <span className="text-clay" aria-hidden="true">→</span>
               </a>
-              <Link href={`tel:${CONTACT.phoneTel}`} className="text-base font-medium text-ink/70 hover:text-ink transition">
-                or call {CONTACT.phone}
+              <Link
+                href={`tel:${CONTACT.phoneTel}`}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-0 md:py-0 border border-ink/25 md:border-0 text-ink md:text-ink/70 md:hover:text-ink text-base font-medium transition rounded-sm md:rounded-none"
+              >
+                <span className="md:hidden" aria-hidden="true">📞</span>
+                <span>or call {CONTACT.phone}</span>
               </Link>
             </div>
 
@@ -165,7 +193,7 @@ export default function HomePage() {
       <TrustStrip />
 
       {/* ═════════════════════════════════════════════════ APPROACH (with drop cap + thali photo) */}
-      <section className="bg-paper py-20 md:py-28">
+      <section className="bg-paper py-14 md:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-start">
           {/* Type column with drop cap */}
           <div className="md:col-span-7 md:order-2 relative">
@@ -230,7 +258,7 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ INSIDE THE CLINIC (real interior photography) */}
-      <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
+      <section className="bg-paper-dark py-14 md:py-24 border-y border-[#d8c8a8]/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <header className="grid md:grid-cols-12 gap-8 items-end mb-12">
             <div className="md:col-span-7">
@@ -347,7 +375,7 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ SERVICES (editorial grid) */}
-      <section className="bg-paper py-20 md:py-24">
+      <section className="bg-paper py-14 md:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <header className="grid md:grid-cols-12 gap-8 items-end mb-12">
             <div className="md:col-span-7">
@@ -389,7 +417,7 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ CONDITIONS (type-led list) */}
-      <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
+      <section className="bg-paper-dark py-14 md:py-24 border-y border-[#d8c8a8]/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
             <div className="text-eyebrow text-clay mb-4">Conditions we manage</div>
@@ -444,7 +472,7 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ ABOUT (press feature) */}
-      <section className="bg-paper py-20 md:py-24">
+      <section className="bg-paper py-14 md:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <figure>
@@ -497,7 +525,7 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ TESTIMONIALS */}
-      <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
+      <section className="bg-paper-dark py-14 md:py-24 border-y border-[#d8c8a8]/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <header className="text-center max-w-3xl mx-auto mb-14">
             <div className="text-eyebrow text-clay mb-4">Field notes from clients</div>
@@ -538,7 +566,7 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ FAQ */}
-      <section className="bg-paper py-20 md:py-24">
+      <section className="bg-paper py-14 md:py-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <header className="mb-12 text-center">
             <div className="text-eyebrow text-clay mb-4">Before you book</div>
@@ -567,7 +595,7 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ CLOSING CTA */}
-      <section className="bg-ink text-paper py-20 md:py-28 relative overflow-hidden">
+      <section className="bg-ink text-paper py-14 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #C9A961 0%, transparent 40%)" }} aria-hidden="true" />
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <MoringaMark className="size-12 text-clay mx-auto mb-6" />

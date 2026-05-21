@@ -1,6 +1,6 @@
 # Schema + Head Audit Report
 
-Generated: 2026-05-21T03:19:23.897Z
+Generated: 2026-05-21T03:38:38.895Z
 Base URL: https://moringa-qx137s-projects.vercel.app
 
 ## Summary
@@ -11,8 +11,8 @@ Base URL: https://moringa-qx137s-projects.vercel.app
 | Passing | 90 |
 | Failing | 0 |
 | Total JSON-LD blocks | 377 |
-| Average response time | 63 ms |
-| Total bytes transferred | 11.58 MB |
+| Average response time | 709 ms |
+| Total bytes transferred | 13.03 MB |
 
 ## Schema types found across the site
 

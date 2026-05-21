@@ -26,9 +26,19 @@ export function localBusinessSchema() {
     url: SITE.url,
     telephone: CONTACT.phone,
     email: CONTACT.email,
-    image: BUSINESS_IMAGE_URL,
-    // logo intentionally omitted — Schema.org `logo` is optional and a
-    // mock wordmark would be misleading. Restore once a real logo asset exists.
+    image: `${SITE.url}/photography/clinic-reception.jpg`,
+    // ISO 9001:2015 quality-management certification. The certificate scope
+    // matches our published services (Weight Loss, Weight Gain, Figure
+    // Correction, Therapeutic Diet, Healthy Pregnancy Diet). Adds a verifiable
+    // E-E-A-T credential for AI engines + search engines.
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Certification",
+      name: "ISO 9001:2015 Quality Management System",
+      recognizedBy: { "@type": "Organization", name: "International Quality Certification Services (IQCS) · UKAC accredited" },
+      identifier: "22ZKAK10019Q",
+    },
+    // logo intentionally omitted — wordmark-only brand; no logo image asset.
     priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",
@@ -72,9 +82,9 @@ export function personSchema() {
     "@id": `${SITE.url}/#person-priyatama`,
     name: PERSON.name,
     jobTitle: PERSON.role,
-    // Person.image intentionally omitted until a real clinic photo exists.
-    // PersonBadge renders a monogram placeholder on the visual surface; we do
-    // not falsify the schema with a stock photo.
+    // Real clinic portrait (2026-05-21 client photoshoot). Replaces the omitted
+    // field we used while only Unsplash placeholders existed.
+    image: `${SITE.url}/photography/priyatama-portrait.jpg`,
     url: `${SITE.url}/priyatama-srivastava.php`,
     worksFor: { "@id": `${SITE.url}/#business` },
     knowsAbout: [

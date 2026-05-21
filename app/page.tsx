@@ -6,6 +6,8 @@ import { Footer } from "./components/Footer";
 import { JsonLd } from "./components/JsonLd";
 import { MoringaMark } from "./components/MoringaMark";
 import { PersonBadge } from "./components/PersonBadge";
+import { TrustStrip } from "./components/TrustStrip";
+import { REAL } from "@/lib/photo-strategy";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
 import {
@@ -108,34 +110,17 @@ export default function HomePage() {
               </Link>
             </p>
 
-            {/* Stat band */}
-            <div className="mt-14 grid grid-cols-3 gap-x-6 gap-y-2 max-w-xl py-6 border-y border-[#d8c8a8]/80">
-              {[
-                { value: `${PERSON.yearsExperience}`, mark: "+", label: "Years in\npractice" },
-                { value: "10,000", mark: "+", label: "Clients\ntransformed" },
-                { value: `${REVIEWS.practo.rating}`, mark: "★", label: `Practo · ${REVIEWS.practo.count}\nreviews` },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="font-display font-medium text-ink leading-none" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-                    {s.value}<em className="italic-clay">{s.mark}</em>
-                  </div>
-                  <div className="text-[10px] uppercase tracking-[0.18em] mt-3 leading-snug font-mono text-warm-700" style={{ whiteSpace: "pre-line" }}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Stat band — replaced by the full TrustStrip below the hero (better mobile rhythm, adds the ISO credential). */}
           </div>
 
           <div className="md:col-span-5 md:pt-4 space-y-6">
-            {/* Main portrait */}
+            {/* Main portrait — real clinic photo, Sector 49 (added 2026-05-21) */}
             <figure>
               <figcaption className="text-eyebrow text-clay mb-4 flex items-center gap-3">
                 <span className="block h-px w-6 bg-clay" />
-                Photographed in clinic · 2024
+                In clinic · Sector 49 · 2026
               </figcaption>
               <PersonBadge variant="hero" alt={`${PERSON.name} — clinical dietitian`} />
-              {/* Portrait pending real clinic photography (see lib/photo-strategy.ts). */}
               <div className="mt-4 flex items-baseline justify-between">
                 <div className="font-display">
                   <div className="text-lg font-medium text-ink">{PERSON.name}</div>
@@ -175,6 +160,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═════════════════════════════════════════════════ TRUST STRIP (years · clients · reviews · ISO) */}
+      <TrustStrip />
 
       {/* ═════════════════════════════════════════════════ APPROACH (with drop cap + thali photo) */}
       <section className="bg-paper py-20 md:py-28">
@@ -241,37 +229,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═════════════════════════════════════════════════ PANTRY (new — magazine spread) */}
+      {/* ═════════════════════════════════════════════════ INSIDE THE CLINIC (real interior photography) */}
       <section className="bg-paper-dark py-20 md:py-24 border-y border-[#d8c8a8]/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <header className="grid md:grid-cols-12 gap-8 items-end mb-12">
             <div className="md:col-span-7">
-              <div className="text-eyebrow text-clay mb-4">From the pantry · what a plan is built from</div>
+              <div className="text-eyebrow text-clay mb-4">Inside · Sector 49, Gurugram</div>
               <h2 className="font-display font-medium text-ink leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)" }}>
-                Spice, leaf, lentil. <em className="italic-clay">Measured</em>.
+                The clinic, <em className="italic-clay">in pictures</em>.
               </h2>
             </div>
             <div className="md:col-span-5 md:text-right">
               <p className="text-warm-700 text-base leading-relaxed">
-                Every plan begins with what is already in your kitchen — and what should be. Daily haldi, weekly fish, never-skipped greens, the seasonal fruit your grandmother named.
+                Where every plan is written, every weekly review is held, every measurement is taken. Photographed by us — no stock, no staging.
               </p>
             </div>
           </header>
 
-          {/* Asymmetric photo grid */}
+          {/* Asymmetric photo grid — real clinic interiors */}
           <div className="grid grid-cols-12 gap-x-6 gap-y-8">
             <figure className="col-span-12 md:col-span-7 lg:col-span-6">
               <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
                 <Image
-                  src={PHOTOS.indianSpicesWhite.url}
-                  alt={PHOTOS.indianSpicesWhite.alt}
+                  src={REAL.clinicReception}
+                  alt="Reception area of Go Moringa Diet Clinic — Sector 49 Gurugram, with the Go Moringa logo on the wall"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 50vw, (min-width: 768px) 60vw, 100vw"
                 />
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
-                <span>Mise en place · daily spice palette</span>
+                <span>Reception · the Go Moringa wall</span>
                 <span className="italic font-display normal-case tracking-normal text-clay">No. 01</span>
               </figcaption>
             </figure>
@@ -279,31 +267,31 @@ export default function HomePage() {
             <figure className="col-span-6 md:col-span-5 lg:col-span-3 md:mt-12">
               <div className="relative aspect-[3/4] overflow-hidden border border-ink/15">
                 <Image
-                  src={PHOTOS.spicesOnSpoons.url}
-                  alt={PHOTOS.spicesOnSpoons.alt}
+                  src={REAL.clinicConsultation}
+                  alt="Main consultation room with green velvet chairs and natural light"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 25vw, 50vw"
                 />
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
-                <span>Turmeric · daily</span>
+                <span>Consultation room</span>
                 <span className="italic font-display normal-case tracking-normal text-clay">No. 02</span>
               </figcaption>
             </figure>
 
-            <figure className="col-span-6 md:col-span-12 lg:col-span-3 lg:mt-24">
+            <figure className="col-span-6 md:col-span-5 lg:col-span-3 lg:mt-24">
               <div className="relative aspect-[3/4] lg:aspect-square overflow-hidden border border-ink/15">
                 <Image
-                  src={PHOTOS.washedSpinach.url}
-                  alt={PHOTOS.washedSpinach.alt}
+                  src={REAL.isoCertificate}
+                  alt="ISO 9001:2015 quality-management system certification for Go Moringa Nutri Diet — issued by IQCS, UKAC accredited"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 25vw, 50vw"
                 />
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
-                <span>Spinach · iron</span>
+                <span>ISO 9001:2015 cert</span>
                 <span className="italic font-display normal-case tracking-normal text-clay">No. 03</span>
               </figcaption>
             </figure>
@@ -311,47 +299,47 @@ export default function HomePage() {
             <figure className="col-span-12 md:col-span-7 lg:col-span-5 lg:-mt-6">
               <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
                 <Image
-                  src={PHOTOS.freshGreens.url}
-                  alt={PHOTOS.freshGreens.alt}
+                  src={REAL.clinicWaiting}
+                  alt="Waiting area with cream upholstered chairs and a glass partition into the consultation rooms"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 40vw, (min-width: 768px) 60vw, 100vw"
                 />
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
-                <span>Market morning · sabzi mandi</span>
+                <span>Waiting area</span>
                 <span className="italic font-display normal-case tracking-normal text-clay">No. 04</span>
               </figcaption>
             </figure>
 
-            <figure className="col-span-12 md:col-span-5 lg:col-span-4 lg:mt-12">
+            <figure className="col-span-12 md:col-span-5 lg:col-span-4 md:-mt-6 lg:mt-12">
               <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
                 <Image
-                  src={PHOTOS.spiceBowls.url}
-                  alt={PHOTOS.spiceBowls.alt}
+                  src={REAL.clinicOffice}
+                  alt="Consultation desk with awards and certificates on glass shelving above"
                   fill
                   className="object-cover"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 40vw, 100vw"
                 />
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between text-eyebrow text-warm-500">
-                <span>Photographed in Goa</span>
+                <span>The desk · where plans are written</span>
                 <span className="italic font-display normal-case tracking-normal text-clay">No. 05</span>
               </figcaption>
             </figure>
 
-            <div className="col-span-12 lg:col-span-3 lg:mt-12 flex flex-col justify-between bg-paper border border-clay/40 p-6">
+            <div className="col-span-12 md:col-span-7 lg:col-span-3 md:-mt-6 lg:mt-12 flex flex-col justify-between bg-paper border border-clay/40 p-6">
               <div>
                 <MoringaMark className="size-8 text-clay" />
                 <p className="mt-4 font-display italic text-xl text-ink leading-snug">
-                  Every plan begins in a real Indian kitchen.
+                  A real room, in a real building, in Sector 49.
                 </p>
                 <p className="mt-3 text-sm text-warm-700 leading-relaxed">
-                  Not a lab. Not a meal-kit subscription. Your kitchen, your time, your family at the table.
+                  Unitech Rodio Drive, D-117 &amp; 118, South City II. Walk in. Or video call from anywhere in India.
                 </p>
               </div>
               <p className="mt-6 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
-                — The clinic
+                Photographed · 2026
               </p>
             </div>
           </div>
@@ -460,9 +448,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <figure>
-              <PersonBadge variant="hero" alt={PERSON.name} />
+              {/* Brand-context portrait (priyatamaWithLogo) — different shot from the
+                  hero so the same face isn't repeated identically twice on one page. */}
+              <PersonBadge variant="hero" src={REAL.priyatamaWithLogo} alt={`${PERSON.name} at Go Moringa Diet Clinic, Sector 49 Gurugram`} />
               <figcaption className="mt-3 text-eyebrow text-warm-500">
-                Portrait pending · Clinical session · Sector 49
+                Photographed at the clinic · Sector 49, Gurugram
               </figcaption>
             </figure>
           </div>
@@ -602,9 +592,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Photography credits (tiny, editorial) */}
-      <div className="bg-ink-deep text-paper/40 py-4 text-center text-[10px] uppercase tracking-[0.18em] font-mono">
-        Photography: {PHOTOS.indianThali.credit.photographer} · {PHOTOS.indianSpicesWhite.credit.photographer} · {PHOTOS.spicesOnSpoons.credit.photographer} · {PHOTOS.spiceBowls.credit.photographer} · {PHOTOS.washedSpinach.credit.photographer} · {PHOTOS.freshGreens.credit.photographer} · {PHOTOS.moringaLeaves.credit.photographer} · via Unsplash
+      {/* Photography credits — honest mix of clinic + Unsplash */}
+      <div className="bg-ink-deep text-paper/40 py-4 px-6 text-center text-[10px] uppercase tracking-[0.18em] font-mono leading-relaxed">
+        Photography · Interiors &amp; portraits by Go Moringa · Sector 49, Gurugram · 2026
+        <span className="opacity-50 mx-2">·</span>
+        Botanical &amp; food: {PHOTOS.indianThali.credit.photographer}, {PHOTOS.moringaLeaves.credit.photographer}, {PHOTOS.freshGreens.credit.photographer} &amp; others via Unsplash
       </div>
 
       <Footer />

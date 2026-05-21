@@ -17,6 +17,21 @@
 
 import { PHOTOS } from "./images";
 
+// ─────────── Real clinic photography (added 2026-05-21) ───────────
+// Authentic photos provided by the client. Hosted locally in /public/photography.
+// These take priority over Unsplash placeholders wherever a "real" photo is
+// contextually appropriate (portraits, clinic interiors, the ISO certificate).
+export const REAL = {
+  priyatamaPortrait: "/photography/priyatama-portrait.jpg",
+  priyatamaWithLogo: "/photography/priyatama-with-logo.jpg",
+  teamAtWork: "/photography/team-at-work.jpg",
+  isoCertificate: "/photography/iso-9001-certificate.jpg",
+  clinicReception: "/photography/clinic-reception.jpg",
+  clinicConsultation: "/photography/clinic-consultation.jpg",
+  clinicWaiting: "/photography/clinic-waiting.jpg",
+  clinicOffice: "/photography/clinic-office.jpg",
+} as const;
+
 // ─────────── Service hero image mapping ───────────
 export const SERVICE_HEROES: Record<string, string> = {
   "weight-loss": PHOTOS.freshGreens.url,        // vegetables-led, clean
@@ -99,7 +114,9 @@ export const LOCATION_HEROES: Record<string, string> = {
 };
 
 // ─────────── Default OG / banner image (used everywhere as fallback) ───────────
-export const DEFAULT_OG_IMAGE = PHOTOS.indianThali.url;
+// Swapped to the real reception photo (with the Go Moringa logo on the wall)
+// now that we have authentic clinic photography.
+export const DEFAULT_OG_IMAGE = REAL.clinicReception;
 
 // ─────────── Resolver helpers (consumed by services / treatments / recipes data) ───────────
 export function heroForService(slug: string): string {

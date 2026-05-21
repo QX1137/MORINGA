@@ -24,7 +24,7 @@ export function AuthorBioBlock({ reviewedDate, topicNote }: Props) {
         Reviewed and approved by
       </div>
       <div className="flex flex-col md:flex-row gap-7 md:gap-10 items-start">
-        {/* Portrait — press-print framed (PersonBadge while real clinic photo is pending) */}
+        {/* Portrait — real clinic photo via PersonBadge (added 2026-05-21) */}
         <div className="shrink-0">
           <div className="size-28 md:size-36 overflow-hidden border border-ink/25">
             <PersonBadge variant="card" alt={PERSON.name} />

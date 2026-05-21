@@ -1,34 +1,83 @@
 /**
- * PersonBadge — honest placeholder for Dt. Priyatama's portrait until the
- * client provides real photography. Renders a serif monogram + the moringa
- * leaf mark inside a circular frame. Used everywhere the old site referenced
- * /assets/diet-img/priyatma.jpg (which we no longer ship).
+ * PersonBadge — Dt. Priyatama Srivastava portrait component.
  *
- * Two variants:
- *   "card"  — small badge for headers, footers, byline strips, related cards
- *   "hero"  — large portrait-shaped frame for the main hero / about portrait
+ * Now that the client has provided real clinic photography (added 2026-05-21),
+ * the component renders the real `priyatama-portrait.jpg` by default. The
+ * legacy monogram (moringa-mark + "PS" on cream paper) is still available via
+ * `mode="monogram"` for layouts where a photo is contextually wrong (e.g.,
+ * abstract avatar slots, very small thumbnails).
+ *
+ * Two variants control sizing:
+ *   "card"  — small/circular byline avatars
+ *   "hero"  — large portrait-shaped frame for hero / About / AuthorBio
  */
 
+import Image from "next/image";
 import { MoringaMark } from "./MoringaMark";
+import { REAL } from "@/lib/photo-strategy";
 
 type Variant = "card" | "hero";
+type Mode = "photo" | "monogram";
 
 type Props = {
   variant?: Variant;
+  mode?: Mode;
   className?: string;
   alt?: string;
   /** Optional initials override; default is "PS" for Priyatama Srivastava */
   initials?: string;
+  /** Optional override image (must live under /photography/...) */
+  src?: string;
+  /** When true, renders without the press-print border frame around the image */
+  unframed?: boolean;
 };
 
-export function PersonBadge({ variant = "card", className = "", alt, initials = "PS" }: Props) {
+export function PersonBadge({
+  variant = "card",
+  mode = "photo",
+  className = "",
+  alt = "Dt. Priyatama Srivastava — Clinical Dietitian, Go Moringa Diet Clinic",
+  initials = "PS",
+  src = REAL.priyatamaPortrait,
+  unframed = false,
+}: Props) {
   const isHero = variant === "hero";
+
+  // ───────────────────────────────────── photo mode (default)
+  if (mode === "photo") {
+    if (isHero) {
+      return (
+        <figure className={`relative aspect-[3/4] w-full overflow-hidden ${unframed ? "" : "border border-ink/20"} ${className}`}>
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            priority
+            sizes="(min-width: 768px) 40vw, 90vw"
+            className="object-cover"
+          />
+        </figure>
+      );
+    }
+    return (
+      <div className={`relative size-full overflow-hidden ${unframed ? "" : "border border-ink/15"} ${className}`}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="80px"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
+  // ───────────────────────────────────── monogram fallback
   const containerCls = isHero
     ? `relative aspect-[3/4] w-full overflow-hidden border border-ink/20 bg-paper-dark ${className}`
     : `relative size-full overflow-hidden border border-ink/15 bg-paper-dark ${className}`;
   return (
-    <div className={containerCls} role="img" aria-label={alt ?? "Dt. Priyatama Srivastava — portrait pending"}>
-      {/* Faint grain to feel like paper */}
+    <div className={containerCls} role="img" aria-label={alt}>
       <div
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
@@ -45,12 +94,6 @@ export function PersonBadge({ variant = "card", className = "", alt, initials = 
         >
           {initials}
         </div>
-        {isHero && (
-          <div className="mt-2 text-[10px] uppercase tracking-[0.2em] font-mono text-warm-500 text-center">
-            Dt. Priyatama Srivastava<br />
-            <span className="text-clay">Portrait pending</span>
-          </div>
-        )}
       </div>
     </div>
   );

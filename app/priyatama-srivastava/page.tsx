@@ -94,7 +94,7 @@ export default function PriyatamaPage() {
             <figure>
               <figcaption className="text-eyebrow text-clay mb-4 flex items-center gap-3">
                 <span className="block h-px w-6 bg-clay" />
-                Photographed in clinic · 2024
+                In clinic · Sector 49 · 2026
               </figcaption>
               <PersonBadge variant="hero" alt={PERSON.name} />
               <div className="mt-4 flex items-baseline justify-between">

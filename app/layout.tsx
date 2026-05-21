@@ -111,7 +111,10 @@ export default function RootLayout({
           </Script>
         ) : null}
       </head>
-      <body className="min-h-full flex flex-col font-sans text-ink bg-paper">
+      {/* pb-16 on mobile reserves space for the FloatingCTA bottom bar (~54px)
+          so the final footer credits never get hidden behind it. md:pb-0 lifts
+          the padding on desktop where the FloatingCTA is a small circular cluster. */}
+      <body className="min-h-full flex flex-col font-sans text-ink bg-paper pb-14 md:pb-0">
         {children}
         <FloatingCTA />
         <ExitIntentPopup />

@@ -63,8 +63,9 @@ export default function HomePage() {
 
       {/* ═════════════════════════════════════════════════ HERO */}
       <section className="relative overflow-hidden bg-paper-grain">
-        {/* Provenance band */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-6">
+        {/* Provenance band — decorative; hidden on the smallest screens where
+            the mono eyebrow would wrap awkwardly. */}
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-6 hidden sm:block">
           <div className="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-[#d8c8a8]/80">
             <div className="text-eyebrow text-clay">
               Profile · Clinical Nutrition · Indian Practice

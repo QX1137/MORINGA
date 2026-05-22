@@ -257,14 +257,18 @@ body {
     font-family: var(--font-sans);
   }
 
-  /* Editorial display headings — Fraunces serif by default */
+  /* Editorial display headings — Fraunces serif by default.
+     text-wrap: balance evens out line lengths so headlines don't leave a
+     lone orphan word on the last line (notably on narrow mobile screens). */
   h1, h2, h3 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+    text-wrap: balance;
   }
   h4, h5, h6 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
+    text-wrap: balance;
   }
 }
 

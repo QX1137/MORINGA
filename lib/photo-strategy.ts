@@ -163,6 +163,11 @@ export const BLOG_HEROES: Record<string, string> = {
   "top-10-warning-signs-of-diabetes": PHOTOS.spicesOnSpoons.url,
   "what-to-eat-after-c-section-for-fast-recovery": PHOTOS.moringaLeaves.url,
   "why-healthy-diet-matters-nutrition-tips-dietician-priyatama": REAL.clinicConsultation,
+  // New journal articles (2026-05-22).
+  "how-to-lose-belly-fat": PHOTOS.freshGreens.url,
+  "best-foods-for-pcos": PHOTOS.indianSpicesWhite.url,
+  "normal-blood-sugar-levels": PHOTOS.spicesOnSpoons.url,
+  "indian-breakfast-for-weight-loss": PHOTOS.indianThali.url,
 };
 
 // Inline-image rotation for mid-article placements. The article HTML's old

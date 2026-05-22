@@ -538,3 +538,20 @@ body {
   border: 1.5px solid var(--color-ink);
   box-shadow: 0.3rem 0.3rem 0 0 var(--color-clay);
 }
+
+/* ─── Marquee ticker ───────────────────────────────────────────────────
+   The track carries the item list twice; translating -50% lands the second
+   copy exactly on the first copy's start position, so the loop is seamless.
+   Slow (40s) and restrained — an editorial ticker, not a flashing banner.
+   Pauses entirely for users who prefer reduced motion. */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}

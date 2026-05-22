@@ -7,6 +7,8 @@ import { JsonLd } from "./components/JsonLd";
 import { MoringaMark } from "./components/MoringaMark";
 import { PersonBadge } from "./components/PersonBadge";
 import { TrustStrip } from "./components/TrustStrip";
+import { Marquee } from "./components/Marquee";
+import { HowItWorks } from "./components/HowItWorks";
 import { REAL } from "@/lib/photo-strategy";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
@@ -190,7 +192,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═════════════════════════════════════════════════ TRUST STRIP (years · clients · reviews · ISO) */}
+      {/* ═════════════════════════════════════════════════ MARQUEE RIBBON → TRUST STRIP
+          Cream hero → terracotta ticker → deep-green credentials band:
+          a three-step descent in tone that gives the top of the page a
+          confident, colour-blocked rhythm. */}
+      <Marquee />
       <TrustStrip />
 
       {/* ═════════════════════════════════════════════════ APPROACH (with drop cap + thali photo) */}
@@ -257,6 +263,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═════════════════════════════════════════════════ HOW IT WORKS (dark process band)
+          A deep ink-green band placed philosophy → process → place. It breaks
+          the long run of light mid-page sections and tells visitors exactly
+          what happens after they get in touch. */}
+      <HowItWorks />
 
       {/* ═════════════════════════════════════════════════ INSIDE THE CLINIC (real interior photography) */}
       <section className="bg-paper-dark py-14 md:py-24 border-y border-[#d8c8a8]/60">

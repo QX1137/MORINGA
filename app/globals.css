@@ -270,6 +270,17 @@ body {
     letter-spacing: -0.01em;
     text-wrap: balance;
   }
+
+  /* Justified body text site-wide — an editorial / print convention that
+     suits the magazine aesthetic. hyphens: auto (enabled by <html lang="en">)
+     breaks words at syllable boundaries so lines stay tight and river-free,
+     even in narrow mobile columns. This sits in @layer base, so any explicit
+     Tailwind alignment utility (text-left / text-center / text-right) on a
+     paragraph still wins — centred hero subheads and CTAs are unaffected. */
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
 }
 
 /* === Editorial utility classes === */

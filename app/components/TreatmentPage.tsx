@@ -129,7 +129,7 @@ export function TreatmentPage({ treatment }: { treatment: TreatmentData }) {
                 <span className="block h-px w-6 bg-clay" />
                 {treatment.title} · clinical context
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
                 <Image
                   src={treatment.heroImage}
                   alt={treatment.h1}

@@ -66,7 +66,7 @@ export default function AboutPage() {
                 <span className="block h-px w-6 bg-clay" />
                 A working Indian thali
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
                 <Image src={PHOTOS.indianThali.url} alt={PHOTOS.indianThali.alt} fill className="object-cover" style={{ filter: "saturate(0.92) contrast(1.03)" }} sizes="(min-width: 768px) 40vw, 90vw" />
               </div>
               <figcaption className="mt-3 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">

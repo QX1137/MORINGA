@@ -68,7 +68,7 @@ export default function BlogIndex() {
             </div>
             <Link href={featured.phpPath} className="group grid md:grid-cols-12 gap-x-8 gap-y-6 items-center border-b border-[#d8c8a8]/60 pb-10">
               <figure className="md:col-span-6 md:order-2">
-                <div className="relative aspect-[4/3] overflow-hidden border border-ink/15">
+                <div className="relative aspect-[4/3] overflow-hidden photo-frame">
                   <Image
                     src={heroForBlog(featured.slug)}
                     alt={featured.h1 || featured.title}
@@ -114,7 +114,7 @@ export default function BlogIndex() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
             {rest.map((b, i) => (
               <Link key={b.slug} href={b.phpPath} className="group">
-                <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 mb-5">
+                <div className="relative aspect-[4/3] overflow-hidden photo-frame mb-5">
                   <Image
                     src={heroForBlog(b.slug)}
                     alt={b.h1 || b.title}

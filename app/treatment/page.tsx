@@ -59,7 +59,7 @@ export default function TreatmentHubPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
             {TREATMENT_LIST.map((t, i) => (
               <Link key={t.slug} href={t.phpPath} className="group">
-                <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 mb-5">
+                <div className="relative aspect-[4/3] overflow-hidden photo-frame mb-5">
                   <Image src={t.heroImage} alt={t.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" style={{ filter: "saturate(0.9)" }} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
                 </div>
                 <div className="text-eyebrow text-clay mb-2 font-mono">

@@ -124,7 +124,7 @@ export function ServicePage({ service }: { service: ServiceData }) {
                 <span className="block h-px w-6 bg-clay" />
                 {service.title} · programme reference
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
                 <Image
                   src={service.heroImage}
                   alt={service.h1}

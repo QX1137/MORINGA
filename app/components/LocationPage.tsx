@@ -98,7 +98,7 @@ export function LocationPage({ location }: { location: LocationData }) {
                 <span className="block h-px w-6 bg-clay" />
                 {location.city} · the clinic context
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
                 <Image
                   src={location.heroImage}
                   alt={location.h1}

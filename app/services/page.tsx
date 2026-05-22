@@ -70,7 +70,7 @@ export default function ServicesHubPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
             {SERVICE_LIST.map((s, i) => (
               <Link key={s.slug} href={s.phpPath} className="group">
-                <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 mb-5">
+                <div className="relative aspect-[4/3] overflow-hidden photo-frame mb-5">
                   <Image src={s.heroImage} alt={s.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" style={{ filter: "saturate(0.9)" }} sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
                 </div>
                 <div className="text-eyebrow text-clay mb-2 font-mono">

@@ -105,7 +105,7 @@ export function BlogPage({ blog, related }: Props) {
             on mobile (16/9) so the title stays above-the-fold. */}
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-6 md:pt-10">
           <figure className="relative">
-            <div className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden border border-ink/15">
+            <div className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden photo-frame">
               <Image
                 src={heroImage}
                 alt={blog.h1 || blog.title}
@@ -335,7 +335,7 @@ export function BlogPage({ blog, related }: Props) {
                 const cardHero = heroForBlog(b.slug);
                 return (
                   <Link key={b.slug} href={b.phpPath} className="group">
-                    <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 mb-4">
+                    <div className="relative aspect-[4/3] overflow-hidden photo-frame mb-4">
                       <Image
                         src={cardHero}
                         alt={b.h1 || b.title}

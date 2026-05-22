@@ -116,7 +116,7 @@ export function LandingPage({ page }: { page: LandingPageData }) {
                 <span className="block h-px w-6 bg-clay" />
                 {page.eyebrow}
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
                 <Image
                   src={page.heroImage}
                   alt={page.h1}

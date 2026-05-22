@@ -240,7 +240,7 @@ export default function HomePage() {
                 <span className="block h-px w-6 bg-clay" />
                 A working Indian thali
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
                 <Image
                   src={PHOTOS.indianThali.url}
                   alt={PHOTOS.indianThali.alt}
@@ -278,7 +278,7 @@ export default function HomePage() {
           {/* Asymmetric photo grid — real clinic interiors */}
           <div className="grid grid-cols-12 gap-x-6 gap-y-8">
             <figure className="col-span-12 md:col-span-7 lg:col-span-6">
-              <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
+              <div className="relative aspect-[5/4] overflow-hidden photo-frame">
                 <Image
                   src={REAL.clinicReception}
                   alt="Reception area of Go Moringa Diet Clinic — Sector 49 Gurugram, with the Go Moringa logo on the wall"
@@ -294,7 +294,7 @@ export default function HomePage() {
             </figure>
 
             <figure className="col-span-6 md:col-span-5 lg:col-span-3 md:mt-12">
-              <div className="relative aspect-[3/4] overflow-hidden border border-ink/15">
+              <div className="relative aspect-[3/4] overflow-hidden photo-frame">
                 <Image
                   src={REAL.clinicConsultation}
                   alt="Main consultation room with green velvet chairs and natural light"
@@ -310,7 +310,7 @@ export default function HomePage() {
             </figure>
 
             <figure className="col-span-6 md:col-span-5 lg:col-span-3 lg:mt-24">
-              <div className="relative aspect-[3/4] lg:aspect-square overflow-hidden border border-ink/15">
+              <div className="relative aspect-[3/4] lg:aspect-square overflow-hidden photo-frame">
                 <Image
                   src={REAL.isoCertificate}
                   alt="ISO 9001:2015 quality-management system certification for Go Moringa Nutri Diet — issued by IQCS, UKAC accredited"
@@ -326,7 +326,7 @@ export default function HomePage() {
             </figure>
 
             <figure className="col-span-12 md:col-span-7 lg:col-span-5 lg:-mt-6">
-              <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
+              <div className="relative aspect-[5/4] overflow-hidden photo-frame">
                 <Image
                   src={REAL.clinicWaiting}
                   alt="Waiting area with cream upholstered chairs and a glass partition into the consultation rooms"
@@ -342,7 +342,7 @@ export default function HomePage() {
             </figure>
 
             <figure className="col-span-12 md:col-span-5 lg:col-span-4 md:-mt-6 lg:mt-12">
-              <div className="relative aspect-[5/4] overflow-hidden border border-ink/15">
+              <div className="relative aspect-[5/4] overflow-hidden photo-frame">
                 <Image
                   src={REAL.clinicOffice}
                   alt="Consultation desk with awards and certificates on glass shelving above"
@@ -395,7 +395,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
             {SERVICE_LIST.map((s, i) => (
               <Link key={s.slug} href={s.phpPath} className="group">
-                <div className="relative aspect-[4/3] overflow-hidden border border-ink/15 mb-5">
+                <div className="relative aspect-[4/3] overflow-hidden photo-frame mb-5">
                   <Image
                     src={s.heroImage}
                     alt={s.title}

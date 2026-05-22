@@ -123,7 +123,7 @@ export function RecipePage({ recipe }: { recipe: RecipeData }) {
                 <span className="block h-px w-6 bg-clay" />
                 Plated · clinic test kitchen
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden border border-ink/20">
+              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
                 <Image
                   src={recipe.heroImage}
                   alt={recipe.h1}

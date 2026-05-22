@@ -47,7 +47,7 @@ export function PersonBadge({
   if (mode === "photo") {
     if (isHero) {
       return (
-        <figure className={`relative aspect-[3/4] w-full overflow-hidden ${unframed ? "" : "border border-ink/20"} ${className}`}>
+        <figure className={`relative aspect-[3/4] w-full overflow-hidden ${unframed ? "" : "photo-frame"} ${className}`}>
           <Image
             src={src}
             alt={alt}

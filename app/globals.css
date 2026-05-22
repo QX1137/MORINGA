@@ -32,8 +32,10 @@
 @theme {
   /* === Direction D primary palette === */
   --color-paper: #f2ede3;
-  --color-paper-dark: #e8ddc5;
-  --color-paper-deep: #dfd2b8;
+  /* Deepened so the alternating section bands actually read as a rhythm
+     instead of near-identical shades of beige (part of the contrast pass). */
+  --color-paper-dark: #e4d4b2;
+  --color-paper-deep: #dbcaa6;
 
   --color-ink: #163e2e;
   --color-ink-soft: #2d5642;
@@ -511,4 +513,28 @@ body {
   font-style: italic;
   color: var(--color-clay);
   font-weight: 400;
+}
+
+/* ─── Offset accent frame for photographs ────────────────────────────────
+   A crisp ink hairline with a terracotta block offset behind it — a
+   gallery / letterpress treatment that replaces the near-invisible
+   border-ink/15 hairlines. The offset block is drawn with box-shadow
+   (zero blur, zero spread), so it renders correctly even on the
+   overflow-hidden containers Next/Image fill mode requires, and never
+   creates horizontal scroll. */
+.photo-frame {
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 0.4rem 0.4rem 0 0 var(--color-clay);
+}
+@media (min-width: 768px) {
+  .photo-frame {
+    box-shadow: 0.6rem 0.6rem 0 0 var(--color-clay);
+  }
+}
+
+/* Lighter variant for dense photo grids — same crisp ink edge, a smaller
+   offset so adjacent framed thumbnails don't visually collide. */
+.photo-frame-sm {
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 0.3rem 0.3rem 0 0 var(--color-clay);
 }

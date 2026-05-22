@@ -50,6 +50,11 @@ The first 15-minute conversation is free. Programmes start with a one-month plan
 - [PCOS Diet Plan](/pcos-diet-plan) — Indian diet chart for PCOS/PCOD
 - [Diabetes Diet Plan](/diabetes-diet-plan) — Indian diabetic diet chart, HbA1c control
 - [Thyroid Diet Plan](/thyroid-diet-plan) — Indian diet chart for hypo- and hyperthyroidism
+- [Cholesterol Diet Plan](/cholesterol-diet-plan) — Indian diet to lower LDL and triglycerides
+- [High Blood Pressure Diet Plan](/high-blood-pressure-diet-plan) — low-sodium Indian diet for hypertension
+- [Fatty Liver Diet Plan](/fatty-liver-diet-plan) — Indian diet for NAFLD
+- [Uric Acid Diet Plan](/uric-acid-diet-plan) — low-purine Indian diet for high uric acid & gout
+- [Kidney Diet Plan](/kidney-diet-plan) — Indian renal diet for CKD, built with your nephrologist
 
 ## Services
 - [Weight Loss](/weight-loss.php)

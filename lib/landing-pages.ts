@@ -493,6 +493,378 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "Manage thyroid from anywhere" },
     ],
   },
+
+  // ─────────────────────────────────────────── 7. CHOLESTEROL DIET PLAN
+  "cholesterol-diet-plan": {
+    slug: "cholesterol-diet-plan",
+    path: "/cholesterol-diet-plan",
+    theme: "condition",
+    primaryKeyword: "cholesterol diet plan",
+    eyebrow: "Lipids, brought back into range",
+    metaTitle: "Cholesterol Diet Plan — Indian Diet to Lower Cholesterol | Go Moringa",
+    metaDescription:
+      "A cholesterol diet plan to lower LDL and triglycerides and lift HDL through Indian meals. Heart-healthy Indian diet chart by Dt. Priyatama Srivastava — Gurgaon & online.",
+    h1: "Cholesterol Diet Plan",
+    heroSubhead:
+      "An Indian diet plan that brings LDL and triglycerides down and HDL up — built on everyday food, reviewed against your lipid profile.",
+    heroImage: PHOTOS.freshGreens.url,
+    introLead:
+      "High cholesterol is one of the most diet-responsive conditions there is. What you eat directly shapes your lipid profile — the LDL that clogs arteries, the triglycerides that ride with it, the HDL that protects you. A cholesterol diet plan built around Indian food can move all three numbers, and for many people it reduces or removes the need for medication over time, in coordination with their doctor.",
+    sections: [
+      {
+        heading: "How diet moves your lipid numbers",
+        body: "Soluble fibre binds cholesterol in the gut and carries it out. Replacing refined carbohydrates and trans fats with whole grains, pulses and good fats lowers LDL and triglycerides. The wrong fats — vanaspati, repeatedly heated oil, deep-fried snacks — push them up. A cholesterol diet plan is, in large part, a fat-and-fibre correction applied to your normal Indian plate.",
+      },
+      {
+        heading: "The Indian foods that lower cholesterol",
+        body: "Oats, barley, whole pulses and legumes for soluble fibre. Flaxseed, walnuts and mustard or rice-bran oil in measured amounts for healthy fats. Garlic, methi and plenty of vegetables. Fish twice a week for non-vegetarians. These are not exotic imports — they are foods that fit straight into an Indian kitchen.",
+      },
+      {
+        heading: "What the plan reduces",
+        body: "Deep-fried snacks, vanaspati and repeatedly reused cooking oil, full-fat dairy in excess, refined flour and sugar, and red and processed meats. The single biggest lever for most Indian households is cooking oil — its type, and how much of it goes into everyday cooking.",
+      },
+      {
+        heading: "Triglycerides and the sugar connection",
+        body: "Triglycerides respond less to dietary fat and more to refined carbohydrate, sugar and alcohol. If your triglycerides are high, the plan focuses there — cutting sugar, sweets, refined flour and sugary drinks — alongside the LDL-lowering changes.",
+      },
+      {
+        heading: "Reading your lipid profile over time",
+        body: "A lipid profile measures LDL, HDL, triglycerides and total cholesterol. Diet-driven improvement typically shows within two to three months of consistent eating. The plan is built and revised with your lipid panel in view, and works alongside your doctor — any change to cholesterol medication is their decision.",
+      },
+    ],
+    highlights: [
+      "Lowers LDL and triglycerides, supports HDL",
+      "Soluble-fibre and healthy-fat Indian meals",
+      "Corrects the cooking-oil and fried-food habit",
+      "Works alongside your doctor and any medication",
+      "Reviewed against your lipid profile each cycle",
+    ],
+    process: [
+      { title: "Assessment", body: "Your lipid profile, medical history, medication, family history and food habits are reviewed together." },
+      { title: "Heart-healthy plan", body: "An Indian diet chart built for soluble fibre, the right fats, and reduced refined carbohydrate." },
+      { title: "Everyday eating", body: "Follow the plan from your own kitchen — the changes are to oil, portions and pairings, not to whole cuisines." },
+      { title: "Review with labs", body: "Weekly follow-ups refine the plan; the lipid profile is reviewed each two-to-three-month cycle." },
+    ],
+    sampleDay: [
+      { time: "7:00 AM", meal: "On waking", items: "Warm water; 1 tsp soaked flaxseed and 2 walnuts" },
+      { time: "8:30 AM", meal: "Breakfast", items: "Vegetable oats or 2 moong dal cheela, or vegetable poha — with a bowl of curd" },
+      { time: "11:00 AM", meal: "Mid-morning", items: "A seasonal fruit — apple, guava or orange" },
+      { time: "1:30 PM", meal: "Lunch", items: "2 phulka, 1 bowl dal, 1 sabzi cooked in measured oil, large salad, curd" },
+      { time: "4:30 PM", meal: "Evening", items: "Green tea; roasted chana or a small handful of nuts" },
+      { time: "8:00 PM", meal: "Dinner", items: "1 phulka with sabzi, or vegetable-and-dal soup; non-veg: grilled fish twice a week" },
+    ],
+    sampleDayNote:
+      "Illustrative only. A cholesterol diet plan is calibrated to your lipid profile, whether LDL or triglycerides are the priority, and any other conditions — your chart will differ. Coordinate with your treating doctor.",
+    faqs: [
+      { q: "Can diet alone lower high cholesterol?", a: "For many people, diet produces a meaningful drop in LDL and triglycerides within two to three months — sometimes enough that the doctor reviews medication. Whether diet alone is sufficient depends on your numbers and risk profile; that is a decision for your doctor, working with better lab values the diet provides." },
+      { q: "Which foods lower cholesterol in an Indian diet?", a: "Oats and barley, whole pulses and legumes, flaxseed and walnuts, mustard or rice-bran oil in measured amounts, garlic, methi, plenty of vegetables, and fish for non-vegetarians. Soluble fibre and the right fats do the work." },
+      { q: "What is the biggest dietary mistake that raises cholesterol?", a: "For most Indian households it is cooking oil — the type used, repeated reheating, and the sheer quantity that goes into everyday cooking — together with deep-fried snacks and vanaspati. Correcting this is often the single largest lever." },
+      { q: "How do I lower high triglycerides specifically?", a: "Triglycerides respond mainly to refined carbohydrate, sugar and alcohol rather than dietary fat. If triglycerides are your main concern, the plan focuses on cutting sugar, sweets, refined flour and sugary drinks." },
+      { q: "Is the cholesterol diet plan available online?", a: "Yes. Share your lipid profile as a photograph, consult by video, and receive the plan in writing with weekly reviews — the same process as an in-clinic engagement." },
+    ],
+    relatedLinks: [
+      { label: "Cholesterol / Lipid Profile treatment", href: "/treatment/lipid-profile-cholesterol.php", note: "Clinical overview" },
+      { label: "Heart Disease treatment", href: "/treatment/heart-disease.php", note: "Cardiac nutrition" },
+      { label: "Weight Loss Diet Plan", href: "/weight-loss-diet-plan", note: "Weight loss lowers lipids too" },
+      { label: "Diabetes Diet Plan", href: "/diabetes-diet-plan", note: "When cholesterol and diabetes overlap" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 8. HIGH BLOOD PRESSURE DIET PLAN
+  "high-blood-pressure-diet-plan": {
+    slug: "high-blood-pressure-diet-plan",
+    path: "/high-blood-pressure-diet-plan",
+    theme: "condition",
+    primaryKeyword: "high blood pressure diet",
+    eyebrow: "Pressure, eaten down",
+    metaTitle: "High Blood Pressure Diet Plan — Indian Diet for Hypertension | Go Moringa",
+    metaDescription:
+      "A high blood pressure diet plan — Indian, low-sodium, potassium-rich — to help manage hypertension. Diet chart by Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "High Blood Pressure Diet Plan",
+    heroSubhead:
+      "An Indian diet plan that lowers the sodium load, lifts protective nutrients, and helps bring blood pressure into a healthier range.",
+    heroImage: PHOTOS.freshGreens.url,
+    introLead:
+      "Blood pressure responds to diet faster than most people expect. The sodium in salt, achaar, papad and packaged food pushes it up; the potassium, magnesium and fibre in vegetables, fruit and whole grains help bring it down. A high blood pressure diet plan built around Indian food works on both sides of that balance — and works alongside your doctor and any medication.",
+    sections: [
+      {
+        heading: "Sodium — the number that matters most",
+        body: "Most Indians eat far more sodium than is healthy, and very little of it comes from the salt jar alone. Achaar, papad, namkeen, packaged snacks, sauces, processed and restaurant food all carry hidden sodium. A high blood pressure diet plan systematically finds and reduces these sources — the single most powerful dietary change for hypertension.",
+      },
+      {
+        heading: "The protective nutrients to add",
+        body: "Potassium counters sodium's effect on blood pressure — it is found in bananas, citrus, coconut water, leafy greens, beans and curd. Magnesium, calcium and fibre help too. The plan is, in effect, an Indian adaptation of the well-evidenced DASH approach: less sodium, more vegetables, fruit, whole grains and low-fat dairy.",
+      },
+      {
+        heading: "Weight, alcohol and blood pressure",
+        body: "Excess weight and regular alcohol both raise blood pressure independently. For clients carrying extra weight, even a modest, steady loss can lower readings noticeably — so the plan often combines blood-pressure-specific changes with sustainable weight management.",
+      },
+      {
+        heading: "Indian foods that help, and that hurt",
+        body: "Helps: fresh vegetables and fruit, whole grains and millets, dal and beans, curd and low-fat milk, unsalted nuts. Hurts: achaar, papad, namkeen and fried snacks, packaged and processed foods, sauces and seasonings, and excess salt added at the table.",
+      },
+      {
+        heading: "Diet works with your doctor",
+        body: "A high blood pressure diet plan does not replace your physician or prescribed medication. It works alongside them — and as readings improve, your doctor may review your medication. Any change is their decision; the diet's job is to give them steadier numbers to work with.",
+      },
+    ],
+    highlights: [
+      "Systematically cuts hidden dietary sodium",
+      "Builds potassium, magnesium and fibre",
+      "An Indian adaptation of the DASH approach",
+      "Pairs with weight management where needed",
+      "Works alongside your doctor and medication",
+    ],
+    process: [
+      { title: "Assessment", body: "Your readings, medication, weight, medical history and current eating patterns are reviewed in detail." },
+      { title: "Low-sodium plan", body: "An Indian diet chart that cuts hidden sodium and builds the nutrients that protect against hypertension." },
+      { title: "Everyday eating", body: "Follow the plan from your own kitchen — achaar and namkeen out, vegetables and fruit in, salt brought under control." },
+      { title: "Weekly review", body: "Follow-ups refine the plan as your readings respond, in coordination with your doctor's monitoring." },
+    ],
+    sampleDay: [
+      { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds" },
+      { time: "8:30 AM", meal: "Breakfast", items: "Vegetable poha or oats with minimal salt, or 2 moong dal cheela — with a bowl of curd" },
+      { time: "11:00 AM", meal: "Mid-morning", items: "A potassium-rich fruit — banana, orange — or fresh coconut water" },
+      { time: "1:30 PM", meal: "Lunch", items: "2 phulka, 1 bowl dal (lightly salted), 1 sabzi, large fresh salad, curd" },
+      { time: "4:30 PM", meal: "Evening", items: "Unsalted roasted chana or makhana; herbal tea" },
+      { time: "8:00 PM", meal: "Dinner", items: "1 phulka with sabzi, or vegetable-and-dal soup with minimal salt" },
+    ],
+    sampleDayNote:
+      "Illustrative only. A hypertension diet plan is calibrated to your readings, medication, weight and other conditions — your chart and salt allowance will differ. Coordinate with your treating doctor.",
+    faqs: [
+      { q: "What is the best diet for high blood pressure?", a: "A low-sodium, potassium-rich diet built on fresh vegetables, fruit, whole grains, pulses and low-fat dairy — an Indian adaptation of the DASH approach. Reducing hidden sodium from achaar, papad, namkeen and packaged food is the most powerful single change." },
+      { q: "Which Indian foods raise blood pressure?", a: "Achaar, papad, namkeen and fried snacks, packaged and processed foods, sauces and seasonings, and excess table salt — all high in sodium. Most of the problem sodium is hidden in these, not in the cooking salt alone." },
+      { q: "Can a diet plan replace blood pressure medication?", a: "No. The diet plan works alongside your doctor and prescribed medication. As readings improve, your doctor may review your medication — that decision belongs to your treating physician." },
+      { q: "How quickly can diet lower blood pressure?", a: "Many people see readings respond within a few weeks of consistent low-sodium, potassium-rich eating, especially when combined with modest weight loss. The plan is reviewed against your readings as they change." },
+      { q: "Is the high blood pressure diet plan available online?", a: "Yes. Consult by video, share your readings and history, and receive the plan in writing with weekly reviews — identical in depth to an in-clinic engagement." },
+    ],
+    relatedLinks: [
+      { label: "High Blood Pressure treatment", href: "/treatment/high-blood-pressure.php", note: "Clinical overview of hypertension" },
+      { label: "Heart Disease treatment", href: "/treatment/heart-disease.php", note: "Cardiac nutrition" },
+      { label: "Cholesterol Diet Plan", href: "/cholesterol-diet-plan", note: "Lipids and blood pressure together" },
+      { label: "Weight Loss Diet Plan", href: "/weight-loss-diet-plan", note: "Weight loss lowers blood pressure" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 9. FATTY LIVER DIET PLAN
+  "fatty-liver-diet-plan": {
+    slug: "fatty-liver-diet-plan",
+    path: "/fatty-liver-diet-plan",
+    theme: "condition",
+    primaryKeyword: "fatty liver diet",
+    eyebrow: "A reversible condition",
+    metaTitle: "Fatty Liver Diet Plan — Indian Diet for NAFLD | Go Moringa",
+    metaDescription:
+      "A fatty liver diet plan to manage and often reverse NAFLD through Indian meals and steady weight loss. Diet chart by Dt. Priyatama Srivastava — Gurgaon & online.",
+    h1: "Fatty Liver Diet Plan",
+    heroSubhead:
+      "Non-alcoholic fatty liver is one of the most diet-reversible conditions there is — and the plan that reverses it is an Indian one you can keep to.",
+    heroImage: PHOTOS.freshGreens.url,
+    introLead:
+      "Non-alcoholic fatty liver disease — fat accumulating in the liver — has become strikingly common, and it is one of the most encouraging conditions to treat: in its early stages it is often reversible, and diet is the central tool. A fatty liver diet plan works by reducing the liver's fat load through steady weight loss and a sharp cut in the foods that drive fat storage.",
+    sections: [
+      {
+        heading: "Why fatty liver develops",
+        body: "Non-alcoholic fatty liver is closely tied to excess weight, insulin resistance and a diet high in sugar, refined carbohydrate and fructose. The liver, overloaded, begins storing fat. Because the same drivers cause it across most people, the dietary correction is well understood — and effective.",
+      },
+      {
+        heading: "Weight loss is the core treatment",
+        body: "For most people with fatty liver, a steady loss of body weight is the single most effective intervention — even a 7–10% reduction can significantly reduce liver fat. The plan therefore combines fatty-liver-specific changes with sustainable, calibrated weight loss built on Indian meals.",
+      },
+      {
+        heading: "What the plan cuts hardest",
+        body: "Refined sugar and sweets, sugary drinks and packaged fruit juices, refined flour and maida products, deep-fried foods, and ultra-processed snacks. Fructose and refined carbohydrate are particular drivers of liver fat, so these are reduced sharply rather than gradually.",
+      },
+      {
+        heading: "What the plan builds in",
+        body: "Adequate protein from dal, pulses, curd, paneer, eggs and fish; high-fibre whole grains and millets; plenty of vegetables; coffee in moderation, which evidence associates with liver benefit; and good fats from nuts, seeds and the right oils. It looks like a normal, corrected Indian plate.",
+      },
+      {
+        heading: "Working with your doctor",
+        body: "A fatty liver diet plan works alongside your physician, who monitors your liver enzymes and ultrasound findings. Diet-driven improvement often shows within a few months of consistent eating and weight loss. Any medication or further investigation remains your doctor's domain.",
+      },
+    ],
+    highlights: [
+      "Targets the weight and sugar load behind NAFLD",
+      "Often reversible in its early stages",
+      "Sharp cut in sugar, fructose and refined carbs",
+      "Sustainable Indian-meal weight loss built in",
+      "Works alongside your doctor's monitoring",
+    ],
+    process: [
+      { title: "Assessment", body: "Your liver reports, weight, medical history, blood sugar and food habits are reviewed together." },
+      { title: "Liver-focused plan", body: "An Indian diet chart cutting sugar and refined carbohydrate, with a calibrated weight-loss target." },
+      { title: "Steady progress", body: "Follow the plan from your own kitchen; weight and energy begin to shift in the first weeks." },
+      { title: "Review with labs", body: "Weekly follow-ups refine the plan; liver enzymes and weight are tracked across months." },
+    ],
+    sampleDay: [
+      { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds and 2 walnuts" },
+      { time: "8:30 AM", meal: "Breakfast", items: "Vegetable oats or 2 moong dal cheela — with a bowl of curd; black coffee, unsweetened" },
+      { time: "11:00 AM", meal: "Mid-morning", items: "A low-sugar fruit — guava, pear or apple" },
+      { time: "1:30 PM", meal: "Lunch", items: "2 millet phulka, 1 bowl dal, 1 sabzi, large salad, curd" },
+      { time: "4:30 PM", meal: "Evening", items: "Green tea; roasted chana or makhana" },
+      { time: "8:00 PM", meal: "Dinner", items: "1 phulka with sabzi, or vegetable-and-dal soup with paneer or grilled fish" },
+    ],
+    sampleDayNote:
+      "Illustrative only. A fatty liver diet plan is calibrated to your liver reports, weight target and other conditions such as diabetes — your chart will differ. Coordinate with your treating doctor.",
+    faqs: [
+      { q: "Can fatty liver be reversed with diet?", a: "In its early stages, non-alcoholic fatty liver is often reversible, and diet is the central tool. Steady weight loss — even a 7–10% reduction in body weight — can significantly reduce liver fat. Reversal should be confirmed by your doctor through follow-up tests." },
+      { q: "What foods should I avoid with fatty liver?", a: "Refined sugar and sweets, sugary drinks and packaged juices, refined flour and maida products, deep-fried foods and ultra-processed snacks. Fructose and refined carbohydrate are particular drivers of liver fat." },
+      { q: "Is weight loss necessary to treat fatty liver?", a: "For most people, yes — steady weight loss is the single most effective intervention. The plan combines fatty-liver-specific changes with sustainable, calibrated weight loss built on Indian meals." },
+      { q: "How long does it take to improve fatty liver through diet?", a: "Diet-driven improvement often shows within a few months of consistent eating and weight loss. Your doctor confirms progress through liver enzymes and imaging." },
+      { q: "Is the fatty liver diet plan available online?", a: "Yes. Share your liver reports as photographs, consult by video, and receive the plan in writing with weekly reviews." },
+    ],
+    relatedLinks: [
+      { label: "Weight Loss Diet Plan", href: "/weight-loss-diet-plan", note: "Weight loss is the core of NAFLD reversal" },
+      { label: "Diabetes Diet Plan", href: "/diabetes-diet-plan", note: "Fatty liver and insulin resistance overlap" },
+      { label: "Therapeutic Diet programme", href: "/therapeutic-diet.php", note: "Diets for chronic conditions" },
+      { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "Manage fatty liver from anywhere" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 10. URIC ACID DIET PLAN
+  "uric-acid-diet-plan": {
+    slug: "uric-acid-diet-plan",
+    path: "/uric-acid-diet-plan",
+    theme: "condition",
+    primaryKeyword: "uric acid diet",
+    eyebrow: "Purines, brought under control",
+    metaTitle: "Uric Acid Diet Plan — Indian Diet for High Uric Acid & Gout | Go Moringa",
+    metaDescription:
+      "A uric acid diet plan to manage high uric acid and gout through Indian meals — low-purine, well-hydrated. Diet chart by Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "Uric Acid Diet Plan",
+    heroSubhead:
+      "An Indian diet plan that lowers the purine load, supports hydration, and helps keep uric acid — and gout flares — under control.",
+    heroImage: PHOTOS.greenLeafBranch.url,
+    introLead:
+      "High uric acid, and the gout that can follow it, responds well to dietary care. Uric acid is produced when the body breaks down purines — compounds found in certain foods and drinks. A uric acid diet plan works by lowering the purine load, supporting the body's ability to flush uric acid out, and steadying the weight and metabolic factors that quietly drive the numbers up.",
+    sections: [
+      {
+        heading: "How diet affects uric acid",
+        body: "Some foods are high in purines and raise uric acid more than others; sugar — especially fructose — and alcohol also push it up. At the same time, good hydration and certain foods help the body clear uric acid. A uric acid diet plan adjusts both sides: less of what raises it, more of what helps clear it.",
+      },
+      {
+        heading: "What the plan limits",
+        body: "Organ meats, red meat and certain seafood are high in purines and limited or avoided. Alcohol — beer in particular — is a strong trigger. Sugary drinks and fructose-heavy foods raise uric acid and are cut back. Among vegetarian foods, very high-purine items are moderated, though plant purines affect uric acid far less than animal ones.",
+      },
+      {
+        heading: "What the plan encourages",
+        body: "Generous water intake to help the kidneys flush uric acid. Low-fat dairy, which is associated with lower uric acid. Plenty of vegetables and most fruit — cherries in particular are linked with fewer gout flares. Whole grains, and coffee in moderation. For most people an Indian vegetarian plate, correctly built, is naturally uric-acid-friendly.",
+      },
+      {
+        heading: "Weight, crash diets and gout",
+        body: "Excess weight raises uric acid, so steady weight loss helps — but crash dieting and rapid fasting can temporarily spike uric acid and trigger a flare. This is exactly why a calibrated plan matters: the weight comes off at a pace that does not provoke gout.",
+      },
+      {
+        heading: "Diet works with your doctor",
+        body: "A uric acid diet plan supports, but does not replace, medical care. If you have gout or very high uric acid, your doctor may prescribe medication; the diet works alongside it. During an acute gout flare, follow your doctor's advice first.",
+      },
+    ],
+    highlights: [
+      "Lowers the dietary purine load",
+      "Strong focus on hydration to flush uric acid",
+      "Identifies alcohol and fructose triggers",
+      "Weight loss paced to avoid provoking flares",
+      "Works alongside your doctor and medication",
+    ],
+    process: [
+      { title: "Assessment", body: "Your uric acid levels, gout history, medication, weight and food and drink habits are reviewed." },
+      { title: "Low-purine plan", body: "An Indian diet chart that lowers purine load, builds hydration, and removes the main triggers." },
+      { title: "Steady eating", body: "Follow the plan from your own kitchen — triggers out, water and uric-acid-friendly foods in." },
+      { title: "Weekly review", body: "Follow-ups refine the plan and pace any weight loss so it does not provoke a flare." },
+    ],
+    sampleDay: [
+      { time: "7:00 AM", meal: "On waking", items: "2 glasses of water; 5–6 soaked almonds" },
+      { time: "8:30 AM", meal: "Breakfast", items: "Vegetable poha or oats, or 2 besan cheela — with a bowl of low-fat curd" },
+      { time: "11:00 AM", meal: "Mid-morning", items: "A seasonal fruit — cherries, orange or apple — and a glass of water" },
+      { time: "1:30 PM", meal: "Lunch", items: "2 phulka, 1 bowl moderate-purine dal, 1 sabzi, large salad, low-fat curd" },
+      { time: "4:30 PM", meal: "Evening", items: "Coconut water or buttermilk; roasted makhana" },
+      { time: "8:00 PM", meal: "Dinner", items: "1 phulka with sabzi, or vegetable khichdi — plenty of water through the day" },
+    ],
+    sampleDayNote:
+      "Illustrative only. A uric acid diet plan is calibrated to your levels, gout history and other conditions — your chart will differ. During an acute gout flare, follow your doctor's advice first.",
+    faqs: [
+      { q: "What foods should I avoid with high uric acid?", a: "Organ meats, red meat and certain seafood (high in purines), alcohol — beer especially — and sugary, fructose-heavy drinks and foods. Among vegetarian foods, very high-purine items are moderated, though plant purines affect uric acid far less than animal ones." },
+      { q: "What foods help lower uric acid?", a: "Generous water intake, low-fat dairy, plenty of vegetables and most fruit (cherries are linked with fewer flares), whole grains and moderate coffee. A correctly built Indian vegetarian plate is naturally uric-acid-friendly for most people." },
+      { q: "Can a vegetarian diet cause high uric acid?", a: "It is far less likely to than a meat-heavy diet — plant purines raise uric acid much less than animal ones. Sugar, fructose, alcohol and excess weight are common contributors even in vegetarians, and the plan addresses these." },
+      { q: "Does losing weight lower uric acid?", a: "Steady weight loss helps lower uric acid — but crash dieting and rapid fasting can temporarily spike it and trigger a gout flare. The plan paces weight loss specifically to avoid this." },
+      { q: "Is the uric acid diet plan available online?", a: "Yes. Share your uric acid reports, consult by video, and receive the plan in writing with weekly reviews." },
+    ],
+    relatedLinks: [
+      { label: "Uric Acid / Gout treatment", href: "/treatment/uric-acid.php", note: "Clinical overview" },
+      { label: "Therapeutic Diet programme", href: "/therapeutic-diet.php", note: "Diets for chronic conditions" },
+      { label: "Weight Loss Diet Plan", href: "/weight-loss-diet-plan", note: "Weight loss, paced safely" },
+      { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "Manage uric acid from anywhere" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 11. KIDNEY DIET PLAN
+  "kidney-diet-plan": {
+    slug: "kidney-diet-plan",
+    path: "/kidney-diet-plan",
+    theme: "condition",
+    primaryKeyword: "kidney diet plan",
+    eyebrow: "Renal nutrition, done carefully",
+    metaTitle: "Kidney Diet Plan — Indian Renal Diet for CKD | Go Moringa",
+    metaDescription:
+      "A kidney diet plan — Indian, renal-friendly — to support kidney health in CKD, built carefully alongside your nephrologist. By Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "Kidney Diet Plan",
+    heroSubhead:
+      "A renal diet is one of the most individual diets in clinical nutrition — built carefully around your kidney function and your nephrologist's guidance.",
+    heroImage: PHOTOS.greenLeafBranch.url,
+    introLead:
+      "A kidney diet plan is among the most precise and individual diets in clinical nutrition. In chronic kidney disease, the diet must balance protein, sodium, potassium, phosphorus and fluid — and the right balance depends entirely on the stage of kidney function, whether dialysis is involved, and your other conditions. This is diet built strictly in coordination with your nephrologist.",
+    sections: [
+      {
+        heading: "Why a renal diet must be individual",
+        body: "There is no single 'kidney diet'. What is correct for early-stage chronic kidney disease differs sharply from what is correct for advanced stages or for someone on dialysis. Protein, potassium and phosphorus targets in particular change with kidney function. A renal diet plan must be built around your specific reports and your nephrologist's instructions — never from a generic chart.",
+      },
+      {
+        heading: "The nutrients a kidney diet manages",
+        body: "Protein is controlled to a level matched to your stage of kidney disease — too much strains the kidneys, too little risks malnutrition. Sodium is reduced to manage blood pressure and fluid. Potassium and phosphorus are adjusted based on your blood levels. Fluid intake may be limited in later stages. Each of these is set with your nephrologist.",
+      },
+      {
+        heading: "Building a renal diet from the Indian kitchen",
+        body: "An Indian renal diet still uses Indian food — but with specific adjustments: certain dals and vegetables managed for potassium and phosphorus, cooking techniques such as leaching used where needed, and salt and salt substitutes handled carefully. The clinic's role is to translate your nephrologist's targets into meals you can actually cook and eat.",
+      },
+      {
+        heading: "Eating well while protecting the kidneys",
+        body: "A common difficulty in kidney disease is eating enough, and well, within tight restrictions — appetite is often poor and many foods are limited. A good renal diet plan works hard on this: making the permitted foods varied, palatable and adequate, so nutrition does not slip while the kidneys are protected.",
+      },
+      {
+        heading: "This diet is always doctor-led",
+        body: "A kidney diet plan supports, and never replaces, your nephrologist and treating team. The clinic builds the everyday meal plan around the medical targets they set, and revises it as your reports change. Any decision about medication, dialysis or restrictions belongs to your doctors.",
+      },
+    ],
+    highlights: [
+      "Built strictly around your kidney function & stage",
+      "Manages protein, sodium, potassium, phosphorus",
+      "Indian renal meals — adjusted, not generic",
+      "Focus on eating adequately within restrictions",
+      "Always coordinated with your nephrologist",
+    ],
+    process: [
+      { title: "Assessment", body: "Your kidney reports, stage, nephrologist's targets, medication and food habits are reviewed in detail." },
+      { title: "Renal meal plan", body: "An Indian diet chart translating your medical targets — protein, sodium, potassium, phosphorus — into real meals." },
+      { title: "Careful eating", body: "Follow the plan from your own kitchen, with cooking techniques and portions matched to your reports." },
+      { title: "Review with labs", body: "The plan is revised as your blood levels and kidney function change, alongside your nephrologist." },
+    ],
+    sampleDayNote:
+      "A renal diet is too individual to publish a sample chart safely — protein, potassium, phosphorus and fluid targets differ entirely by stage of kidney disease and by whether dialysis is involved. Your plan is built only after reviewing your reports and your nephrologist's instructions.",
+    faqs: [
+      { q: "Is there a standard kidney diet plan?", a: "No — and this matters. A renal diet must be individual: protein, potassium, phosphorus, sodium and fluid targets change entirely with the stage of kidney disease and whether dialysis is involved. A generic 'kidney diet chart' can be unsafe. The plan is built from your specific reports and your nephrologist's targets." },
+      { q: "Can I follow a kidney diet without a doctor?", a: "No. A kidney diet plan is always doctor-led. The clinic translates your nephrologist's medical targets into everyday Indian meals — but the targets, and all decisions about medication, dialysis and restrictions, come from your treating team." },
+      { q: "Can a kidney diet still use Indian food?", a: "Yes. An Indian renal diet uses Indian food with specific adjustments — certain dals and vegetables managed for potassium and phosphorus, leaching and cooking techniques used where needed, and salt handled carefully. The aim is meals you can genuinely cook and eat." },
+      { q: "Why is it hard to eat well with kidney disease?", a: "Appetite is often poor in kidney disease, and many foods are restricted — so eating enough, and adequately, is a real challenge. A good renal diet plan focuses heavily on keeping the permitted foods varied, palatable and nutritionally adequate." },
+      { q: "Is the kidney diet plan available online?", a: "Yes. Share your kidney reports and your nephrologist's instructions, consult by video, and receive the plan in writing with reviews — built carefully around your medical targets." },
+    ],
+    relatedLinks: [
+      { label: "Therapeutic Diet programme", href: "/therapeutic-diet.php", note: "Diets for chronic conditions" },
+      { label: "High Blood Pressure Diet Plan", href: "/high-blood-pressure-diet-plan", note: "Blood pressure and kidney health" },
+      { label: "Diabetes Diet Plan", href: "/diabetes-diet-plan", note: "Diabetes is a leading cause of CKD" },
+      { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "Renal nutrition support, online" },
+    ],
+  },
 };
 
 export const LANDING_PAGE_LIST: LandingPage[] = Object.values(LANDING_PAGES);

@@ -60,6 +60,11 @@ export function Footer() {
             <li><Link href="/pcos-diet-plan" className="text-ink/85 hover:text-clay transition">PCOS Diet Plan</Link></li>
             <li><Link href="/diabetes-diet-plan" className="text-ink/85 hover:text-clay transition">Diabetes Diet Plan</Link></li>
             <li><Link href="/thyroid-diet-plan" className="text-ink/85 hover:text-clay transition">Thyroid Diet Plan</Link></li>
+            <li><Link href="/cholesterol-diet-plan" className="text-ink/85 hover:text-clay transition">Cholesterol Diet Plan</Link></li>
+            <li><Link href="/high-blood-pressure-diet-plan" className="text-ink/85 hover:text-clay transition">Blood Pressure Diet</Link></li>
+            <li><Link href="/fatty-liver-diet-plan" className="text-ink/85 hover:text-clay transition">Fatty Liver Diet</Link></li>
+            <li><Link href="/uric-acid-diet-plan" className="text-ink/85 hover:text-clay transition">Uric Acid Diet</Link></li>
+            <li><Link href="/kidney-diet-plan" className="text-ink/85 hover:text-clay transition">Kidney Diet Plan</Link></li>
           </ul>
         </div>
 

@@ -117,6 +117,9 @@ export const LOCATION_HEROES: Record<string, string> = {
   "dietitian-in-dlf-gurgaon": PHOTOS.freshGreens.url,
   "dietitian-in-sohna-road": PHOTOS.spiceBowls.url,
   "dietitian-in-sushant-lok": PHOTOS.indianSpicesWhite.url,
+  // Regional ranking pages (2026-05-22).
+  "best-dietitian-in-delhi-ncr": PHOTOS.spiceBowls.url,
+  "best-dietitian-in-india": PHOTOS.indianThali.url,
 };
 
 // ─────────── Blog hero image mapping (per-slug, with topical fallback) ───────────

@@ -91,6 +91,8 @@ export function Footer() {
         <div className="md:col-span-2">
           <h3 className="text-eyebrow text-clay mb-4">Find us</h3>
           <ul className="space-y-2.5 text-sm">
+            <li><Link href="/best-dietitian-in-india" className="text-ink/85 hover:text-clay transition">Best Dietitian in India</Link></li>
+            <li><Link href="/best-dietitian-in-delhi-ncr" className="text-ink/85 hover:text-clay transition">Best in Delhi NCR</Link></li>
             <li><Link href="/dietician-in-gurgaon.php" className="text-ink/85 hover:text-clay transition">Dietitian in Gurgaon</Link></li>
             <li><Link href="/nutritionist-in-gurgaon" className="text-ink/85 hover:text-clay transition">Nutritionist · Gurgaon</Link></li>
             <li><Link href="/diet-clinic-in-gurgaon" className="text-ink/85 hover:text-clay transition">Diet Clinic · Gurgaon</Link></li>

@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/payment.php"), priority: 0.4 },
     { url: url("/book-an-appointment.php"), priority: 0.7 },
     { url: url("/blog.php"), priority: 0.7, changeFrequency: "weekly" as const },
+    { url: url("/faq"), priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   const services = SERVICE_LIST.map((s) => ({

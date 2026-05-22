@@ -97,6 +97,7 @@ export function Footer() {
             <li><Link href="/treatment/thyroid.php" className="text-ink/85 hover:text-clay transition">Thyroid</Link></li>
             <li><Link href="/treatment/heart-disease.php" className="text-ink/85 hover:text-clay transition">Heart Disease</Link></li>
             <li><Link href="/treatment.php" className="text-ink/85 hover:text-clay transition italic">All conditions →</Link></li>
+            <li><Link href="/faq" className="text-ink/85 hover:text-clay transition italic">Nutrition FAQ →</Link></li>
           </ul>
         </div>
 

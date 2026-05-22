@@ -108,6 +108,9 @@ The first 15-minute conversation is free. Programmes start with a one-month plan
 ## Journal & Recipes
 Clinical-nutrition writing and healthy Indian recipes by Dt. Priyatama — see the [Journal](/blog.php).
 
+## Nutrition & Diet FAQ
+A comprehensive question-and-answer reference covering weight loss, PCOS, thyroid, diabetes and chronic conditions, Indian diet and everyday nutrition, and how consultation works: [Nutrition & Diet FAQ](/faq).
+
 ## About
 - [About Go Moringa](/about.php)
 - [About Dt. Priyatama Srivastava](/priyatama-srivastava.php)

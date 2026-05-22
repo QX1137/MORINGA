@@ -176,9 +176,12 @@ function hashSlug(slug: string): number {
 }
 
 // ─────────── Default OG / banner image (used everywhere as fallback) ───────────
-// Swapped to the real reception photo (with the Go Moringa logo on the wall)
-// now that we have authentic clinic photography.
-export const DEFAULT_OG_IMAGE = REAL.clinicReception;
+// A purpose-built 1200×630 branded card (public/og-card.png): real Go Moringa
+// logo + "Best Dietitian in Gurgaon" + Dt. Priyatama's name + the verified
+// credentials strip, on the khadi-paper brand background. This is what renders
+// in WhatsApp/Facebook/LinkedIn link previews. A designed card beats a cropped
+// photo here — portrait clinic photos crop badly to 1.91:1 landscape.
+export const DEFAULT_OG_IMAGE = "/og-card.png";
 
 // ─────────── Resolver helpers (consumed by services / treatments / recipes data) ───────────
 export function heroForService(slug: string): string {

@@ -476,9 +476,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <figure>
-              {/* Brand-context portrait (priyatamaWithLogo) — different shot from the
-                  hero so the same face isn't repeated identically twice on one page. */}
-              <PersonBadge variant="hero" src={REAL.priyatamaWithLogo} alt={`${PERSON.name} at Go Moringa Diet Clinic, Sector 49 Gurugram`} />
+              {/* Primary clinic portrait. The side-profile priyatamaWithLogo shot
+                  was weak (face not visible) — replaced with the strong portrait. */}
+              <PersonBadge variant="hero" src={REAL.priyatamaPortrait} alt={`${PERSON.name} — Clinical Dietitian, Go Moringa Diet Clinic, Sector 49 Gurugram`} />
               <figcaption className="mt-3 text-eyebrow text-warm-500">
                 Photographed at the clinic · Sector 49, Gurugram
               </figcaption>

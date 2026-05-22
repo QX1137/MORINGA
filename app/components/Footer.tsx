@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { MoringaMark } from "./MoringaMark";
 import { CONTACT, REVIEWS, SOCIAL, PERSON } from "@/lib/site";
 
 export function Footer() {
@@ -8,8 +8,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-14 grid gap-10 md:grid-cols-12">
         {/* Wordmark + address */}
         <div className="md:col-span-5">
-          <Link href="/" className="inline-flex items-center gap-2.5">
-            <MoringaMark className="size-9 text-ink" />
+          <Link href="/" className="inline-flex items-center gap-3" aria-label="Go Moringa Diet Clinic — home">
+            <Image
+              src="/go-moringa-leaves.png"
+              alt="Go Moringa Diet Clinic logo"
+              width={165}
+              height={73}
+              className="h-9 w-auto"
+            />
             <div className="flex flex-col">
               <span className="text-2xl tracking-tight leading-none font-display font-medium text-ink">
                 Go Moringa

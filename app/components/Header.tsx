@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { MoringaMark } from "./MoringaMark";
 import { LiveAvailability } from "./LiveAvailability";
 import { CONTACT, PERSON, phoneUrl } from "@/lib/site";
 
@@ -39,8 +39,17 @@ export function Header() {
 
       {/* Main nav — wordmark left, links centre/right */}
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 md:py-5 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-          <MoringaMark className="size-9 text-ink group-hover:text-clay transition" />
+        <Link href="/" className="flex items-center gap-3 shrink-0 group" aria-label="Go Moringa Diet Clinic — home">
+          {/* Real Go Moringa leaf mark (from the original brand logo) +
+              the Fraunces wordmark. Replaces the hand-drawn MoringaMark. */}
+          <Image
+            src="/go-moringa-leaves.png"
+            alt="Go Moringa Diet Clinic logo"
+            width={165}
+            height={73}
+            priority
+            className="h-8 w-auto"
+          />
           <div className="flex flex-col">
             <span className="text-xl md:text-2xl tracking-tight leading-none font-display font-medium text-ink">
               Go Moringa

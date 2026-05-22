@@ -68,7 +68,7 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Services column */}
+        {/* Services + Who we help column */}
         <div className="md:col-span-2">
           <h3 className="text-eyebrow text-clay mb-4">Services</h3>
           <ul className="space-y-2.5 text-sm">
@@ -77,6 +77,14 @@ export function Footer() {
             <li><Link href="/figure-correction.php" className="text-ink/85 hover:text-clay transition">Figure Correction</Link></li>
             <li><Link href="/therapeutic-diet.php" className="text-ink/85 hover:text-clay transition">Therapeutic</Link></li>
             <li><Link href="/pregnancy-diet.php" className="text-ink/85 hover:text-clay transition">Pregnancy</Link></li>
+          </ul>
+          <h3 className="text-eyebrow text-clay mt-7 mb-4">Who we help</h3>
+          <ul className="space-y-2.5 text-sm">
+            <li><Link href="/dietitian-for-women" className="text-ink/85 hover:text-clay transition">Dietitian for Women</Link></li>
+            <li><Link href="/weight-loss-after-pregnancy" className="text-ink/85 hover:text-clay transition">Post-Pregnancy</Link></li>
+            <li><Link href="/child-nutritionist" className="text-ink/85 hover:text-clay transition">Child Nutritionist</Link></li>
+            <li><Link href="/diet-plan-for-senior-citizens" className="text-ink/85 hover:text-clay transition">Senior Citizens</Link></li>
+            <li><Link href="/corporate-wellness-program" className="text-ink/85 hover:text-clay transition">Corporate Wellness</Link></li>
           </ul>
         </div>
 

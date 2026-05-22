@@ -26,7 +26,7 @@ export type LandingPage = {
   slug: string;
   /** Clean canonical URL, e.g. "/weight-loss-diet-plan". */
   path: string;
-  theme: "online" | "weight-loss" | "condition";
+  theme: "online" | "weight-loss" | "condition" | "audience";
   primaryKeyword: string;
   eyebrow: string;
   metaTitle: string;
@@ -863,6 +863,375 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { label: "High Blood Pressure Diet Plan", href: "/high-blood-pressure-diet-plan", note: "Blood pressure and kidney health" },
       { label: "Diabetes Diet Plan", href: "/diabetes-diet-plan", note: "Diabetes is a leading cause of CKD" },
       { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "Renal nutrition support, online" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 12. DIETITIAN FOR WOMEN
+  "dietitian-for-women": {
+    slug: "dietitian-for-women",
+    path: "/dietitian-for-women",
+    theme: "audience",
+    primaryKeyword: "dietitian for women",
+    eyebrow: "Nutrition across a woman's life",
+    metaTitle: "Dietitian for Women — Nutrition for Every Life Stage | Go Moringa",
+    metaDescription:
+      "A dietitian for women — PCOS, pregnancy, post-partum, thyroid, iron deficiency, menopause. Personalised Indian nutrition by Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "Dietitian for Women",
+    heroSubhead:
+      "Women's nutrition changes with every life stage — PCOS, pregnancy, post-partum, thyroid, menopause. One dietitian who has guided 10,000+ clients through all of them.",
+    heroImage: PHOTOS.indianSpicesWhite.url,
+    introLead:
+      "A woman's nutritional needs are not static — they shift through the teenage years, the reproductive decades, pregnancy and post-partum recovery, and the menopausal transition. A dietitian for women is someone who understands those shifts and adjusts the plan to the stage you are actually in. Dt. Priyatama Srivastava has spent 20 years doing exactly that, for more than 10,000 clients.",
+    sections: [
+      {
+        heading: "PCOS, periods and hormonal health",
+        body: "PCOS and PCOD, irregular cycles, painful or heavy periods — these are among the most common reasons women consult a dietitian, and among the most diet-responsive. Insulin, inflammation and weight all influence the hormonal picture, and a calibrated eating plan addresses the mechanism, not just the symptoms.",
+      },
+      {
+        heading: "Pregnancy and post-partum nutrition",
+        body: "Pregnancy nutrition supports both mother and baby through each trimester; post-partum nutrition supports recovery, breastfeeding and a realistic return to pre-pregnancy health. Both are core to the practice, and both are built around safe, nourishing Indian meals rather than restriction.",
+      },
+      {
+        heading: "Thyroid and metabolism",
+        body: "Thyroid disorders are far more common in women than men, and they reshape metabolism, energy and weight. Thyroid-supportive nutrition — and managing the frequent overlap of thyroid issues with PCOS — is a regular part of women's care at the clinic.",
+      },
+      {
+        heading: "Iron, calcium and the deficiencies women carry",
+        body: "Iron-deficiency anaemia, low calcium and vitamin D, and other micronutrient gaps are widespread among Indian women, and they quietly drain energy, hair health and bone strength. A women's nutrition plan deliberately builds these nutrients in through everyday food, correcting confirmed deficiencies.",
+      },
+      {
+        heading: "Menopause and the years beyond",
+        body: "The menopausal transition brings shifts in weight distribution, bone density and metabolism. Nutrition through and after menopause focuses on protein and calcium for muscle and bone, managing the mid-life weight change, and protecting heart health for the decades ahead.",
+      },
+    ],
+    highlights: [
+      "PCOS, periods and hormonal-health nutrition",
+      "Pregnancy and post-partum care",
+      "Thyroid and metabolism support",
+      "Corrects iron, calcium and vitamin deficiencies",
+      "Menopause and mid-life nutrition",
+    ],
+    process: [
+      { title: "Assessment", body: "Your life stage, cycle and hormonal history, labs, medical history and food habits are reviewed together." },
+      { title: "Stage-specific plan", body: "An Indian-meal plan built for the stage you are in — PCOS, pregnancy, thyroid, menopause or general health." },
+      { title: "Everyday eating", body: "Follow the plan from your own kitchen — nourishing, not restrictive, built around real food." },
+      { title: "Weekly review", body: "The plan is reviewed and revised as your body, labs and life stage change." },
+    ],
+    sampleDay: [
+      { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds and 2 walnuts" },
+      { time: "8:30 AM", meal: "Breakfast", items: "2 moong dal cheela or vegetable poha, or 2 idli with sambar — with a bowl of curd" },
+      { time: "11:00 AM", meal: "Mid-morning", items: "A seasonal fruit, or a glass of buttermilk" },
+      { time: "1:30 PM", meal: "Lunch", items: "2 phulka, 1 bowl dal, 1 iron-rich sabzi (greens), salad, curd" },
+      { time: "4:30 PM", meal: "Evening", items: "Tea; roasted chana or a small handful of nuts and seeds" },
+      { time: "8:00 PM", meal: "Dinner", items: "1 phulka with sabzi, or vegetable-and-dal soup with paneer, eggs or fish" },
+    ],
+    sampleDayNote:
+      "Illustrative only. A women's nutrition plan is calibrated to your life stage, hormonal and nutritional labs and any conditions — your chart will differ.",
+    faqs: [
+      { q: "Why see a dietitian who focuses on women's nutrition?", a: "A woman's nutritional needs change through every life stage — adolescence, the reproductive years, pregnancy, post-partum and menopause. A dietitian familiar with those shifts can match the plan to the stage you are actually in, rather than applying a one-size approach." },
+      { q: "Can a dietitian help with PCOS and irregular periods?", a: "Yes. PCOS and irregular cycles are among the most diet-responsive concerns. Insulin, inflammation and weight all influence the hormonal picture, and a calibrated plan addresses the underlying mechanism." },
+      { q: "Do you provide pregnancy and post-partum nutrition?", a: "Yes — both are core to the practice. Pregnancy nutrition supports mother and baby through each trimester; post-partum nutrition supports recovery, breastfeeding and a realistic return to health." },
+      { q: "Why are iron and calcium deficiencies so common in women?", a: "Menstrual loss, pregnancy, breastfeeding and often inadequate dietary intake combine to make iron, calcium and vitamin D deficiencies widespread among Indian women. A women's nutrition plan deliberately builds these nutrients in and corrects confirmed deficiencies." },
+      { q: "Is the consultation available online?", a: "Yes. Women's nutrition is managed online for clients across India and abroad — video assessment, written plan, weekly reviews." },
+    ],
+    relatedLinks: [
+      { label: "PCOS Diet Plan", href: "/pcos-diet-plan", note: "Managing PCOS through diet" },
+      { label: "Pregnancy Diet", href: "/pregnancy-diet.php", note: "Trimester-wise pregnancy nutrition" },
+      { label: "Weight Loss After Pregnancy", href: "/weight-loss-after-pregnancy", note: "Post-partum weight loss" },
+      { label: "Thyroid Diet Plan", href: "/thyroid-diet-plan", note: "Thyroid nutrition for women" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 13. WEIGHT LOSS AFTER PREGNANCY
+  "weight-loss-after-pregnancy": {
+    slug: "weight-loss-after-pregnancy",
+    path: "/weight-loss-after-pregnancy",
+    theme: "audience",
+    primaryKeyword: "weight loss after pregnancy",
+    eyebrow: "Post-partum, done patiently",
+    metaTitle: "Weight Loss After Pregnancy — Post-Partum Diet Plan | Go Moringa",
+    metaDescription:
+      "Weight loss after pregnancy, done safely — a post-partum diet plan that protects breastfeeding and recovery. By Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "Weight Loss After Pregnancy",
+    heroSubhead:
+      "Post-partum weight loss that protects your recovery and your milk supply — patient, nourishing, and built for a new mother's reality.",
+    heroImage: PHOTOS.moringaLeaves.url,
+    introLead:
+      "Losing weight after pregnancy is real, achievable and worth doing well — but it is not the place for a crash diet. The post-partum body is recovering, and for many mothers it is also producing milk. A weight loss after pregnancy plan has to respect both: nourishing enough to support healing and breastfeeding, structured enough to bring weight down steadily.",
+    sections: [
+      {
+        heading: "Why post-partum weight loss is different",
+        body: "After delivery the body is healing, hormones are resettling, sleep is broken, and — for many mothers — milk is being produced. A diet that ignores all of this fails fast or harms recovery. Post-partum weight loss must be patient and well-nourished by design, not aggressive.",
+      },
+      {
+        heading: "Losing weight while breastfeeding",
+        body: "Breastfeeding mothers can lose weight safely — but the plan must supply enough energy and nutrients to protect milk supply and the mother's own stores. The plan builds in adequate calories, protein, calcium, iron and fluids, and brings weight down through gentle, steady changes rather than sharp restriction.",
+      },
+      {
+        heading: "A realistic timeline",
+        body: "It took nine months to gain pregnancy weight; losing it well takes time too. A steady, sustainable rate — without compromising recovery or feeding — is the goal. Crash dieting in the post-partum period can reduce milk supply, slow healing and leave a tired mother more tired; the plan deliberately avoids it.",
+      },
+      {
+        heading: "Eating well on a new mother's schedule",
+        body: "Newborn care leaves little time and energy for elaborate cooking. The plan is built around simple, quick, nourishing Indian meals, sensible snacks within reach, and the reality of broken sleep and unpredictable days — so it can actually be followed.",
+      },
+      {
+        heading: "Rebuilding strength, not just losing weight",
+        body: "Post-partum nutrition is as much about rebuilding — iron stores often depleted by delivery, calcium, protein for tissue repair and strength — as about weight. The plan treats recovery and weight loss as one combined goal.",
+      },
+    ],
+    highlights: [
+      "Safe for breastfeeding — protects milk supply",
+      "Patient, steady pace — never a crash diet",
+      "Simple, quick Indian meals for a new mother",
+      "Rebuilds iron, calcium and protein stores",
+      "Available online — no clinic travel with a newborn",
+    ],
+    process: [
+      { title: "Assessment", body: "Your delivery, recovery, breastfeeding status, labs, current weight and routine are reviewed with care." },
+      { title: "Post-partum plan", body: "A nourishing Indian-meal plan that supports recovery and feeding while bringing weight down steadily." },
+      { title: "Gentle progress", body: "Follow the plan from home — simple meals, sensible snacks, no aggressive restriction." },
+      { title: "Weekly review", body: "The plan is revised as recovery progresses and, where relevant, as breastfeeding changes." },
+    ],
+    sampleDay: [
+      { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds, 2 walnuts and 2 dates" },
+      { time: "8:30 AM", meal: "Breakfast", items: "Vegetable poha or 2 moong dal cheela, or vegetable upma — with a bowl of curd" },
+      { time: "11:00 AM", meal: "Mid-morning", items: "A seasonal fruit and a glass of milk" },
+      { time: "1:30 PM", meal: "Lunch", items: "2 phulka, 1 bowl dal, 1 sabzi (include greens for iron), salad, curd" },
+      { time: "4:30 PM", meal: "Evening", items: "Buttermilk or milk; roasted chana, or a handful of nuts and seeds" },
+      { time: "8:00 PM", meal: "Dinner", items: "1 phulka with sabzi, or moong dal khichdi with vegetables and paneer" },
+    ],
+    sampleDayNote:
+      "Illustrative only, and oriented to a breastfeeding mother. Your plan is calibrated to your recovery, feeding status, labs and weight goal — energy needs of a breastfeeding mother are higher, and the chart will differ.",
+    faqs: [
+      { q: "When can I start a weight loss diet after delivery?", a: "Gentle, well-nourished weight management can usually begin once initial recovery is underway, but the timing depends on your delivery, recovery and breastfeeding — and is best confirmed with your doctor. The plan is always patient and nourishing rather than aggressive." },
+      { q: "Can I lose weight while breastfeeding?", a: "Yes, safely — but the plan must supply enough energy and nutrients to protect your milk supply and your own stores. Weight comes down through gentle, steady changes, never sharp restriction." },
+      { q: "Why should I avoid crash dieting after pregnancy?", a: "Crash dieting in the post-partum period can reduce milk supply, slow healing and leave an already-tired mother more depleted. Sustainable, nourishing weight loss protects both recovery and feeding." },
+      { q: "How long does it take to lose pregnancy weight?", a: "It took nine months to gain; losing it well takes time too. A steady, sustainable rate — without compromising recovery or breastfeeding — is the goal, rather than a fast drop." },
+      { q: "Is the post-partum plan available online?", a: "Yes — and most new mothers prefer it. Video assessment, written plan and weekly reviews mean no clinic travel with a newborn." },
+    ],
+    relatedLinks: [
+      { label: "Pregnancy Diet", href: "/pregnancy-diet.php", note: "Trimester-wise pregnancy nutrition" },
+      { label: "Dietitian for Women", href: "/dietitian-for-women", note: "Nutrition across every life stage" },
+      { label: "Weight Loss Diet Plan", href: "/weight-loss-diet-plan", note: "How a personalised plan is built" },
+      { label: "Diet for Breastfeeding", href: "/blog/diet-for-breastfeeding.php", note: "Nutrition while breastfeeding" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 14. CHILD NUTRITIONIST
+  "child-nutritionist": {
+    slug: "child-nutritionist",
+    path: "/child-nutritionist",
+    theme: "audience",
+    primaryKeyword: "child nutritionist",
+    eyebrow: "Healthy habits, started early",
+    metaTitle: "Child Nutritionist — Diet & Nutrition for Children | Go Moringa",
+    metaDescription:
+      "A child nutritionist for fussy eating, healthy growth, immunity and childhood weight concerns. Family-friendly Indian nutrition by Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "Child Nutritionist",
+    heroSubhead:
+      "Nutrition guidance for children — fussy eating, healthy growth, immunity and weight — built around the family kitchen, not around restriction.",
+    heroImage: PHOTOS.washedSpinach.url,
+    introLead:
+      "Children's nutrition is not adult dieting in a smaller portion. It is about building healthy eating habits that last a lifetime, supporting growth and immunity, and resolving the everyday struggles — the fussy eater, the constant junk-food pull, the child whose weight worries a parent. A child nutritionist's job is to do all of that gently, with the family, never through restriction that a child should not face.",
+    sections: [
+      {
+        heading: "The fussy eater",
+        body: "Few parenting struggles are as draining as a child who refuses to eat. The clinic's approach is practical — understanding the real causes, widening the accepted-food list gradually, presenting familiar Indian foods in ways children take to, and reducing mealtime conflict. The goal is a child who eats well, not a child who is forced.",
+      },
+      {
+        heading: "Growth, immunity and energy",
+        body: "Children need the right nutrients to grow, build immunity and stay energetic through school and play. Plans focus on adequate protein, iron, calcium, vitamins and whole foods — and on correcting deficiencies that show up as frequent illness, low energy or poor concentration.",
+      },
+      {
+        heading: "Childhood weight — handled with care",
+        body: "Childhood overweight is a genuine and growing concern, but it must be handled very differently from adult weight loss. Children are still growing, so the focus is on healthy habits, balanced family meals, reduced ultra-processed food and active routines — never on calorie-cutting or restrictive dieting. Where weight is a medical concern, the approach is coordinated with the child's paediatrician.",
+      },
+      {
+        heading: "Less junk, without a battle",
+        body: "Packaged snacks, sugary drinks, biscuits and fast food are everywhere in a child's world. The plan does not declare war on them — it crowds them out, with appealing Indian alternatives, sensible structure and habits the whole family shares, so the change does not single the child out.",
+      },
+      {
+        heading: "It works best as a family",
+        body: "A child eats what the household eats. Plans are built for the family table — so a healthy change is something the whole family does together, which is both kinder to the child and far more likely to last.",
+      },
+    ],
+    highlights: [
+      "Practical help for the fussy eater",
+      "Supports growth, immunity and energy",
+      "Childhood weight handled gently — never crash dieting",
+      "Crowds out junk food with Indian alternatives",
+      "Built for the whole family table",
+    ],
+    process: [
+      { title: "Assessment", body: "Your child's growth, eating patterns, health history and any concerns are discussed with the parent." },
+      { title: "Family-friendly plan", body: "A practical plan of Indian meals and habits built for the child within the family kitchen." },
+      { title: "Gentle change", body: "Habits shift gradually — the accepted-food list widens, junk is crowded out, mealtimes ease." },
+      { title: "Review together", body: "Progress is reviewed with the parent and the plan adjusted as the child grows and responds." },
+    ],
+    sampleDay: [
+      { time: "Morning", meal: "Breakfast", items: "Vegetable poha, idli, paratha with curd, or besan cheela — a protein-inclusive start" },
+      { time: "Mid-morning", meal: "School snack", items: "A fruit, or homemade snack — roasted chana, makhana, a small sandwich" },
+      { time: "Afternoon", meal: "Lunch", items: "Roti or rice, dal, a vegetable the child accepts, curd — balanced and familiar" },
+      { time: "Evening", meal: "After play", items: "Milk; a homemade snack rather than a packaged one" },
+      { time: "Night", meal: "Dinner", items: "A simple, balanced family meal — roti, sabzi, dal, or khichdi" },
+    ],
+    sampleDayNote:
+      "Illustrative only. A child's plan is built around their age, growth, food acceptance and any health concerns — and is never restrictive. Where weight or a medical issue is involved, the approach is coordinated with your paediatrician.",
+    faqs: [
+      { q: "When should I consult a child nutritionist?", a: "Common reasons are a persistently fussy eater, concerns about growth or low energy, frequent illness, an over-reliance on junk food, or a paediatrician flagging a weight concern. A nutritionist helps build healthy, lasting habits for the whole family." },
+      { q: "How do you help with a fussy eater?", a: "By understanding the real causes, widening the accepted-food list gradually, presenting familiar Indian foods in child-friendly ways, and reducing mealtime conflict — so the child eats well rather than being forced." },
+      { q: "Should an overweight child be put on a diet?", a: "Not in the adult sense. Children are still growing, so the focus is on healthy habits, balanced family meals, less ultra-processed food and active routines — never calorie-cutting or restrictive dieting. Where weight is a medical concern, the plan is coordinated with the child's paediatrician." },
+      { q: "Do both parents and child need to change how they eat?", a: "It works best that way. A child eats what the household eats, so plans are built for the family table — a healthy change the whole family makes together is kinder and far more likely to last." },
+      { q: "Is the consultation available online?", a: "Yes. Children's nutrition is guided online for families across India — a video discussion with the parent, a written plan, and reviews as the child grows." },
+    ],
+    relatedLinks: [
+      { label: "Dietitian for Women", href: "/dietitian-for-women", note: "Nutrition for mothers too" },
+      { label: "Healthy recipes", href: "/blog.php", note: "Family-friendly Indian recipes" },
+      { label: "Micronutrient Deficiency", href: "/treatment/micronutrient-deficiency.php", note: "Correcting nutrient gaps" },
+      { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "Family nutrition, online" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 15. DIET PLAN FOR SENIOR CITIZENS
+  "diet-plan-for-senior-citizens": {
+    slug: "diet-plan-for-senior-citizens",
+    path: "/diet-plan-for-senior-citizens",
+    theme: "audience",
+    primaryKeyword: "diet plan for senior citizens",
+    eyebrow: "Nutrition for the later years",
+    metaTitle: "Diet Plan for Senior Citizens — Nutrition for the Elderly | Go Moringa",
+    metaDescription:
+      "A diet plan for senior citizens — managing diabetes, blood pressure, joints and strength through gentle Indian nutrition. By Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "Diet Plan for Senior Citizens",
+    heroSubhead:
+      "Nutrition for the later years — protecting strength and bone, managing chronic conditions, and keeping food a pleasure, not a restriction.",
+    heroImage: PHOTOS.spiceBowls.url,
+    introLead:
+      "Good nutrition in the later years is quietly one of the most powerful things for quality of life. A diet plan for senior citizens has a particular job: to protect muscle and bone, manage the chronic conditions that often accumulate with age, work around reduced appetite and digestion, and do all of it while keeping food enjoyable. It is gentle, practical nutrition — not restriction.",
+    sections: [
+      {
+        heading: "Protecting muscle and strength",
+        body: "Muscle is lost steadily with age, and with it goes strength, balance and independence. Adequate, well-distributed protein — from dal, curd, paneer, eggs, milk and fish — is central to a senior nutrition plan, because protecting muscle protects mobility and reduces fall risk.",
+      },
+      {
+        heading: "Bones and joints",
+        body: "Bone density declines with age and joint problems become common. The plan builds in calcium, vitamin D and the nutrients bone needs, and supports joint health and a healthy weight — because every extra kilogram is extra load on ageing knees and hips.",
+      },
+      {
+        heading: "Managing several conditions at once",
+        body: "Many seniors live with more than one condition — diabetes, blood pressure, cholesterol, thyroid, kidney or heart issues together. A senior diet plan has to balance all of them in one coherent set of meals, in coordination with the treating doctors, rather than following a single-condition chart.",
+      },
+      {
+        heading: "Appetite, digestion and easy eating",
+        body: "Appetite often fades with age, digestion slows, and chewing can become harder. The plan adapts — smaller, more frequent meals, softer preparations where needed, easily digestible Indian foods — so that adequate nutrition is actually achievable, not a struggle.",
+      },
+      {
+        heading: "Keeping food a pleasure",
+        body: "Food is one of the daily pleasures of later life. A good senior nutrition plan never strips that away — it works with familiar, comforting Indian dishes, adjusted thoughtfully, so eating well stays something to look forward to.",
+      },
+    ],
+    highlights: [
+      "Protein to protect muscle, strength and balance",
+      "Calcium and nutrients for bones and joints",
+      "Balances several conditions in one plan",
+      "Adapts to appetite, digestion and easy chewing",
+      "Keeps familiar Indian food enjoyable",
+    ],
+    process: [
+      { title: "Assessment", body: "Health conditions, medication, labs, appetite, digestion and food preferences are reviewed in detail." },
+      { title: "Gentle plan", body: "An Indian-meal plan balancing every condition, protecting strength and bone, easy to eat." },
+      { title: "Comfortable eating", body: "Follow the plan from home — familiar foods, sensible portions, smaller frequent meals where helpful." },
+      { title: "Regular review", body: "The plan is revised as conditions, labs and appetite change, alongside the treating doctors." },
+    ],
+    sampleDay: [
+      { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds" },
+      { time: "8:30 AM", meal: "Breakfast", items: "Vegetable upma, soft poha, or daliya — with a bowl of curd or a glass of milk" },
+      { time: "11:00 AM", meal: "Mid-morning", items: "A soft seasonal fruit, or buttermilk" },
+      { time: "1:30 PM", meal: "Lunch", items: "1–2 soft phulka, 1 bowl well-cooked dal, 1 sabzi, curd — easy to chew and digest" },
+      { time: "4:30 PM", meal: "Evening", items: "Tea with milk; a light, soft snack" },
+      { time: "7:30 PM", meal: "Dinner", items: "Light and early — moong dal khichdi with vegetables, or 1 phulka with sabzi" },
+    ],
+    sampleDayNote:
+      "Illustrative only. A senior nutrition plan is calibrated to the individual's conditions, medication, labs, appetite and digestion — and coordinated with their doctors. The chart will differ.",
+    faqs: [
+      { q: "Why do senior citizens need a special diet plan?", a: "Nutritional needs change with age — muscle and bone need protecting, appetite and digestion change, and chronic conditions often accumulate. A senior diet plan addresses all of this gently, in coordination with the treating doctors." },
+      { q: "How much protein do elderly people need?", a: "Older adults often need more attention to protein, not less — muscle is lost steadily with age, and adequate, well-distributed protein from dal, curd, paneer, eggs, milk and fish helps protect strength, balance and independence. The exact target is set individually." },
+      { q: "Can one diet plan manage several conditions together?", a: "Yes — and it must. Many seniors live with diabetes, blood pressure, cholesterol or other conditions at once. A senior diet plan balances all of them in one coherent set of meals, coordinated with the treating doctors." },
+      { q: "What if appetite or digestion has become poor?", a: "The plan adapts — smaller, more frequent meals, softer preparations, easily digestible Indian foods — so that adequate nutrition is genuinely achievable rather than a daily struggle." },
+      { q: "Is the senior diet plan available online?", a: "Yes. Many families arrange an online consultation for an elderly parent — a video assessment, a written plan, and regular reviews, with no need for clinic travel." },
+    ],
+    relatedLinks: [
+      { label: "Therapeutic Diet programme", href: "/therapeutic-diet.php", note: "Diets for chronic conditions" },
+      { label: "Diabetes Diet Plan", href: "/diabetes-diet-plan", note: "A common condition in later years" },
+      { label: "Osteoporosis treatment", href: "/treatment/osteoporosis.php", note: "Bone-health nutrition" },
+      { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "Arrange care for a parent, online" },
+    ],
+  },
+
+  // ─────────────────────────────────────────── 16. CORPORATE WELLNESS PROGRAM
+  "corporate-wellness-program": {
+    slug: "corporate-wellness-program",
+    path: "/corporate-wellness-program",
+    theme: "audience",
+    primaryKeyword: "corporate wellness program",
+    eyebrow: "Workplace nutrition that works",
+    metaTitle: "Corporate Wellness Program — Workplace Nutrition | Go Moringa",
+    metaDescription:
+      "A corporate wellness program built on real clinical nutrition — workshops, screenings and personalised plans for employees. By Dt. Priyatama Srivastava, Gurgaon & online.",
+    h1: "Corporate Wellness Program",
+    heroSubhead:
+      "Nutrition wellness for your workforce — practical workshops, health screenings and personalised plans, delivered on-site in Gurgaon or online nationwide.",
+    heroImage: REAL.teamAtWork,
+    introLead:
+      "The modern Indian workplace quietly manufactures lifestyle disease — sedentary hours, food-app lunches, skipped breakfasts, vending-machine snacks, stress eating. A corporate wellness program built on real clinical nutrition addresses that directly: better-informed employees, healthier daily choices, and a workforce with more energy and fewer sick days. Go Moringa delivers wellness programs grounded in 20 years of clinical practice — not generic motivational sessions.",
+    sections: [
+      {
+        heading: "Why workplace nutrition matters",
+        body: "Lifestyle-disease markers — blood sugar, blood pressure, cholesterol, weight — now creep up in employees from their early 30s. The cost shows up as fatigue, lower productivity, absenteeism and rising health-insurance claims. Nutrition is one of the few wellness levers that is both low-cost and genuinely effective.",
+      },
+      {
+        heading: "Nutrition workshops and talks",
+        body: "Practical, engaging sessions for employees — on weight management, eating well on a busy work schedule, managing diabetes and hypertension risk, food-app and canteen choices, and stress eating. Real, usable guidance from a clinical dietitian, not slogans.",
+      },
+      {
+        heading: "Health screenings and assessments",
+        body: "On-site or coordinated health and nutritional screenings — identifying employees with weight, blood-sugar, blood-pressure or deficiency concerns early, when dietary intervention works best. Aggregate, anonymised insight helps an organisation understand its workforce's health.",
+      },
+      {
+        heading: "Personalised plans for employees",
+        body: "Beyond group sessions, individual employees can receive personalised diet plans — the same clinical assessment, written plan and follow-up the clinic provides every client. Programs can be structured as a company benefit, in-clinic or online.",
+      },
+      {
+        heading: "Flexible delivery, NCR and nationwide",
+        body: "Programs are delivered on-site for Gurgaon and Delhi NCR offices, and fully online for distributed teams and offices anywhere in India. Scope and format are tailored to the organisation — a one-off workshop series, or an ongoing wellness partnership.",
+      },
+    ],
+    highlights: [
+      "Grounded in 20 years of clinical nutrition",
+      "Workshops, screenings and 1:1 employee plans",
+      "Targets the lifestyle-disease curve early",
+      "On-site in Gurgaon NCR, or online nationwide",
+      "Scoped and tailored to your organisation",
+    ],
+    process: [
+      { title: "Discuss your goals", body: "A conversation about your workforce, health concerns, and what the program should achieve." },
+      { title: "Tailored proposal", body: "A program scoped to your organisation — workshops, screenings, employee plans, or a combination." },
+      { title: "Delivery", body: "Sessions and screenings run on-site or online; employees who opt in receive personalised plans." },
+      { title: "Review and continue", body: "Outcomes are reviewed, and the program can continue as an ongoing wellness partnership." },
+    ],
+    faqs: [
+      { q: "What does a corporate wellness program include?", a: "It can include nutrition workshops and talks, on-site or coordinated health screenings, and personalised diet plans for individual employees. The exact scope is tailored to the organisation — from a one-off workshop series to an ongoing partnership." },
+      { q: "Can the program be delivered for offices outside Gurgaon?", a: "Yes. Programs run on-site for Gurgaon and Delhi NCR offices and fully online for distributed teams or offices anywhere in India — workshops by video, screenings coordinated, employee plans delivered online." },
+      { q: "How is this different from a generic wellness session?", a: "It is built on 20 years of clinical nutrition practice. Workshops give real, usable guidance; screenings identify genuine risk early; and employees who opt in get the same clinical-grade personalised plans the clinic provides every client — not slogans." },
+      { q: "How do we set up a program for our company?", a: "Contact the clinic to discuss your workforce and goals. A program is then scoped and proposed — tailored in format, scale and delivery to your organisation." },
+      { q: "Can individual employees get personalised diet plans?", a: "Yes. Beyond group sessions, employees can receive individual clinical assessments, written plans and follow-ups — structured as a company benefit, in-clinic or online." },
+    ],
+    relatedLinks: [
+      { label: "About Go Moringa", href: "/about.php", note: "The clinic and its approach" },
+      { label: "Dt. Priyatama Srivastava", href: "/priyatama-srivastava.php", note: "Full practice profile" },
+      { label: "Online Dietitian Consultation", href: "/online-dietitian-consultation", note: "How employee plans are delivered" },
+      { label: "Contact", href: "/contact.php", note: "Discuss a program for your company" },
     ],
   },
 };

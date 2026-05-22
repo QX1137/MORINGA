@@ -440,9 +440,12 @@ body {
   border: 1px solid rgba(22, 62, 46, 0.15);
 }
 
-/* Mid-article photo break — magazine-spread treatment with editorial caption */
+/* Mid-article photo break — magazine-spread treatment with editorial caption.
+   No horizontal bleed on mobile (the article column already runs to the screen
+   edge — a negative margin there overflows the viewport). The bleed returns
+   from md: up, where the column has page margins to bleed into. */
 .article-prose .article-inline-figure {
-  margin: 3.5rem -1rem;
+  margin: 3.5rem 0;
   border-top: 1px solid rgba(216, 200, 168, 0.6);
   border-bottom: 1px solid rgba(216, 200, 168, 0.6);
   padding: 1.5rem 0;

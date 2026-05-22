@@ -50,8 +50,11 @@ export function TrustStrip({ variant = "default" }: Props) {
             sub={`Verified on Practo & Justdial`}
             href={REVIEWS.practo.url}
           />
-          {/* 4. ISO certification with a real thumbnail of the framed cert */}
-          <article className="px-5 py-5 md:py-3 flex items-start gap-4">
+          {/* 4. ISO certification with a real thumbnail of the framed cert.
+              Mobile: image stacks ABOVE the text so the cert id has the full
+              tile width (a side-by-side layout left only ~44px for text and
+              overflowed the viewport). md+: image sits beside the text. */}
+          <article className="px-5 py-5 md:py-3 flex flex-col md:flex-row md:items-start gap-3 md:gap-4">
             <a
               href={REAL.isoCertificate}
               target="_blank"
@@ -72,7 +75,9 @@ export function TrustStrip({ variant = "default" }: Props) {
               <div className="font-display text-lg md:text-xl font-medium text-ink leading-tight mt-1">
                 Certified clinic
               </div>
-              <div className="text-eyebrow text-warm-700 mt-1.5 font-mono leading-snug">
+              {/* Plain mono (no wide eyebrow tracking) so the cert id stays
+                  compact and can wrap at the spaces if a screen is very narrow. */}
+              <div className="text-[10px] text-warm-700 mt-1.5 font-mono leading-snug break-words">
                 Cert · 22ZKAK10019Q
               </div>
             </div>

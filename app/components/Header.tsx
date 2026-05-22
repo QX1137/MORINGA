@@ -17,11 +17,14 @@ export function Header() {
     <header className="bg-paper border-b border-[#d8c8a8]/60">
       {/* Editorial top band — provenance metadata in mono */}
       <div className="bg-ink text-paper">
-        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-2 flex items-center justify-between flex-wrap gap-2">
-          <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] font-mono text-paper/85">
-            <span>Est. 2005</span>
-            <span className="opacity-50">·</span>
-            <span>Sector 49, Gurugram</span>
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-2 flex items-center justify-between gap-3">
+          {/* Provenance metadata. On small phones the location + live status
+              are hidden so the band stays a single tidy line (Est. 2005 + phone);
+              they reappear from sm: upward where there is room. */}
+          <div className="flex items-center gap-2.5 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-mono text-paper/85 min-w-0">
+            <span className="shrink-0">Est. 2005</span>
+            <span className="opacity-50 hidden sm:inline">·</span>
+            <span className="hidden sm:inline">Sector 49, Gurugram</span>
             <span className="opacity-50 hidden md:inline">·</span>
             <span className="hidden md:inline text-paper">
               {/* Live clinic status — replaces static hours text */}

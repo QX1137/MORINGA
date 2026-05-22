@@ -476,11 +476,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-5">
             <figure>
-              {/* Primary clinic portrait. The side-profile priyatamaWithLogo shot
-                  was weak (face not visible) — replaced with the strong portrait. */}
-              <PersonBadge variant="hero" src={REAL.priyatamaPortrait} alt={`${PERSON.name} — Clinical Dietitian, Go Moringa Diet Clinic, Sector 49 Gurugram`} />
+              {/* At-desk working portrait (teamAtWork) — a deliberately different
+                  shot from the hero portrait so the same face isn't repeated
+                  identically twice on the homepage. */}
+              <PersonBadge variant="hero" src={REAL.teamAtWork} alt={`${PERSON.name} at work in the Go Moringa clinic, Sector 49 Gurugram`} />
               <figcaption className="mt-3 text-eyebrow text-warm-500">
-                Photographed at the clinic · Sector 49, Gurugram
+                At the clinic desk · Sector 49, Gurugram
               </figcaption>
             </figure>
           </div>

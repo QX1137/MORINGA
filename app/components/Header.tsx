@@ -85,19 +85,9 @@ export function Header() {
           <span aria-hidden="true">→</span>
         </Link>
 
-        {/* Mobile: phone quick-dial + hamburger menu */}
-        <div className="lg:hidden flex items-center gap-1">
-          <a
-            href={phoneUrl()}
-            className="inline-flex items-center justify-center size-11 text-ink"
-            aria-label={`Call ${CONTACT.phone}`}
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="size-5" aria-hidden="true">
-              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.05l-2.21 2.16z" />
-            </svg>
-          </a>
-          <MobileNav />
-        </div>
+        {/* Mobile: the MENU button (phone is already in the top band,
+            the floating bar, and inside the menu itself). */}
+        <MobileNav />
       </div>
     </header>
   );

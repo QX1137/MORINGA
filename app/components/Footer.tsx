@@ -6,8 +6,8 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-[#d8c8a8]/60 bg-paper-dark">
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-14 grid gap-10 md:grid-cols-12">
-        {/* Wordmark + address */}
-        <div className="md:col-span-5">
+        {/* Wordmark + address + verified-on */}
+        <div className="md:col-span-4">
           <Link href="/" className="inline-flex items-center gap-3" aria-label="Go Moringa Diet Clinic — home">
             <Image
               src="/go-moringa-leaves.png"
@@ -37,6 +37,30 @@ export function Footer() {
             <a href={`tel:${CONTACT.phoneTel}`} className="block text-ink hover:text-clay transition">{CONTACT.phone}</a>
             <a href={`mailto:${CONTACT.email}`} className="block text-ink hover:text-clay transition">{CONTACT.email}</a>
           </div>
+          <h3 className="text-eyebrow text-clay mt-7 mb-3">Verified on</h3>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href={REVIEWS.practo.url} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">
+              Practo <span className="font-mono text-xs">{REVIEWS.practo.rating}★</span>
+            </a>
+            <a href={REVIEWS.justdial.url} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">
+              Justdial <span className="font-mono text-xs">{REVIEWS.justdial.rating}★</span>
+            </a>
+            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">Instagram</a>
+            <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">YouTube</a>
+          </div>
+        </div>
+
+        {/* Diet Plans column — keyword landing pages */}
+        <div className="md:col-span-2">
+          <h3 className="text-eyebrow text-clay mb-4">Diet Plans</h3>
+          <ul className="space-y-2.5 text-sm">
+            <li><Link href="/online-dietitian-consultation" className="text-ink/85 hover:text-clay transition">Online Consultation</Link></li>
+            <li><Link href="/weight-loss-diet-plan" className="text-ink/85 hover:text-clay transition">Weight Loss Diet Plan</Link></li>
+            <li><Link href="/indian-diet-plan-for-weight-loss" className="text-ink/85 hover:text-clay transition">Indian Diet Plan</Link></li>
+            <li><Link href="/pcos-diet-plan" className="text-ink/85 hover:text-clay transition">PCOS Diet Plan</Link></li>
+            <li><Link href="/diabetes-diet-plan" className="text-ink/85 hover:text-clay transition">Diabetes Diet Plan</Link></li>
+            <li><Link href="/thyroid-diet-plan" className="text-ink/85 hover:text-clay transition">Thyroid Diet Plan</Link></li>
+          </ul>
         </div>
 
         {/* Services column */}
@@ -63,38 +87,19 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Locations + social */}
-        <div className="md:col-span-3">
-          <h3 className="text-eyebrow text-clay mb-4">We see clients from</h3>
+        {/* Locations column */}
+        <div className="md:col-span-2">
+          <h3 className="text-eyebrow text-clay mb-4">Find us</h3>
           <ul className="space-y-2.5 text-sm">
-            <li><Link href="/dietician-in-gurgaon.php" className="text-ink/85 hover:text-clay transition">Gurgaon</Link></li>
+            <li><Link href="/dietician-in-gurgaon.php" className="text-ink/85 hover:text-clay transition">Dietitian in Gurgaon</Link></li>
+            <li><Link href="/nutritionist-in-gurgaon" className="text-ink/85 hover:text-clay transition">Nutritionist · Gurgaon</Link></li>
+            <li><Link href="/diet-clinic-in-gurgaon" className="text-ink/85 hover:text-clay transition">Diet Clinic · Gurgaon</Link></li>
+            <li><Link href="/dietitian-in-dlf-gurgaon" className="text-ink/85 hover:text-clay transition">DLF Phase 1–5</Link></li>
+            <li><Link href="/dietitian-in-sohna-road" className="text-ink/85 hover:text-clay transition">Sohna Road</Link></li>
+            <li><Link href="/dietitian-in-sushant-lok" className="text-ink/85 hover:text-clay transition">Sushant Lok</Link></li>
             <li><Link href="/dietician-in-delhi.php" className="text-ink/85 hover:text-clay transition">Delhi</Link></li>
             <li><Link href="/dietician-in-noida.php" className="text-ink/85 hover:text-clay transition">Noida</Link></li>
             <li><Link href="/dietitian-in-faridabad.php" className="text-ink/85 hover:text-clay transition">Faridabad</Link></li>
-            <li className="text-ink/60 italic text-xs pt-1">+ pan-India online</li>
-          </ul>
-          <h3 className="text-eyebrow text-clay mt-7 mb-4">Verified on</h3>
-          <ul className="space-y-2.5 text-sm">
-            <li>
-              <a href={REVIEWS.practo.url} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">
-                Practo · <span className="font-mono text-xs">{REVIEWS.practo.rating}★ ({REVIEWS.practo.count})</span>
-              </a>
-            </li>
-            <li>
-              <a href={REVIEWS.justdial.url} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">
-                Justdial · <span className="font-mono text-xs">{REVIEWS.justdial.rating}★ ({REVIEWS.justdial.count})</span>
-              </a>
-            </li>
-            <li>
-              <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" className="text-ink/85 hover:text-clay transition">
-                YouTube
-              </a>
-            </li>
           </ul>
         </div>
       </div>

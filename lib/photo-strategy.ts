@@ -111,6 +111,12 @@ export const LOCATION_HEROES: Record<string, string> = {
   "dietician-in-delhi": PHOTOS.spiceBowls.url,
   "dietician-in-noida": PHOTOS.indianSpicesWhite.url,
   "dietitian-in-faridabad": PHOTOS.freshGreens.url,
+  // New hyperlocal / keyword location pages (2026-05-22).
+  "nutritionist-in-gurgaon": REAL.clinicReception,
+  "diet-clinic-in-gurgaon": REAL.clinicWaiting,
+  "dietitian-in-dlf-gurgaon": PHOTOS.freshGreens.url,
+  "dietitian-in-sohna-road": PHOTOS.spiceBowls.url,
+  "dietitian-in-sushant-lok": PHOTOS.indianSpicesWhite.url,
 };
 
 // ─────────── Blog hero image mapping (per-slug, with topical fallback) ───────────

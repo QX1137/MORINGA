@@ -5,6 +5,7 @@ import { LOCATION_LIST } from "@/lib/locations";
 import { TREATMENT_LIST } from "@/lib/treatments";
 import { RECIPE_LIST } from "@/lib/recipes";
 import { BLOGS } from "@/lib/blogs";
+import { LANDING_PAGE_LIST } from "@/lib/landing-pages";
 
 const today = new Date();
 
@@ -54,7 +55,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
-  return [...staticPages, ...services, ...locations, ...treatments, ...recipes, ...blogs].map(
-    (entry) => ({ lastModified: today, changeFrequency: "monthly" as const, ...entry })
-  );
+  // Keyword landing pages (online consultation, weight-loss & condition
+  // diet-plans) — high commercial intent, so a high crawl priority.
+  const landingPages = LANDING_PAGE_LIST.map((p) => ({
+    url: url(p.path),
+    priority: 0.9,
+    changeFrequency: "monthly" as const,
+  }));
+
+  return [
+    ...staticPages,
+    ...services,
+    ...locations,
+    ...landingPages,
+    ...treatments,
+    ...recipes,
+    ...blogs,
+  ].map((entry) => ({ lastModified: today, changeFrequency: "monthly" as const, ...entry }));
 }

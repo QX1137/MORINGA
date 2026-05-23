@@ -232,7 +232,7 @@ export default function HomePage() {
             {/* Marginal annotation */}
             <aside className="mt-8 border-l-2 border-clay pl-5 max-w-md">
               <p className="text-sm text-warm-700 italic font-display leading-relaxed">
-                We have written approximately 22,000 plans across two decades. Each one is a single document. None of them are copy-pasted.
+                Ten thousand clients across two decades — each one a single document, calibrated to one body. None of them copy-pasted, none of them recycled.
               </p>
               <p className="mt-2 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
                 Note from the clinic

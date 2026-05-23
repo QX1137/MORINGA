@@ -87,7 +87,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     introLead: "Delhi residents have always made up a significant share of Go Moringa's client base — South Delhi (GK, Hauz Khas, Vasant Vihar, Saket), West Delhi (Punjabi Bagh, Rajouri Garden), East Delhi (Mayur Vihar, Patparganj), and Central Delhi (Karol Bagh, Connaught Place). Dt. Priyatama Srivastava consults Delhi clients via online video call as well as from her Sector 49 Gurugram clinic — a 30-45 minute drive from most South Delhi locations.",
     whyPickUs: [
       { title: "Online consultation, same clinical depth", body: "Delhi clients largely consult online — video call for the initial assessment, WhatsApp + plan PDFs throughout the program. The depth of assessment, customisation of the plan, and follow-up frequency are identical to in-clinic care. Many of our 10,000+ clients have never visited the clinic." },
-      { title: "Coordinated with Delhi physicians", body: "We routinely coordinate with cardiologists, endocrinologists, gynaecologists and obstetricians across Apollo, Max, BLK, Fortis and AIIMS hospital systems. If you're already under specialist care, we work alongside them." },
+      { title: "Coordinated with Delhi physicians", body: "We routinely work alongside cardiologists, endocrinologists, gynaecologists and obstetricians across Delhi NCR. If you're already under specialist care, the diet plan runs alongside it — never instead of it." },
       { title: "Delhi-specific dietary realities", body: "Delhi food culture has its own patterns — heavy wedding seasons, festival eating, ghee-rich Punjabi staples, butter chicken Sundays, paneer-heavy vegetarian diets. Our plans don't ask you to abandon these — they re-engineer how you eat them." },
       { title: "20 years + 10,000 clients", body: "Two decades of clinical practice with cross-NCR clientele. The track record is verifiable on Practo (5.0/279) and Justdial (4.9/699)." },
     ],
@@ -129,7 +129,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     whyPickUs: [
       { title: "Online consultation made for distance", body: "Noida to Sector 49 Gurugram is approximately 60-75 minutes by road via DND or Yamuna Expressway. Most Noida clients use online consultation — the clinical depth is identical to in-person, and weekly follow-ups happen via WhatsApp." },
       { title: "Tech professional + corporate workforce", body: "Noida's corporate clients face the same patterns as Gurgaon's — long sedentary hours, late dinners, irregular meal timing, lifestyle disease creep in the 30s. Our plans accommodate these realities." },
-      { title: "Coordination with Noida physicians", body: "We coordinate with specialists across Noida and Greater Noida — Fortis, Max, Jaypee, Kailash — when clients are under their care." },
+      { title: "Coordination with Noida physicians", body: "We coordinate with specialists across Noida and Greater Noida when clients are already under their care, so the diet plan aligns with the rest of the medical picture." },
       { title: "20 years + 10,000 clients across NCR", body: "Verifiable on Practo (5.0/279) and Justdial (4.9/699). Tested track record across all four NCR pockets." },
     ],
     localContext: [
@@ -419,7 +419,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     whyPickUs: [
       { title: "One practice for the entire NCR", body: "NCR clients do not need to find a separate dietitian for each city. Go Moringa serves the whole region from its Sector 49 Gurgaon clinic — and through online consultation that reaches every NCR pocket equally. Gurgaon, South and West Delhi, Noida and Greater Noida, Faridabad, Ghaziabad: one practice, one standard." },
       { title: "20 years reading the NCR health curve", body: "The NCR lifestyle-disease pattern is specific — corporate hours, long commutes, food-app dinners, festival and wedding seasons, lifestyle markers creeping up from the mid-30s. Two decades of NCR-specific practice means the plans are calibrated to exactly this population." },
-      { title: "Coordinated with NCR's hospital systems", body: "We routinely work alongside specialists across Apollo, Max, Fortis, BLK, Medanta and AIIMS — cardiologists, endocrinologists, gynaecologists and obstetricians. If you are under specialist care anywhere in NCR, the diet plan runs alongside it." },
+      { title: "Coordinated with NCR's hospital systems", body: "We routinely work alongside cardiologists, endocrinologists, gynaecologists and obstetricians across the major NCR hospital networks. If you are under specialist care anywhere in NCR, the diet plan runs alongside it — never instead of it." },
       { title: "5.0 Practo · 4.9 Justdial · ISO-certified", body: "279+ reviews on Practo at 5.0, 699+ on Justdial at 4.9 — accumulated across NCR over years of results. The Sector 49 clinic holds an ISO 9001:2015 quality-management certification." },
     ],
     localContext: [

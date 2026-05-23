@@ -32,44 +32,56 @@ type Field = {
   placeholder?: boolean;
 };
 
+// ─── PROVENANCE ───────────────────────────────────────────────────────
+// Every line below is sourced from the live gomoringa.in copy preserved
+// in /backup/html/. Specific quoted phrases are noted inline. The original
+// site does NOT list a specific degree, institution, IDA membership
+// number, or hospital affiliations — so this Dossier sticks to claims
+// the live site already publicly makes. When the clinic supplies the
+// specific degree / institution / registration numbers, swap them in.
+// ─────────────────────────────────────────────────────────────────────
 const FIELDS: Field[] = [
-  // TODO-CRED: Replace with her actual degree(s), institution, year(s).
+  // Source: index.html — "Dt. Priyatama Srivastava, a certified dietician
+  // based in Gurgaon" + about.php — "well qualified and experienced
+  // Nutritionist and Dietitian in Gurgaon"
   {
-    eyebrow: "Education",
-    primary: "Post-graduate · Foods & Nutrition",
-    secondary: "Institution + year to be confirmed",
-    placeholder: true,
+    eyebrow: "Practice",
+    primary: "Qualified clinical dietitian & nutritionist",
+    secondary: "Based in Gurgaon · serving Delhi NCR and online worldwide",
   },
-  // TODO-CRED: Confirm IDA membership number / RD registration body.
+  // Source: index.html — "dieticians certified by esteemed organizations
+  // and dietetic associations in India" + "a registered dietitian"
   {
     eyebrow: "Registrations",
-    primary: "Indian Dietetic Association",
-    secondary: "Membership number to be confirmed",
-    placeholder: true,
+    primary: "Registered & certified dietitian",
+    secondary: "Certified by national dietetic associations in India",
   },
-  // Real — verified from existing site copy.
+  // Source: index.html meta — "20 years of experience" + priyatama-srivastava.php —
+  // "more than 10,000 clients"
   {
     eyebrow: "Clinical experience",
     primary: `${PERSON.yearsExperience} years · in practice since 2005`,
-    secondary: `${PERSON.clientCount} clients · 22,000+ written plans`,
+    secondary: `${PERSON.clientCount} clients across India and worldwide`,
   },
-  // Real — matches the treatment slugs on the site.
+  // Source: priyatama-srivastava.php — "Weight Loss Diet programs, Weight gain,
+  // Pregnancy diet, Therapeutic Diets for Hypertension, Diabetes, Obesity, PCOD,
+  // Depression, Thyroid"
   {
     eyebrow: "Areas of practice",
     primary: "Weight · PCOS · Diabetes · Thyroid",
-    secondary: "Pregnancy · Heart · Fatty liver · Therapeutic",
+    secondary: "Pregnancy · Hypertension · Therapeutic · Depression",
   },
-  // Real — affiliations are documented on the About + Priyatama pages.
+  // Source: lib/site.ts — the registered clinic address.
   {
-    eyebrow: "Hospital coordination",
-    primary: "Apollo · Max · BLK · Fortis · Medanta",
-    secondary: "Multi-specialty referrals across Delhi NCR",
+    eyebrow: "Clinic",
+    primary: "Sector 49, Gurugram · Haryana",
+    secondary: "Mon–Sat, 10:00 – 19:00 · in-person & video consult",
   },
-  // Real — verifiable third-party credentials.
+  // Source: REAL.isoCertificate (Cert 22ZKAK10019Q) + REVIEWS in lib/site.ts.
   {
     eyebrow: "Verifiable credentials",
     primary: "ISO 9001:2015 certified",
-    secondary: `Practo ${REVIEWS.practo.rating}★ · Justdial ${REVIEWS.justdial.rating}★`,
+    secondary: `Practo ${REVIEWS.practo.rating}★ · Justdial ${REVIEWS.justdial.rating}★ · Lybrate listed`,
   },
 ];
 

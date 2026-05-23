@@ -134,7 +134,7 @@ export default function PriyatamaPage() {
               Beyond the dietary protocols, Priyatama has built a reputation for personal connection. Many of her clients return for follow-up programs years later, refer their family, and stay in touch through life transitions. Her warm, plain-speaking style has made her, in her own words, &ldquo;more friends than clients.&rdquo;
             </p>
             <p>
-              The services she offers go well beyond diet charts. She regularly advises and guides her clients on lifestyle adjustments, exercise integration, sleep, stress management, and the long-term sustainability of healthy eating habits. She coordinates with cardiologists, endocrinologists, gynaecologists and obstetricians across the Delhi NCR region — particularly Apollo, Max, BLK, Fortis and Medanta hospital systems — when client conditions require multi-specialist coordination.
+              The services she offers go well beyond diet charts. She regularly advises and guides her clients on lifestyle adjustments, exercise integration, sleep, stress management, and the long-term sustainability of healthy eating habits. She works alongside clients&rsquo; existing physicians — cardiologists, endocrinologists, gynaecologists and obstetricians across the Delhi NCR region — when a condition requires multi-specialist coordination, so the diet plan supports the medical care rather than competing with it.
             </p>
           </div>
 

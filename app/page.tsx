@@ -9,6 +9,7 @@ import { PersonBadge } from "./components/PersonBadge";
 import { TrustStrip } from "./components/TrustStrip";
 import { Marquee } from "./components/Marquee";
 import { HowItWorks } from "./components/HowItWorks";
+import { Dossier } from "./components/Dossier";
 import { REAL } from "@/lib/photo-strategy";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
@@ -538,6 +539,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═════════════════════════════════════════════════ DOSSIER (credentials grid)
+          Right after About — person → paper trail → results is the trust ladder
+          that E-E-A-T scoring (and a wary first-time visitor) reads correctly. */}
+      <Dossier />
+
       {/* ═════════════════════════════════════════════════ TESTIMONIALS */}
       <section className="bg-paper-dark py-14 md:py-24 border-y border-[#d8c8a8]/60">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -580,8 +586,10 @@ export default function HomePage() {
       </section>
 
       {/* ═════════════════════════════════════════════════ FAQ */}
-      <section className="bg-paper py-14 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <section className="bg-paper bg-paper-rules py-14 md:py-24 relative overflow-hidden">
+        {/* Faint stamped leaf — visual signature shared with the Dossier */}
+        <MoringaMark className="absolute -bottom-10 -left-8 md:-bottom-14 md:-left-12 size-44 md:size-60 text-clay/[0.05] pointer-events-none" />
+        <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
           <header className="mb-12 text-center">
             <div className="text-eyebrow text-clay mb-4">Before you book</div>
             <h2 className="font-display font-medium text-ink leading-[1.05] tracking-[-0.02em]" style={{ fontSize: "clamp(2rem, 4.5vw, 3.5rem)" }}>
@@ -611,6 +619,10 @@ export default function HomePage() {
       {/* ═════════════════════════════════════════════════ CLOSING CTA */}
       <section className="bg-ink text-paper py-14 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, #C9A961 0%, transparent 40%)" }} aria-hidden="true" />
+        {/* Faint moringa-leaf watermarks — the page closes with the brand mark,
+            tying the bottom of the page back to the logo at the top. */}
+        <MoringaMark className="absolute -top-8 -left-10 md:-top-12 md:-left-16 size-48 md:size-72 text-brass/[0.07] pointer-events-none" />
+        <MoringaMark className="absolute -bottom-12 -right-10 md:-bottom-16 md:-right-20 size-52 md:size-80 text-brass/[0.06] pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <MoringaMark className="size-12 text-clay mx-auto mb-6" />
           <div className="text-eyebrow text-clay mb-5">Begin</div>

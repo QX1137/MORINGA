@@ -42,6 +42,10 @@ export type LandingPage = {
   /** Sample Indian-meal day — present on diet-plan/chart-intent pages. */
   sampleDay?: SampleMeal[];
   sampleDayNote?: string;
+  /** Optional labelled infographic shown mid-article (e.g. the Weight Loss
+      Thali diagram). Rendered uncropped at its natural aspect ratio, so
+      `ratio` must match the asset (e.g. "1290/1219"). */
+  inlineFigure?: { src: string; eyebrow: string; alt: string; caption: string; ratio: string };
   faqs: FAQ[];
   relatedLinks: RelatedLink[];
 };
@@ -117,6 +121,13 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
   // ─────────────────────────────────────────── 2. WEIGHT LOSS DIET PLAN
   "weight-loss-diet-plan": {
     slug: "weight-loss-diet-plan",
+    inlineFigure: {
+      src: REAL.weightLossThali,
+      eyebrow: "What a balanced plate holds",
+      alt: "Go Moringa weight-loss thali — a balanced Indian plate: protein-rich dal, fibre-rich salad, sprouts, low-calorie sabzi, multigrain roti and gut-friendly curd, each component labelled",
+      caption: "A Go Moringa weight-loss thali — balanced, not restrictive",
+      ratio: "1290/1219",
+    },
     path: "/weight-loss-diet-plan",
     theme: "weight-loss",
     primaryKeyword: "weight loss diet plan",
@@ -193,6 +204,13 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
   // ─────────────────────────────────────────── 3. INDIAN DIET PLAN FOR WEIGHT LOSS
   "indian-diet-plan-for-weight-loss": {
     slug: "indian-diet-plan-for-weight-loss",
+    inlineFigure: {
+      src: REAL.weightLossThali,
+      eyebrow: "What a balanced plate holds",
+      alt: "Go Moringa weight-loss thali — a balanced Indian plate: protein-rich dal, fibre-rich salad, sprouts, low-calorie sabzi, multigrain roti and gut-friendly curd, each component labelled",
+      caption: "A Go Moringa weight-loss thali — balanced, not restrictive",
+      ratio: "1290/1219",
+    },
     path: "/indian-diet-plan-for-weight-loss",
     theme: "weight-loss",
     primaryKeyword: "indian diet plan for weight loss",
@@ -945,6 +963,13 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
   // ─────────────────────────────────────────── 13. WEIGHT LOSS AFTER PREGNANCY
   "weight-loss-after-pregnancy": {
     slug: "weight-loss-after-pregnancy",
+    inlineFigure: {
+      src: REAL.weightLossThali,
+      eyebrow: "What a balanced plate holds",
+      alt: "Go Moringa weight-loss thali — a balanced Indian plate: protein-rich dal, fibre-rich salad, sprouts, low-calorie sabzi, multigrain roti and gut-friendly curd, each component labelled",
+      caption: "A Go Moringa weight-loss thali — balanced, not restrictive",
+      ratio: "1290/1219",
+    },
     path: "/weight-loss-after-pregnancy",
     theme: "audience",
     primaryKeyword: "weight loss after pregnancy",

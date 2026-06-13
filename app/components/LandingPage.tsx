@@ -174,6 +174,38 @@ export function LandingPage({ page }: { page: LandingPageData }) {
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════ INLINE FIGURE (e.g. Weight Loss Thali)
+          Optional labelled infographic. Shown at its natural aspect ratio so
+          the edge labels are never cropped; no "Photograph:" credit (it's a
+          diagram, not a stock photo). */}
+      {page.inlineFigure && (
+        <section className="bg-paper pb-4 md:pb-8">
+          <div className="max-w-3xl mx-auto px-6 lg:px-8">
+            <figure>
+              <figcaption className="text-eyebrow text-clay mb-4 flex items-center gap-3">
+                <span className="block h-px w-10 bg-clay" />
+                {page.inlineFigure.eyebrow}
+              </figcaption>
+              <div
+                className="relative overflow-hidden photo-frame bg-paper"
+                style={{ aspectRatio: page.inlineFigure.ratio.replace("/", " / ") }}
+              >
+                <Image
+                  src={page.inlineFigure.src}
+                  alt={page.inlineFigure.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 48rem, 90vw"
+                />
+              </div>
+              <figcaption className="mt-3 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
+                {page.inlineFigure.caption}
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      )}
+
       {/* ═══════════════════════════════════════════════ PROSE SECTIONS */}
       <section className="bg-paper-dark py-14 md:py-20 border-y border-[#d8c8a8]/60">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">

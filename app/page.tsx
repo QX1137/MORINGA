@@ -255,25 +255,29 @@ export default function HomePage() {
             </aside>
           </div>
 
-          {/* Thali photo */}
+          {/* Weight-loss thali infographic (client-supplied, 2026-06-13).
+              Shown at its natural ~square aspect so the labelled components
+              (dal, salad, sprouts, sabzi, multigrain roti, curd) are never
+              cropped. It's a diagram, not a photo — so no "Photograph:"
+              credit. It literally illustrates the section's argument that a
+              healthy Indian plate is balanced, not restrictive. */}
           <div className="md:col-span-5 md:order-1">
             <figure>
               <figcaption className="text-eyebrow text-clay mb-4 flex items-center gap-3">
                 <span className="block h-px w-6 bg-clay" />
-                A working Indian thali
+                What a balanced plate holds
               </figcaption>
-              <div className="relative aspect-[4/5] overflow-hidden photo-frame">
+              <div className="relative aspect-[1290/1219] overflow-hidden photo-frame bg-paper">
                 <Image
-                  src={PHOTOS.indianThali.url}
-                  alt={PHOTOS.indianThali.alt}
+                  src={REAL.weightLossThali}
+                  alt="Go Moringa weight-loss thali — a balanced Indian plate: protein-rich dal, fibre-rich salad, sprouts, low-calorie sabzi, multigrain roti and gut-friendly curd, each component labelled"
                   fill
                   className="object-cover"
-                  style={{ filter: "saturate(0.92) contrast(1.03)" }}
                   sizes="(min-width: 768px) 40vw, 90vw"
                 />
               </div>
               <figcaption className="mt-3 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
-                {PHOTOS.indianThali.caption} · Photograph: {PHOTOS.indianThali.credit.photographer}
+                A Go Moringa weight-loss thali — balanced, not restrictive
               </figcaption>
             </figure>
           </div>

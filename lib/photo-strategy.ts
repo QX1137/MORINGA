@@ -30,6 +30,11 @@ export const REAL = {
   clinicConsultation: "/photography/clinic-consultation.jpg",
   clinicWaiting: "/photography/clinic-waiting.jpg",
   clinicOffice: "/photography/clinic-office.jpg",
+  // Client-supplied "Weight Loss Thali" infographic (added 2026-06-13) — a
+  // labelled, on-brand diagram of a balanced weight-loss plate (dal, salad,
+  // sprouts, sabzi, multigrain roti, curd). Square-ish (1290×1219); must be
+  // shown at its natural aspect ratio so the edge labels are never cropped.
+  weightLossThali: "/photography/weight-loss-thali.jpg",
 } as const;
 
 // ─────────── Service hero image mapping ───────────

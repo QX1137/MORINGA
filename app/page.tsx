@@ -84,8 +84,18 @@ export default function HomePage() {
             from 2.6rem) so the long phrase doesn't wrap awkwardly on iPhone SE,
             primary WhatsApp CTA renders as a tappable button below md (still
             an editorial text-link from md upward to preserve the print feel). */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-6 md:pt-20 pb-8 md:pb-16 grid md:grid-cols-12 gap-x-8 gap-y-10 md:gap-y-12 items-start">
-          <div className="md:col-span-7">
+        {/* Mobile-first hero. On phones the order is recomposed to
+            headline → portrait → pitch → CTA, so a visitor meets the
+            dietitian's face inside the first screen (the strongest trust
+            signal for a personal clinical brand) before the value prop and
+            the call to action. The container is a flex column on mobile
+            (children ordered via order-*) and an explicit 12-col grid from
+            md: upward, where the portrait returns to the right-hand column
+            spanning both text rows — i.e. the original desktop composition,
+            untouched. */}
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-6 md:pt-20 pb-8 md:pb-16 flex flex-col md:grid md:grid-cols-12 md:grid-rows-[auto_1fr] md:gap-x-8 md:items-start">
+          {/* 1 — Headline block */}
+          <div className="order-1 md:col-start-1 md:col-span-7 md:row-start-1 hero-rise">
             <div className="text-eyebrow text-clay mb-4 md:mb-6 flex items-center gap-3">
               <span className="block h-px w-8 md:w-10 bg-clay" />
               The dietitian Gurgaon trusts
@@ -96,56 +106,11 @@ export default function HomePage() {
               <em className="italic-clay">Gurgaon writes</em>{" "}
               back to.
             </h1>
-
-            <p className="mt-5 md:mt-7 max-w-xl text-base md:text-lg leading-[1.6] md:leading-[1.65] text-warm-700">
-              Twenty years of clinical practice. Ten thousand stories, written one meal at a time. <em className="not-italic font-medium text-ink">Dt. Priyatama Srivastava</em> builds personalised Indian-meal plans for the people you actually live with — weight, PCOS, diabetes, thyroid, pregnancy, the slow battles.
-            </p>
-
-            {/* CTAs — mobile renders WhatsApp as a tappable ink button (the
-                FloatingCTA bar at the bottom is identical, but in-flow primary
-                affordance reduces "thumb travel" friction above the fold).
-                From md: upward, switches to the editorial text-link style. */}
-            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-x-8 sm:gap-y-4">
-              {/* Mobile button */}
-              <a
-                href={whatsappUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:hidden inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-ink hover:bg-ink-deep text-paper text-base font-medium transition rounded-sm"
-              >
-                Begin a consultation
-                <span aria-hidden="true">→</span>
-              </a>
-              {/* Desktop editorial link */}
-              <a
-                href={whatsappUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:inline-flex group items-center gap-3 text-base font-medium text-ink"
-              >
-                <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">Begin a consultation</span>
-                <span className="text-clay" aria-hidden="true">→</span>
-              </a>
-              <Link
-                href={`tel:${CONTACT.phoneTel}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-0 md:py-0 border border-ink/25 md:border-0 text-ink md:text-ink/70 md:hover:text-ink text-base font-medium transition rounded-sm md:rounded-none"
-              >
-                <span className="md:hidden" aria-hidden="true">📞</span>
-                <span>or call {CONTACT.phone}</span>
-              </Link>
-            </div>
-
-            <p className="mt-5 text-eyebrow text-warm-500">
-              Not ready to talk yet?{" "}
-              <Link href="/diet-type-report" className="text-clay border-b border-clay/40 hover:border-clay">
-                Try the free Diet Type Report →
-              </Link>
-            </p>
-
-            {/* Stat band — replaced by the full TrustStrip below the hero (better mobile rhythm, adds the ISO credential). */}
           </div>
 
-          <div className="md:col-span-5 md:pt-4 space-y-6">
+          {/* 2 — Portrait. order-2 on mobile (right under the headline);
+                 on desktop the right column, spanning both text rows. */}
+          <div className="order-2 md:order-none md:col-start-8 md:col-span-5 md:row-start-1 md:row-span-2 md:pt-4 mt-8 md:mt-0 space-y-6 hero-rise hero-rise-2">
             {/* Main portrait — real clinic photo, Sector 49 (added 2026-05-21) */}
             <figure>
               <figcaption className="text-eyebrow text-clay mb-4 flex items-center gap-3">
@@ -178,6 +143,56 @@ export default function HomePage() {
                 Moringa oleifera · {PHOTOS.moringaLeaves.credit.photographer}
               </figcaption>
             </figure>
+          </div>
+
+          {/* 3 — Pitch + CTAs */}
+          <div className="order-3 md:col-start-1 md:col-span-7 md:row-start-2 mt-8 md:mt-7 hero-rise hero-rise-3">
+            <p className="max-w-xl text-base md:text-lg leading-[1.6] md:leading-[1.65] text-warm-700">
+              Twenty years of clinical practice. Ten thousand stories, written one meal at a time. <em className="not-italic font-medium text-ink">Dt. Priyatama Srivastava</em> builds personalised Indian-meal plans for the people you actually live with — weight, PCOS, diabetes, thyroid, pregnancy, the slow battles.
+            </p>
+
+            {/* CTAs — mobile leads with one prominent ink button; the call
+                option is a light text link (the phone also lives in the top
+                bar and the sticky bottom bar, so no need to repeat it as a
+                heavy box here). From md: upward, both become editorial
+                text-links to preserve the print feel. */}
+            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-x-8 sm:gap-y-4">
+              {/* Mobile button */}
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:hidden inline-flex items-center justify-center gap-2 px-5 py-4 bg-ink active:bg-ink-deep text-paper text-base font-medium transition rounded-sm"
+              >
+                Begin a consultation
+                <span aria-hidden="true">→</span>
+              </a>
+              {/* Desktop editorial link */}
+              <a
+                href={whatsappUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex group items-center gap-3 text-base font-medium text-ink"
+              >
+                <span className="relative pb-1 border-b-2 border-clay transition-all group-hover:border-b-[3px]">Begin a consultation</span>
+                <span className="text-clay" aria-hidden="true">→</span>
+              </a>
+              {/* Call — light text link on mobile, editorial link on desktop */}
+              <Link
+                href={`tel:${CONTACT.phoneTel}`}
+                className="inline-flex items-center justify-center gap-2 min-h-[44px] text-ink/80 md:text-ink/70 md:hover:text-ink text-base font-medium transition"
+              >
+                <span aria-hidden="true" className="text-clay">☏</span>
+                <span>or call <span className="border-b border-clay/40">{CONTACT.phone}</span></span>
+              </Link>
+            </div>
+
+            <p className="mt-6 text-eyebrow text-warm-500">
+              Not ready to talk yet?{" "}
+              <Link href="/diet-type-report" className="text-clay border-b border-clay/40 hover:border-clay">
+                Try the free Diet Type Report →
+              </Link>
+            </p>
           </div>
         </div>
 

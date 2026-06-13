@@ -273,15 +273,24 @@ body {
     text-wrap: balance;
   }
 
-  /* Justified body text site-wide — an editorial / print convention that
-     suits the magazine aesthetic. hyphens: auto (enabled by <html lang="en">)
-     breaks words at syllable boundaries so lines stay tight and river-free,
-     even in narrow mobile columns. This sits in @layer base, so any explicit
-     Tailwind alignment utility (text-left / text-center / text-right) on a
-     paragraph still wins — centred hero subheads and CTAs are unaffected. */
+  /* Body text alignment — mobile-first.
+     On phones the column is too narrow for justification: justify forces
+     huge inter-word gaps ("dal,   paneer,   ghee   in   measured") that
+     read as broken, not editorial. So we LEFT-align (ragged right) on
+     mobile — the correct, readable choice for a narrow measure — and only
+     switch to justified text from md: upward, where the wider column makes
+     justification look like the print convention it is meant to evoke.
+     hyphens: auto is kept at all sizes so long words still break cleanly.
+     This sits in @layer base, so any explicit Tailwind alignment utility
+     (text-left / text-center / text-right) on a paragraph still wins. */
   p {
-    text-align: justify;
+    text-align: left;
     hyphens: auto;
+  }
+  @media (min-width: 768px) {
+    p {
+      text-align: justify;
+    }
   }
 }
 
@@ -566,6 +575,28 @@ body {
   background: var(--color-clay);
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C8 6 5 10 5 14a7 7 0 0014 0c0-4-3-8-7-12z'/></svg>") center/contain no-repeat;
           mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2C8 6 5 10 5 14a7 7 0 0014 0c0-4-3-8-7-12z'/></svg>") center/contain no-repeat;
+}
+
+/* ─── Hero entrance ─────────────────────────────────────────────────────
+   A restrained "settle into place" on page load — the hero blocks rise a
+   few pixels with a soft ease, staggered top-to-bottom.
+
+   Deliberately TRANSLATE-ONLY (no opacity fade): a transform does not delay
+   paint, so the Largest-Contentful-Paint element (the H1) is painted at full
+   opacity immediately and there is zero Core Web Vitals penalty — the motion
+   is pure polish, never a cost to perceived speed or ranking. Disabled wholly
+   for users who prefer reduced motion. */
+@keyframes hero-rise {
+  from { transform: translateY(14px); }
+  to { transform: translateY(0); }
+}
+.hero-rise {
+  animation: hero-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-rise-2 { animation-delay: 0.08s; }
+.hero-rise-3 { animation-delay: 0.16s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise { animation: none; }
 }
 
 /* ─── Marquee ticker ───────────────────────────────────────────────────

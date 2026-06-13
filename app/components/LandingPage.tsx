@@ -75,12 +75,15 @@ export function LandingPage({ page }: { page: LandingPageData }) {
               {page.heroSubhead}
             </p>
 
-            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-x-8 sm:gap-y-4">
+            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-x-8 sm:gap-y-4">
+              {/* Mobile: one prominent button. The phone also lives in the top
+                  bar and the sticky bottom bar, so "or call" is a light text
+                  link here rather than a second heavy box (matches homepage). */}
               <a
                 href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="md:hidden inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-ink hover:bg-ink-deep text-paper text-base font-medium transition rounded-sm"
+                className="md:hidden inline-flex items-center justify-center gap-2 px-5 py-4 bg-ink active:bg-ink-deep text-paper text-base font-medium transition rounded-sm"
               >
                 Begin a consultation
                 <span aria-hidden="true">→</span>
@@ -98,9 +101,10 @@ export function LandingPage({ page }: { page: LandingPageData }) {
               </a>
               <Link
                 href={`tel:${CONTACT.phoneTel}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 md:px-0 md:py-0 border border-ink/25 md:border-0 text-ink md:text-ink/70 md:hover:text-ink text-base font-medium transition rounded-sm md:rounded-none"
+                className="inline-flex items-center justify-center gap-2 min-h-[44px] text-ink/80 md:text-ink/70 md:hover:text-ink text-base font-medium transition"
               >
-                or call {CONTACT.phone}
+                <span aria-hidden="true" className="text-clay">☏</span>
+                <span>or call <span className="border-b border-clay/40">{CONTACT.phone}</span></span>
               </Link>
             </div>
 

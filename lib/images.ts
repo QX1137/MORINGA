@@ -77,14 +77,21 @@ export const PHOTOS = {
 
   // Food / meals
   indianThali: {
-    id: "1680993032090-1ef7ea9b51e5",
-    url: u("1680993032090-1ef7ea9b51e5"),
-    alt: "Traditional Indian thali meal with curries, lentils, rice, breads and chutneys",
-    caption: "A working thali · Indian household",
+    // Swapped 2026-06-13: the previous thali read as a heavy restaurant
+    // meal (cream dal makhani, mound of white rice, fried papad) — wrong
+    // signal for a weight-loss / diabetes / PCOS diet clinic. Replaced with
+    // a balanced vegetarian Tamil thali: many small portion-controlled
+    // katoris of vegetable preparations, greens, sambar and rasam — which
+    // also visually reinforces the "measured portions / structured Indian
+    // eating" message of the Approach section. Same photographer.
+    id: "1742281257687-092746ad6021",
+    url: u("1742281257687-092746ad6021"),
+    alt: "Balanced vegetarian South Indian thali — sambar, rasam, fresh greens, vegetable poriyals and rice served in portioned katoris",
+    caption: "A balanced vegetarian thali · measured portions",
     credit: {
       photographer: "Zoshua Colah",
       username: "zoshuacolah",
-      sourceUrl: "https://unsplash.com/photos/dncjnYtmWHo",
+      sourceUrl: "https://unsplash.com/photos/indian-thali-is-served-with-side-dishes-gep3f7NQzZY",
     },
   },
 

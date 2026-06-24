@@ -24,8 +24,8 @@ const PACKAGES: Pkg[] = [
 const INCLUDED = [
   "Detailed clinical assessment + medical history review",
   "Customised Indian-meal-based diet plan",
-  "Weekly follow-up calls + plan adjustments",
-  "WhatsApp access for daily questions",
+  "Daily follow-up — send your food photo + weight every day, plan adjusted to match",
+  "Direct WhatsApp access to Dt. Priyatama herself — never an assistant",
   "Recipe library tailored to your plan",
   "Supplement guidance (where genuinely needed)",
   "Restaurant + travel eating guidance",
@@ -95,7 +95,7 @@ export default function PackagePage() {
                   ₹{p.priceIN}
                 </div>
                 <div className="mt-4 text-xs text-warm-500 leading-relaxed flex-1">
-                  Consultation + customised plan + weekly follow-ups
+                  Consultation + customised plan + daily follow-ups
                 </div>
                 <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-6 group inline-flex items-center gap-2 text-base font-medium text-ink">
                   <span className={`relative pb-1 border-b-2 transition-all group-hover:border-b-[3px] ${p.popular ? "border-clay" : "border-[#d8c8a8]"}`}>

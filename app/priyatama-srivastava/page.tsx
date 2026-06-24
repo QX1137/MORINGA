@@ -128,7 +128,7 @@ export default function PriyatamaPage() {
               riyatama Srivastava has practised in Gurgaon since 2005. Her clients are mostly people who have already tried — the gym, the keto plan, the 21-day cleanse, the influencer&rsquo;s PDF — and arrive with the same question. <em>What actually works, year after year?</em>
             </p>
             <p>
-              Her answer, in two decades, has not changed: a documented family-meal-shaped plan, a weekly review, lab work every quarter, and the patience that this is a long road. Ten thousand clients later, that answer has held.
+              Her answer, in two decades, has not changed: a documented family-meal-shaped plan, a daily check-in — your food photo and weight every day, the plan adjusted to match — lab work every quarter, and the patience that this is a long road. Ten thousand clients later, that answer has held.
             </p>
             <p>
               Beyond the dietary protocols, Priyatama has built a reputation for personal connection. Many of her clients return for follow-up programs years later, refer their family, and stay in touch through life transitions. Her warm, plain-speaking style has made her, in her own words, &ldquo;more friends than clients.&rdquo;

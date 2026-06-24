@@ -10,6 +10,7 @@ import { TrustStrip } from "./components/TrustStrip";
 import { Marquee } from "./components/Marquee";
 import { HowItWorks } from "./components/HowItWorks";
 import { Dossier } from "./components/Dossier";
+import { PersonalPromise } from "./components/PersonalPromise";
 import { REAL } from "@/lib/photo-strategy";
 import { CONTACT, PERSON, REVIEWS, SITE, whatsappUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGE } from "@/lib/photo-strategy";
@@ -48,7 +49,7 @@ const TESTIMONIALS = [
 
 const FAQS = [
   { q: "Who is the best dietitian in Gurgaon?", a: `Dt. Priyatama Srivastava of Go Moringa Nutri Diet Clinic, based in Sector 49 Gurugram, is rated 5.0/5 on Practo (${REVIEWS.practo.count} reviews) and 4.9/5 on Justdial (${REVIEWS.justdial.count} reviews). With 20 years of experience and 10,000+ clients across Gurgaon, Delhi NCR and worldwide via online consultation, she specialises in weight loss, PCOS, diabetes, thyroid and pregnancy nutrition.` },
-  { q: "Do you provide online diet consultation?", a: "Yes. We consult clients across India and worldwide via WhatsApp and video call. The process is identical to an in-clinic visit — detailed health assessment, customised diet plan, weekly follow-ups." },
+  { q: "Do you provide online diet consultation?", a: "Yes. We consult clients across India and worldwide via WhatsApp and video call. The process is identical to an in-clinic visit — detailed health assessment, customised diet plan, and daily follow-ups — you send your food photo and weight every day, and the plan is adjusted accordingly." },
   { q: "How long does it take to see results?", a: "Most clients see measurable change within 2-3 weeks. Sustainable weight loss is typically 2-4 kg per month. Therapeutic improvements (HbA1c, lipid profile, hormone levels) usually show up in 3 months of disciplined adherence." },
   { q: "Will I have to give up Indian food?", a: "No. Every diet plan is built around Indian meal patterns — roti, dal, rice, sabzi — adjusted for your goal and condition. We work with your kitchen, not against it." },
   { q: "What's the consultation fee?", a: `Packages start with a one-month plan and scale up to comprehensive multi-month programmes. Call ${CONTACT.phone} or WhatsApp us for current pricing and to find the right fit for your goal.` },
@@ -302,7 +303,7 @@ export default function HomePage() {
             </div>
             <div className="md:col-span-5 md:text-right">
               <p className="text-warm-700 text-base leading-relaxed">
-                Where every plan is written, every weekly review is held, every measurement is taken. Photographed by us — no stock, no staging.
+                Where every plan is written, every day&rsquo;s check-in is read, every measurement is taken. Photographed by us — no stock, no staging.
               </p>
             </div>
           </header>
@@ -419,7 +420,7 @@ export default function HomePage() {
             </div>
             <div className="md:col-span-5 md:text-right">
               <p className="text-warm-700 text-base leading-relaxed">
-                Each programme is a written plan, a weekly review, and an open WhatsApp line to Priyatama. Pick the one that matches your body&rsquo;s current question.
+                Each programme is a written plan, a daily check-in, and an open WhatsApp line to Priyatama. Pick the one that matches your body&rsquo;s current question.
               </p>
             </div>
           </header>
@@ -539,7 +540,7 @@ export default function HomePage() {
                 riyatama Srivastava has practised in Gurgaon since 2005. Her clients are mostly people who have already tried — the gym, the keto plan, the 21-day cleanse, the influencer&rsquo;s pdf — and arrive with the same question. <em>What actually works, year after year?</em>
               </p>
               <p>
-                Her answer, in two decades, has not changed: a documented, family-meal-shaped plan, a weekly review, lab work every quarter, and the patience that this is a long road. Ten thousand clients later, that answer has held.
+                Her answer, in two decades, has not changed: a documented, family-meal-shaped plan, a daily check-in, lab work every quarter, and the patience that this is a long road. Ten thousand clients later, that answer has held.
               </p>
             </div>
 
@@ -557,6 +558,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═════════════════════════════════════════════════ PERSONAL PROMISE
+          Dt. Priyatama's own differentiators (from her 2026-06-24 brief):
+          you reach HER every day, daily food-photo + weight monitoring, no
+          employees in between, a free half-hour upfront. Placed right after
+          About so the reader meets her, then hears her personal commitment. */}
+      <PersonalPromise />
 
       {/* ═════════════════════════════════════════════════ DOSSIER (credentials grid)
           Right after About — person → paper trail → results is the trust ladder

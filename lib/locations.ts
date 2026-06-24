@@ -108,7 +108,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     travelDistance: "Sector 49 Gurugram is 30-45 minutes from most South Delhi locations via Aurobindo Marg or NH-8.",
     faqs: [
       { q: "Do you have a clinic in Delhi?", a: "Our physical clinic is in Sector 49, Gurugram — a 30-45 minute drive from most South Delhi locations. The majority of our Delhi clients consult via online video call, which works equally well for the clinical assessment and follow-ups." },
-      { q: "Can I do the entire program online from Delhi?", a: "Yes. Initial assessment via video call, customised diet plan shared as PDF, weekly follow-ups via WhatsApp + scheduled calls. Many of our most successful clients have completed entire programs without an in-clinic visit." },
+      { q: "Can I do the entire program online from Delhi?", a: "Yes. Initial assessment via video call, customised diet plan shared as PDF, daily follow-ups via WhatsApp + scheduled calls. Many of our most successful clients have completed entire programs without an in-clinic visit." },
       { q: "Will my diet plan account for Delhi food culture?", a: "Absolutely. We don't ask Delhi clients to eat like they're in some other city. Punjabi staples, ghee-rich foods, festival eating, wedding seasons, paneer-heavy vegetarian patterns — all built into the plan with appropriate portion and timing adjustments." },
       { q: "Who is the best dietitian for online consultation in Delhi?", a: "Dt. Priyatama Srivastava of Go Moringa — 20 years of experience, 10,000+ clients, 5.0★ on Practo (279+ reviews). Online consultation has been a core part of our practice for over a decade and is identical in depth to in-clinic care." },
       { q: "How do I pay for online consultation?", a: "We accept UPI, bank transfer, and online payment links. Payment is processed before the initial consultation, and packages are typically paid upfront with no recurring billing." },
@@ -127,7 +127,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     heroImage: "/assets/services/dietician-in-delhi.jpeg",
     introLead: "Noida and Greater Noida have grown into major NCR residential and tech hubs, but quality clinical-nutrition care has lagged behind population growth. Dt. Priyatama Srivastava's Go Moringa Clinic in Sector 49 Gurugram serves Noida clients via online consultation (the majority) or in-clinic visits for those who prefer face-to-face care.",
     whyPickUs: [
-      { title: "Online consultation made for distance", body: "Noida to Sector 49 Gurugram is approximately 60-75 minutes by road via DND or Yamuna Expressway. Most Noida clients use online consultation — the clinical depth is identical to in-person, and weekly follow-ups happen via WhatsApp." },
+      { title: "Online consultation made for distance", body: "Noida to Sector 49 Gurugram is approximately 60-75 minutes by road via DND or Yamuna Expressway. Most Noida clients use online consultation — the clinical depth is identical to in-person, and daily follow-ups happen via WhatsApp." },
       { title: "Tech professional + corporate workforce", body: "Noida's corporate clients face the same patterns as Gurgaon's — long sedentary hours, late dinners, irregular meal timing, lifestyle disease creep in the 30s. Our plans accommodate these realities." },
       { title: "Coordination with Noida physicians", body: "We coordinate with specialists across Noida and Greater Noida when clients are already under their care, so the diet plan aligns with the rest of the medical picture." },
       { title: "20 years + 10,000 clients across NCR", body: "Verifiable on Practo (5.0/279) and Justdial (4.9/699). Tested track record across all four NCR pockets." },
@@ -233,8 +233,8 @@ export const LOCATIONS: Record<string, LocationData> = {
     faqs: [
       { q: "What is the difference between a nutritionist and a dietitian?", a: "In everyday use the terms overlap. What matters is clinical training and a track record managing real medical conditions. Dt. Priyatama Srivastava is a qualified, certified clinical practitioner with 20 years of experience across weight, PCOS, diabetes, thyroid and therapeutic diets — that clinical depth is what you should look for in either title." },
       { q: "Who is the best nutritionist in Gurgaon?", a: "Dt. Priyatama Srivastava of Go Moringa Nutri Diet Clinic, Sector 49 — rated 5.0 on Practo (279+ reviews) and 4.9 on Justdial (699+), with 20 years' experience and 10,000+ clients. The clinic is ISO 9001:2015 certified." },
-      { q: "Does the nutritionist consult online?", a: "Yes. Consultations run both at the Sector 49 clinic and online by video call for clients across Gurgaon and beyond. The assessment, written plan and weekly reviews are identical either way." },
-      { q: "What does a nutrition consultation cover?", a: "A detailed assessment of your health history, lab reports, lifestyle and food habits, followed by a personalised Indian-meal plan, weekly follow-ups and an open WhatsApp line. The first 15-minute conversation is free." },
+      { q: "Does the nutritionist consult online?", a: "Yes. Consultations run both at the Sector 49 clinic and online by video call for clients across Gurgaon and beyond. The assessment, written plan and daily check-ins are identical either way." },
+      { q: "What does a nutrition consultation cover?", a: "A detailed assessment of your health history, lab reports, lifestyle and food habits, followed by a personalised Indian-meal plan, daily follow-ups and an open WhatsApp line. The first 15-minute conversation is free." },
       { q: "Where is the clinic located?", a: "Unitech Rodio Drive, D-117 & 118, South City II, Sector 49, Gurugram 122018 — open Monday to Saturday, 10 AM to 7 PM." },
     ],
   },
@@ -249,16 +249,16 @@ export const LOCATIONS: Record<string, LocationData> = {
     metaDescription: "Go Moringa Nutri Diet & Food Clinic — an ISO 9001:2015 certified diet clinic in Sector 49, Gurgaon. 20 years of practice, 10,000+ clients. Walk in, or consult online.",
     heroSubhead: "A real diet clinic in Sector 49 Gurgaon — ISO 9001:2015 certified, 20 years in practice. Walk in for a consultation, or do the whole programme online.",
     heroImage: "/photography/clinic-waiting.jpg",
-    introLead: "A diet clinic is more than a consultation room — it is a process: the assessment, the written plan, the weekly review, the lab work read in context. Go Moringa Nutri Diet & Food Clinic has run that process from Sector 49, Gurgaon for 20 years, and holds an ISO 9001:2015 quality-management certification for it. You can walk in, or run the entire programme online from anywhere.",
+    introLead: "A diet clinic is more than a consultation room — it is a process: the assessment, the written plan, the daily check-in, the lab work read in context. Go Moringa Nutri Diet & Food Clinic has run that process from Sector 49, Gurgaon for 20 years, and holds an ISO 9001:2015 quality-management certification for it. You can walk in, or run the entire programme online from anywhere.",
     whyPickUs: [
       { title: "A real, certified clinic — not a home setup", body: "The Go Moringa clinic occupies a dedicated space at Unitech Rodio Drive, South City II, Sector 49 — reception, consultation rooms, the works. It is ISO 9001:2015 certified, an independently-audited quality credential for the clinic's process. The clinic photographs on this site are the actual rooms; no stock, no staging." },
       { title: "Twenty years of documented practice", body: "The clinic has built diet plans for 10,000+ clients since 2005 — weight loss and gain, PCOS, diabetes, thyroid, cardiac and kidney conditions, pregnancy, post-cancer recovery, figure correction. Each plan is a single written document, calibrated to one person." },
-      { title: "Walk-in or fully online", body: "Sector 49 is reachable in 10–15 minutes from DLF Phases, Sushant Lok, Sohna Road and Golf Course Road. Prefer not to travel? The clinic has run online programmes for over a decade — video assessment, written plan, weekly reviews — with identical clinical depth." },
+      { title: "Walk-in or fully online", body: "Sector 49 is reachable in 10–15 minutes from DLF Phases, Sushant Lok, Sohna Road and Golf Course Road. Prefer not to travel? The clinic has run online programmes for over a decade — video assessment, written plan, daily check-ins — with identical clinical depth." },
       { title: "5.0 Practo · 4.9 Justdial", body: "279+ verified reviews on Practo at a 5.0 rating, 699+ on Justdial at 4.9 — accumulated over years of consistent clinical results across Gurgaon and NCR." },
     ],
     localContext: [
       { title: "What a first visit looks like", body: "A first consultation at the clinic is a long, detailed conversation — health history, current labs, daily routine, family meal patterns, every diet you have tried before. From it, Dt. Priyatama builds your plan. You leave with a clear understanding of what will change and why." },
-      { title: "The weekly review is the engine", body: "A diet clinic earns its results in the follow-up, not the first visit. Each week, your plan is reviewed against real progress — weight, energy, lab markers — and revised. The clinic keeps the plan honest as festivals, travel and plateaus arrive." },
+      { title: "The daily check-in is the engine", body: "A diet clinic earns its results in the follow-up, not the first visit. Every day, your plan is checked against real progress — weight, energy, lab markers — and revised. The clinic keeps the plan honest as festivals, travel and plateaus arrive." },
       { title: "Conditions the clinic manages", body: "Weight loss and weight gain, PCOS and PCOD, type-2 diabetes and pre-diabetes, thyroid disorders, high cholesterol and blood pressure, fatty liver, pregnancy and post-partum nutrition, and therapeutic diets for chronic and recovery conditions." },
     ],
     servesAreas: [
@@ -275,7 +275,7 @@ export const LOCATIONS: Record<string, LocationData> = {
       { q: "Where is the Go Moringa diet clinic in Gurgaon?", a: "Unitech Rodio Drive, D-117 & 118, South City II, Sector 49, Gurugram, Haryana 122018. Open Monday to Saturday, 10 AM to 7 PM. It is 10–15 minutes from DLF Phase 3, Sushant Lok and Sohna Road." },
       { q: "Is the diet clinic certified?", a: "Yes. Go Moringa Nutri Diet & Food Clinic holds an ISO 9001:2015 quality-management certification — an independently-audited credential covering the clinic's consultation and plan-delivery process." },
       { q: "Can I visit the clinic for a walk-in consultation?", a: "Yes, though booking ahead on WhatsApp (+91-9910922899) is recommended so a slot is reserved. The first 15-minute conversation is free." },
-      { q: "Do I have to visit, or can the programme be done online?", a: "Either works. Many clients complete the entire programme online — video assessment, written plan, weekly reviews — without visiting. The clinical depth is the same as an in-clinic engagement." },
+      { q: "Do I have to visit, or can the programme be done online?", a: "Either works. Many clients complete the entire programme online — video assessment, written plan, daily check-ins — without visiting. The clinical depth is the same as an in-clinic engagement." },
       { q: "What conditions does the clinic treat?", a: "Weight loss and gain, PCOS/PCOD, diabetes, thyroid, cholesterol, blood pressure, fatty liver, pregnancy nutrition, figure correction, and therapeutic diets for chronic conditions." },
     ],
   },
@@ -292,7 +292,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     heroImage: "/photography/clinic-reception.jpg",
     introLead: "DLF Phases 1 to 5 sit at the heart of corporate Gurgaon — and at the heart of its lifestyle-disease profile. The long hours along Golf Course Road and MG Road, the business dinners, the gym memberships that never quite translate to fat loss. The Go Moringa clinic in Sector 49 is a 10–15 minute drive from any DLF Phase, and Dt. Priyatama Srivastava has built diet plans for DLF residents for 20 years.",
     whyPickUs: [
-      { title: "Minutes from every DLF Phase", body: "The Sector 49 clinic is 10–15 minutes from DLF Phase 1, 2, 3, 4 and 5 via Golf Course Road or Sohna Road. Close enough for the weekly rhythm of in-clinic reviews if you want them — and fully available online if you would rather not drive." },
+      { title: "Minutes from every DLF Phase", body: "The Sector 49 clinic is 10–15 minutes from DLF Phase 1, 2, 3, 4 and 5 via Golf Course Road or Sohna Road. Close enough for the regular rhythm of in-clinic reviews if you want them — and fully available online if you would rather not drive." },
       { title: "Built for the DLF corporate calendar", body: "DLF Phase residents are, overwhelmingly, senior corporate professionals, consultants and founders. The plan is built around that reality — business travel, client dinners, conference eating — re-engineering how you eat within the calendar rather than against it." },
       { title: "20 years of DLF clients", body: "Two decades of working with this exact demographic. The dietary patterns of a Phase 3 finance professional or a Phase 5 startup founder are familiar territory, and the plans are calibrated for them." },
       { title: "5.0 Practo · ISO-certified clinic", body: "279+ Practo reviews at 5.0, 699+ on Justdial — and an ISO 9001:2015 certified clinic process. Verifiable credentials, not advertising." },
@@ -315,7 +315,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     travelDistance: "The Sector 49 clinic is a 10–15 minute drive from any DLF Phase via Golf Course Road or Sohna Road — or skip the drive entirely with online consultation.",
     faqs: [
       { q: "How far is the clinic from DLF Phase 3?", a: "The Go Moringa clinic in Sector 49 is roughly 10–15 minutes from DLF Phase 3 via Golf Course Road or Sohna Road. Phases 1, 2, 4 and 5 are a similar distance." },
-      { q: "Can DLF residents consult online instead of visiting?", a: "Yes. Many DLF clients run the entire programme online — video assessment, written plan, weekly reviews — and never need to drive in. The clinical depth is identical." },
+      { q: "Can DLF residents consult online instead of visiting?", a: "Yes. Many DLF clients run the entire programme online — video assessment, written plan, daily check-ins — and never need to drive in. The clinical depth is identical." },
       { q: "Who is the best dietitian for DLF Gurgaon residents?", a: "Dt. Priyatama Srivastava of Go Moringa, Sector 49 — 20 years' experience, 10,000+ clients, 5.0 on Practo. The clinic has worked with the DLF Phase demographic for two decades." },
       { q: "Do you handle pre-wedding diet plans for DLF clients?", a: "Yes — pre-wedding figure correction is one of the most-booked programmes among DLF Phase residents. Booking six to twelve months ahead gives the best results." },
       { q: "How do I book a consultation?", a: "WhatsApp +91-9910922899 or call. The first 15-minute conversation is free — we'll discuss your goal and recommend the right programme." },
@@ -336,7 +336,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     whyPickUs: [
       { title: "On the Sohna Road corridor itself", body: "The Sector 49 clinic is on the Sohna Road corridor — for residents of Vatika, Tulip, Central Park, Malibu Towne, Uppal Southend and the surrounding sectors, it is one of the closest clinical-nutrition practices there is. A short drive, no expressway, no city crossing." },
       { title: "Built for the condominium belt", body: "The Sohna Road corridor is a dense belt of family condominiums and dual-career households. The plans are built for that — family meal patterns, shared kitchens, children's nutrition and the realities of cooking for a household, not an individual." },
-      { title: "Walk in for the weekly rhythm", body: "Because the clinic is so close, Sohna Road clients can keep an easy weekly in-clinic rhythm if they prefer face-to-face reviews. Those who would rather not travel get the identical programme online." },
+      { title: "Walk in for the regular rhythm", body: "Because the clinic is so close, Sohna Road clients can keep an easy regular in-clinic rhythm if they prefer face-to-face reviews. Those who would rather not travel get the identical programme online." },
       { title: "20 years · 10,000+ clients · 5.0 Practo", body: "Two decades of practice, verifiable on Practo (5.0, 279+ reviews) and Justdial (4.9, 699+). An ISO 9001:2015 certified clinic." },
     ],
     localContext: [
@@ -359,7 +359,7 @@ export const LOCATIONS: Record<string, LocationData> = {
       { q: "How close is the clinic to the Sohna Road condominiums?", a: "Very close — Sector 49 is on the corridor, a few minutes' drive from Vatika, Tulip, Central Park, Malibu Towne and the surrounding Sectors 47–50 and 67–78." },
       { q: "Can the whole family be managed together?", a: "Yes. Plans are built around the household kitchen, which makes managing nutrition for couples and families practical. Each person still gets an individually calibrated plan." },
       { q: "Who is the best dietitian for Sohna Road residents?", a: "Dt. Priyatama Srivastava of Go Moringa, Sector 49 — 20 years' experience, 10,000+ clients, 5.0 on Practo, ISO-certified clinic, right on the Sohna Road corridor." },
-      { q: "Can I consult online instead?", a: "Yes. The full programme — video assessment, written plan, weekly reviews — is available online for Sohna Road clients who would rather not travel." },
+      { q: "Can I consult online instead?", a: "Yes. The full programme — video assessment, written plan, daily check-ins — is available online for Sohna Road clients who would rather not travel." },
     ],
   },
 
@@ -375,7 +375,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     heroImage: "/photography/clinic-consultation.jpg",
     introLead: "Sushant Lok is one of Gurgaon's most established residential addresses — Phases 1, 2 and 3 spanning the stretch between MG Road and Golf Course Road. The Go Moringa diet clinic in Sector 49 is a short, easy drive from all three, and Dt. Priyatama Srivastava has built diet plans for Sushant Lok residents across 20 years of practice.",
     whyPickUs: [
-      { title: "A short drive from all three phases", body: "The Sector 49 clinic is a quick drive from Sushant Lok 1, 2 and 3 via Golf Course Road or Sohna Road — close enough for an easy weekly in-clinic rhythm, and fully available online for those who would rather not travel." },
+      { title: "A short drive from all three phases", body: "The Sector 49 clinic is a quick drive from Sushant Lok 1, 2 and 3 via Golf Course Road or Sohna Road — close enough for an easy regular in-clinic rhythm, and fully available online for those who would rather not travel." },
       { title: "Two decades with an established address", body: "Sushant Lok has been home to Gurgaon families for decades — which means multi-generational households, established food cultures, and clients of every age. The practice has 20 years of experience across exactly that range." },
       { title: "Pre-wedding and figure correction", body: "Sushant Lok is among the largest sources of pre-wedding clients — brides and grooms booking six to twelve months ahead for figure correction, skin clarity through nutrition, and energy through the wedding week. There is a tested protocol for it." },
       { title: "5.0 Practo · ISO-certified clinic", body: "279+ Practo reviews at 5.0, 699+ on Justdial at 4.9, and an ISO 9001:2015 certified clinic process — verifiable credentials accumulated over years." },
@@ -400,7 +400,7 @@ export const LOCATIONS: Record<string, LocationData> = {
       { q: "Who is the best dietitian for Sushant Lok residents?", a: "Dt. Priyatama Srivastava of Go Moringa, Sector 49 — 20 years' experience, 10,000+ clients, 5.0 on Practo, and an ISO 9001:2015 certified clinic, a short drive from all three Sushant Lok phases." },
       { q: "Can an older family member's condition be managed?", a: "Yes. Therapeutic diets for diabetes, blood pressure, cholesterol, thyroid and joint health are a core part of the practice, designed to work alongside the treating doctor." },
       { q: "Do you handle pre-wedding diet plans?", a: "Yes — pre-wedding figure correction is one of the most-booked programmes among Sushant Lok clients. Booking six to twelve months ahead gives the best results." },
-      { q: "Can I consult online instead of visiting?", a: "Yes. The complete programme — video assessment, written plan, weekly reviews — is available online for Sushant Lok clients who prefer not to travel." },
+      { q: "Can I consult online instead of visiting?", a: "Yes. The complete programme — video assessment, written plan, daily check-ins — is available online for Sushant Lok clients who prefer not to travel." },
     ],
   },
 
@@ -442,7 +442,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     faqs: [
       { q: "Who is the best dietitian in Delhi NCR?", a: "Dt. Priyatama Srivastava of Go Moringa Nutri Diet & Food Clinic, Sector 49 Gurugram, is widely regarded among the best dietitians in Delhi NCR — 20 years of clinical practice, 10,000+ clients across the region, rated 5.0 on Practo (279+ reviews) and 4.9 on Justdial (699+). The clinic is ISO 9001:2015 certified." },
       { q: "Does the practice cover all of Delhi NCR?", a: "Yes. The Sector 49 Gurgaon clinic serves clients from Gurgaon, Delhi, Noida, Greater Noida, Faridabad and Ghaziabad — in person and through online consultation that reaches every NCR pocket equally." },
-      { q: "Can I consult online from anywhere in NCR?", a: "Yes. Online consultation — video assessment, written plan, weekly reviews — is identical in depth to an in-clinic visit and is how the majority of NCR clients outside Gurgaon are managed." },
+      { q: "Can I consult online from anywhere in NCR?", a: "Yes. Online consultation — video assessment, written plan, daily check-ins — is identical in depth to an in-clinic visit and is how the majority of NCR clients outside Gurgaon are managed." },
       { q: "What conditions are managed for NCR clients?", a: "Weight loss and gain, PCOS/PCOD, diabetes, thyroid, cholesterol, blood pressure, fatty liver, pregnancy nutrition, figure correction and therapeutic diets for chronic conditions." },
       { q: "How do I book from my NCR city?", a: "WhatsApp +91-9910922899 or call. The first 15-minute conversation is free, wherever in NCR you are — we discuss your goal and recommend the right programme." },
     ],
@@ -460,7 +460,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     heroImage: "/photography/priyatama-portrait.jpg",
     introLead: "The best dietitian for you is not necessarily the one in your city — it is the one with the clinical depth to read your labs, the experience to manage your condition, and a plan built for an Indian kitchen. Dt. Priyatama Srivastava has spent 20 years building exactly that, and online consultation now carries it to clients in every Indian state and to NRIs across the world — without anyone needing to live in Gurgaon.",
     whyPickUs: [
-      { title: "A national practice, run online", body: "Online consultation has been core to the practice for over a decade. Clients in Mumbai, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, Chandigarh, Jaipur, Ahmedabad and hundreds of smaller towns are managed exactly as in-clinic clients are — detailed video assessment, a written plan, weekly reviews. Distance changes nothing about the clinical standard." },
+      { title: "A national practice, run online", body: "Online consultation has been core to the practice for over a decade. Clients in Mumbai, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, Chandigarh, Jaipur, Ahmedabad and hundreds of smaller towns are managed exactly as in-clinic clients are — detailed video assessment, a written plan, daily check-ins. Distance changes nothing about the clinical standard." },
       { title: "Plans for every regional Indian kitchen", body: "An Indian diet plan must look like the food you actually cook. Punjabi, Bengali, South Indian, Gujarati, Maharashtrian, Rajasthani — every regional kitchen has its own staples and its own weight-loss-friendly dishes. Plans are built around your region's food, which is why they last." },
       { title: "Trusted by NRIs worldwide", body: "Indians in the Gulf, the UK, the US, Australia, Canada and Singapore consult regularly — for an Indian-meal plan built by someone who understands their kitchen, adapted to the ingredients available where they live." },
       { title: "20 years · 10,000+ clients · verifiable", body: "Two decades of clinical practice and more than 10,000 clients, verifiable on India's largest healthcare review platforms — 5.0 on Practo (279+ reviews), 4.9 on Justdial (699+). The clinic is ISO 9001:2015 certified." },
@@ -482,7 +482,7 @@ export const LOCATIONS: Record<string, LocationData> = {
     travelDistance: "The clinic is in Sector 49, Gurugram — but the practice is national: online consultation reaches every Indian state with identical clinical depth.",
     faqs: [
       { q: "Who is the best dietitian in India?", a: "Among the most experienced and highly-rated is Dt. Priyatama Srivastava of Go Moringa Nutri Diet & Food Clinic — 20 years of clinical practice, 10,000+ clients, rated 5.0 on Practo (279+ reviews) and 4.9 on Justdial (699+), with an ISO 9001:2015 certified clinic. She consults clients across India online." },
-      { q: "Can I consult a top dietitian online from anywhere in India?", a: "Yes. Online consultation — video assessment, written plan, weekly reviews — is identical in clinical depth to an in-clinic visit. Clients in every Indian state, including tier-2 and tier-3 towns, are managed this way." },
+      { q: "Can I consult a top dietitian online from anywhere in India?", a: "Yes. Online consultation — video assessment, written plan, daily check-ins — is identical in clinical depth to an in-clinic visit. Clients in every Indian state, including tier-2 and tier-3 towns, are managed this way." },
       { q: "Will the diet plan suit my regional cuisine?", a: "Yes. Plans are built around your specific regional kitchen — Punjabi, Bengali, South Indian, Gujarati, Maharashtrian and others. Every regional cuisine has weight-loss-friendly and condition-friendly staples; the plan uses yours." },
       { q: "Can NRIs consult from outside India?", a: "Yes. NRIs across the Gulf, UK, US, Australia, Canada and Singapore consult regularly. Plans keep the Indian meal structure while adapting to ingredients available where you live." },
       { q: "How do I book an online consultation?", a: "WhatsApp +91-9910922899 or call. The first 15-minute conversation is free — it is used to understand your goal and tell you honestly whether a dietary programme is the right fit." },

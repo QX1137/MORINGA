@@ -36,9 +36,9 @@ const STEPS = [
     aside: "Built for one body",
   },
   {
-    title: "Weekly reviews",
-    body: "An open WhatsApp line to Priyatama, a weekly check-in, lab work each quarter. The plan is corrected as your body answers back.",
-    aside: "Weekly check-ins",
+    title: "Daily check-ins",
+    body: "Send your food photo and your weight every day. Priyatama reads each one herself and adjusts the plan as your body answers back — daily, not weekly. Lab work every quarter.",
+    aside: "Daily — not weekly",
   },
 ];
 

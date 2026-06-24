@@ -46,7 +46,7 @@ export const SERVICES: Record<string, ServiceData> = {
       { step: 1, title: "Comprehensive health assessment", description: "Detailed history, family medical background, current medications, sleep, stress, water intake, and a 7-day food recall to understand what you actually eat versus what you think you eat." },
       { step: 2, title: "Body composition + lab review", description: "BMI, waist-hip ratio, body-fat percentage where measurable. We review your latest blood work — thyroid, HbA1c, lipid profile, vitamin D and B12 — because weight loss without fixing the underlying cause is temporary." },
       { step: 3, title: "Customised Indian diet plan", description: "A meal-by-meal plan built around your kitchen, your office hours, and your family meals. No exotic ingredients, no banned food groups — portion-controlled Indian eating that fits your day." },
-      { step: 4, title: "Weekly follow-up + adjustment", description: "Weight, measurements and energy check-in once a week. Plans are adjusted as your body responds, plateaus are broken with targeted shifts in carbs, protein timing, or activity." },
+      { step: 4, title: "Daily follow-up + adjustment", description: "Weight, measurements and energy a daily check-in. Plans are adjusted as your body responds, plateaus are broken with targeted shifts in carbs, protein timing, or activity." },
       { step: 5, title: "Maintenance + lifestyle integration", description: "The hardest part of weight loss is keeping it off. Once you hit your target, we transition you to a maintenance protocol designed to keep the weight off for years, not weeks." },
     ],
     pillars: [
@@ -68,7 +68,7 @@ export const SERVICES: Record<string, ServiceData> = {
     includes: [
       "Initial 60-minute consultation (in-person at Sector 49 clinic or video call)",
       "Detailed customised diet plan delivered within 48 hours",
-      "Weekly follow-up calls + plan adjustments",
+      "Daily follow-up — food photo + weight reviewed daily, plan adjusted",
       "WhatsApp access for daily questions",
       "Healthy recipe library tailored to your plan",
       "Supplement guidance where genuinely needed (we don't push products)",
@@ -77,11 +77,11 @@ export const SERVICES: Record<string, ServiceData> = {
     faqs: [
       { q: "How much weight can I expect to lose per month?", a: "A healthy, sustainable pace is 2-4 kg per month of actual fat loss. The first 2-3 weeks may show faster movement on the scale due to water loss as carb intake stabilises. After that, we target consistent fat loss while preserving muscle. Crash diets that promise 8-10 kg/month rebound entirely within a year — our clients lose slower and keep it off." },
       { q: "Will I have to give up rice, roti, or sweets?", a: "No. Rice and roti stay in your plan — portions are calibrated to your goal. Sweets are scheduled as planned indulgences (not banned) so you don't binge. The Indian diet is balanced when portion-controlled; we don't ask you to eat foreign foods." },
-      { q: "Do you provide online weight loss consultation?", a: "Yes. We consult clients across India and worldwide via video call and WhatsApp. The protocol is identical to in-clinic — detailed assessment, customised plan, weekly follow-ups. Diet plans are shared as PDFs and via WhatsApp." },
+      { q: "Do you provide online weight loss consultation?", a: "Yes. We consult clients across India and worldwide via video call and WhatsApp. The protocol is identical to in-clinic — detailed assessment, customised plan, daily follow-ups. Diet plans are shared as PDFs and via WhatsApp." },
       { q: "How long should I follow a weight-loss diet plan?", a: "The active fat-loss phase usually runs 3-6 months depending on how much you have to lose. After hitting your goal weight, we transition you to a 2-3 month maintenance plan that locks in the change. Most clients reach a sustainable eating pattern by month 9." },
       { q: "What if I have PCOS or thyroid issues?", a: "Both are extremely common among women coming to us for weight loss. The diet plan is calibrated for the hormonal context — lower glycaemic carbs, anti-inflammatory food choices, specific timing for thyroid medication. Weight loss with PCOS or hypothyroid is slower but absolutely achievable." },
       { q: "Will I have to take supplements?", a: "Only where genuinely needed and only based on lab values. If you are deficient in vitamin D, B12, or iron, we recommend correcting those because they directly affect weight loss and energy. We do not push fat burners, weight-loss teas, or any product line." },
-      { q: "What does the consultation fee cover?", a: `The consultation fee covers initial assessment + the customised plan + weekly follow-ups for the duration of your package. Multi-month packages offer better per-month rates. Call +91-9910922899 or WhatsApp for current package pricing and to find the right fit for your goal.` },
+      { q: "What does the consultation fee cover?", a: `The consultation fee covers initial assessment + the customised plan + daily follow-ups for the duration of your package. Multi-month packages offer better per-month rates. Call +91-9910922899 or WhatsApp for current package pricing and to find the right fit for your goal.` },
       { q: "Is the clinic accessible from DLF, Sushant Lok, or Cyber City?", a: "Yes. The clinic is at Unitech Rodio Drive, D-117 & 118, South City II, Sector 49 — 10-15 minutes from DLF Phase 3, Sushant Lok and Cyber City via Golf Course Road or NH-8. Most clients also use online consultations to avoid the drive." },
     ],
     relatedServices: ["figure-correction", "therapeutic-diet"],
@@ -103,7 +103,7 @@ export const SERVICES: Record<string, ServiceData> = {
       { step: 2, title: "Establish your maintenance calorie need", description: "Most underweight clients dramatically underestimate how little they eat. We do a 7-day food recall to find your actual intake, then calculate the calorie surplus needed for slow, lean weight gain." },
       { step: 3, title: "Build a 5-6 meal Indian plan", description: "Healthy weight gain comes from frequent, nutrient-dense meals — paneer, full-fat curd, ghee, nuts, eggs, lentils, whole grains. We map these onto your schedule so eating becomes manageable, not a chore." },
       { step: 4, title: "Add the right kind of activity", description: "Gaining without activity = fat gain. We coordinate diet with strength training (or guide you to it if new) so the weight you put on is muscle and structural mass, not belly fat." },
-      { step: 5, title: "Weekly progress + tweaks", description: "Target is 1-2 kg/month of clean weight gain. If progress stalls, we adjust portions, meal timing, or sleep patterns. Most clients reach their target weight within 4-8 months." },
+      { step: 5, title: "Daily progress + tweaks", description: "Target is 1-2 kg/month of clean weight gain. If progress stalls, we adjust portions, meal timing, or sleep patterns. Most clients reach their target weight within 4-8 months." },
     ],
     pillars: [
       { title: "Calorie surplus, not junk surplus", body: "Eating more pizza, fries and ice cream will add weight — and along with it, fatty liver, insulin resistance, and acne. We use nutrient-dense calorie sources: nuts, seeds, ghee, full-fat dairy, eggs, lentils, whole grains. Same calories, completely different body composition outcome." },
@@ -124,7 +124,7 @@ export const SERVICES: Record<string, ServiceData> = {
       "Initial assessment + medical history review",
       "Customised 5-6 meal Indian diet plan",
       "Snack and smoothie recipe library",
-      "Weekly follow-ups + adjustments",
+      "Daily follow-ups + adjustments",
       "WhatsApp access for daily questions",
       "Strength training coordination guidance",
     ],
@@ -175,7 +175,7 @@ export const SERVICES: Record<string, ServiceData> = {
       "Body composition tracking",
       "Customised Indian diet plan focused on inch loss",
       "Movement coordination guidance",
-      "Bi-weekly progress reviews",
+      "Daily progress reviews",
       "Skin + hair nutrition support",
     ],
     faqs: [

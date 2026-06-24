@@ -63,14 +63,14 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       "Online dietitian consultation with Dt. Priyatama Srivastava — 20 years of clinical practice, 10,000+ clients. Personalised Indian diet plans by WhatsApp & video, anywhere in India or abroad.",
     h1: "Online Dietitian Consultation",
     heroSubhead:
-      "The same clinical rigour as the Sector 49 clinic — assessment, a written plan, weekly review — delivered over WhatsApp and video, anywhere in India or abroad.",
+      "The same clinical rigour as the Sector 49 clinic — assessment, a written plan, daily check-in — delivered over WhatsApp and video, anywhere in India or abroad.",
     heroImage: REAL.clinicConsultation,
     introLead:
-      "An online dietitian consultation is not a watered-down version of a clinic visit. It is the same process — a detailed health and lifestyle assessment, a diet plan written for your body and your kitchen, and a weekly review that adjusts the plan as your labs and weight move. The only thing that changes is that the conversation happens on your phone instead of across a desk.",
+      "An online dietitian consultation is not a watered-down version of a clinic visit. It is the same process — a detailed health and lifestyle assessment, a diet plan written for your body and your kitchen, and a daily check-in that adjusts the plan as your labs and weight move. The only thing that changes is that the conversation happens on your phone instead of across a desk.",
     sections: [
       {
         heading: "Why online works as well as in-clinic",
-        body: "Nutrition counselling is, fundamentally, a conversation and a document. A dietitian needs your history, your blood work, your daily routine and your food preferences — all of which travel perfectly over a video call and a few photographs of your reports. The plan itself is a written document. The weekly follow-up is a structured check-in. None of this needs you to be in the room. Twenty years of in-clinic practice taught Dt. Priyatama exactly which questions matter; the online format simply removes the commute.",
+        body: "Nutrition counselling is, fundamentally, a conversation and a document. A dietitian needs your history, your blood work, your daily routine and your food preferences — all of which travel perfectly over a video call and a few photographs of your reports. The plan itself is a written document. The daily follow-up is a structured check-in. None of this needs you to be in the room. Twenty years of in-clinic practice taught Dt. Priyatama exactly which questions matter; the online format simply removes the commute.",
       },
       {
         heading: "Who chooses online consultation",
@@ -78,7 +78,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       },
       {
         heading: "What you receive",
-        body: "A written, personalised diet plan built around Indian meal patterns — roti, dal, rice, sabzi, regional dishes — adjusted to your goal, your medical conditions and your daily schedule. A direct WhatsApp line to ask questions between reviews. A weekly follow-up where the plan is revised based on your progress. Guidance on reading your own lab reports so you understand what is improving and why.",
+        body: "A written, personalised diet plan built around Indian meal patterns — roti, dal, rice, sabzi, regional dishes — adjusted to your goal, your medical conditions and your daily schedule. A direct WhatsApp line to ask questions between reviews. A daily follow-up where the plan is revised based on your progress. Guidance on reading your own lab reports so you understand what is improving and why.",
       },
       {
         heading: "Conditions managed online",
@@ -92,7 +92,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
     highlights: [
       "20 years of clinical practice — the same dietitian, online",
       "Personalised Indian-meal plans, not generic PDFs",
-      "Weekly follow-up + open WhatsApp line",
+      "Daily follow-up + open WhatsApp line",
       "Serves all of India and NRI clients worldwide",
       "First 15-minute conversation is free",
     ],
@@ -100,10 +100,10 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Book a slot", body: "Message on WhatsApp or call the clinic. Pick a consultation time that suits your schedule and timezone." },
       { title: "Health assessment", body: "A detailed video or phone call covering your history, lifestyle, food habits and goals. Share recent lab reports as photographs." },
       { title: "Receive your plan", body: "A written, personalised diet plan reaches you — built around your kitchen, your conditions and your daily routine." },
-      { title: "Weekly review", body: "Each week, a structured follow-up reviews your progress and revises the plan. Questions in between go to a direct WhatsApp line." },
+      { title: "Daily check-in", body: "Every day, a structured check-in reviews your progress and revises the plan. Questions in between go to a direct WhatsApp line." },
     ],
     faqs: [
-      { q: "Is an online diet consultation as effective as visiting the clinic?", a: "Yes. The assessment, the written plan and the weekly review are identical to an in-clinic engagement. Lab reports are shared as photographs and the consultation happens over video or phone. Thousands of online clients across India and abroad have achieved the same results as in-clinic clients." },
+      { q: "Is an online diet consultation as effective as visiting the clinic?", a: "Yes. The assessment, the written plan and the daily check-in are identical to an in-clinic engagement. Lab reports are shared as photographs and the consultation happens over video or phone. Thousands of online clients across India and abroad have achieved the same results as in-clinic clients." },
       { q: "How do I share my blood reports?", a: "Simply photograph them and send them on WhatsApp before your assessment call. Dt. Priyatama reviews HbA1c, lipid profile, thyroid panel, vitamin levels and other relevant markers as part of building your plan." },
       { q: "Can NRIs consult from outside India?", a: "Yes. Clients in the Gulf, UK, US, Australia, Singapore and elsewhere consult regularly. Plans are built around ingredients available where you live, while keeping the Indian meal structure you are used to." },
       { q: "What does the first conversation cost?", a: "The first 15-minute conversation is free. It is used to understand your goal and tell you honestly whether a dietary programme is the right fit. Programme pricing is shared transparently after that." },
@@ -137,7 +137,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       "A weight loss diet plan built around your body, labs and kitchen by Dt. Priyatama Srivastava — 20 years' experience, 10,000+ clients. Sustainable Indian-meal diet charts, not crash diets.",
     h1: "Weight Loss Diet Plan",
     heroSubhead:
-      "A weight loss plan that survives past three weeks — structured Indian eating, calibrated to your labs and your goal, reviewed every week.",
+      "A weight loss plan that survives past three weeks — structured Indian eating, calibrated to your labs and your goal, reviewed every day.",
     heroImage: PHOTOS.freshGreens.url,
     introLead:
       "A weight loss diet plan only works if you can actually live with it. The plans that fail are the ones that ignore your kitchen, your family meals, your office schedule and the quiet history of every diet you have already tried. The plan that works, year after year, is structured Indian eating — measured, documented, and adjusted to the labs you can move.",
@@ -159,22 +159,22 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
         body: "Every plan is built around the food you already eat. Roti, rice, dal, sabzi, curd, regional dishes — all stay. They are portioned, paired and timed for your goal. We work with your kitchen, not against it, because a plan that bans the food your family cooks is a plan you will abandon.",
       },
       {
-        heading: "Weekly review keeps the plan honest",
-        body: "Weight loss is not linear. Plateaus happen, schedules change, festivals arrive. The weekly follow-up exists to adjust the plan to reality — revising portions, swapping meals, troubleshooting what is not working. An open WhatsApp line covers the questions in between.",
+        heading: "Daily check-in keeps the plan honest",
+        body: "Weight loss is not linear. Plateaus happen, schedules change, festivals arrive. The daily follow-up exists to adjust the plan to reality — revising portions, swapping meals, troubleshooting what is not working. An open WhatsApp line covers the questions in between.",
       },
     ],
     highlights: [
       "Personalised to your labs, body and Indian kitchen",
       "Sustainable 2–4 kg per month — no crash dieting",
       "Roti, dal, rice and sabzi stay on the plate",
-      "Weekly review + direct WhatsApp support",
+      "Daily check-in + direct WhatsApp support",
       "20 years of clinical weight-management practice",
     ],
     process: [
       { title: "Assessment", body: "Weight, measurements, lab reports, medical history, routine and food preferences are reviewed in detail." },
       { title: "Your diet chart", body: "A calorie- and macro-calibrated plan, written as real Indian meals you can cook and eat every day." },
       { title: "Follow the plan", body: "Eat normally from your own kitchen, in the portions and timings the plan sets out. No shakes, no banned food groups." },
-      { title: "Weekly revision", body: "Each week the plan is reviewed against your progress and adjusted — plateaus, festivals and schedule changes included." },
+      { title: "Daily revision", body: "Your food photo and weight come in every day; the plan is reviewed against your progress and adjusted — plateaus, festivals and schedule changes included." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water with soaked methi seeds; 5–6 soaked almonds" },
@@ -189,9 +189,9 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
     faqs: [
       { q: "How much weight can I lose with a personalised diet plan?", a: "Sustainable weight loss is typically 2–4 kg per month. Most clients see measurable change within 2–3 weeks. The aim is loss that stays off — not a rapid drop that rebounds." },
       { q: "Will I have to stop eating rice and roti?", a: "No. Rice, roti, dal and sabzi remain on your plate. They are portioned and timed for your goal. A plan that bans staple Indian foods is a plan you cannot sustain." },
-      { q: "Is the weight loss plan available online?", a: "Yes. The plan can be built and followed entirely through online consultation — assessment by video, plan delivered in writing, weekly reviews on call. See the online dietitian consultation page." },
+      { q: "Is the weight loss plan available online?", a: "Yes. The plan can be built and followed entirely through online consultation — assessment by video, plan delivered in writing, daily check-ins on call. See the online dietitian consultation page." },
       { q: "Do you use meal-replacement shakes or supplements?", a: "No. The plan is built on normal, cooked Indian food. Supplements are recommended only when a genuine, lab-confirmed deficiency exists." },
-      { q: "How is this different from a free diet chart online?", a: "A free chart is generic. Your plan is calibrated to your blood work, medical history, body composition and kitchen, and is revised every week against your real progress — that is what makes weight loss hold." },
+      { q: "How is this different from a free diet chart online?", a: "A free chart is generic. Your plan is calibrated to your blood work, medical history, body composition and kitchen, and is revised continually against your real progress — that is what makes weight loss hold." },
     ],
     relatedLinks: [
       { label: "Indian Diet Plan for Weight Loss", href: "/indian-diet-plan-for-weight-loss", note: "What an Indian weight-loss day looks like" },
@@ -257,7 +257,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Tell us your kitchen", body: "Region, vegetarian or non-vegetarian, the dishes your household actually cooks, and your weekly routine." },
       { title: "Calorie & protein target", body: "A target is set from your body composition, labs and goal — then translated into Indian meals." },
       { title: "Your Indian diet chart", body: "A written plan: every meal a real Indian dish, in the portion and timing your goal requires." },
-      { title: "Weekly adjustment", body: "The plan is reviewed each week and adapted — including for festivals, travel and family meals." },
+      { title: "Daily adjustment", body: "The plan is reviewed daily against your food photo and weight, and adapted — including for festivals, travel and family meals." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water with lemon; 5–6 soaked almonds and 2 walnuts" },
@@ -333,7 +333,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "Cycle history, symptoms, weight, and labs — insulin, blood sugar, thyroid and hormone panels — are reviewed together." },
       { title: "Low-GI plan", body: "An Indian diet chart calibrated for glycaemic load, protein adequacy and anti-inflammatory foods." },
       { title: "Steady progress", body: "Follow the plan from your own kitchen; weight, energy and cravings begin to shift in the first weeks." },
-      { title: "Weekly review", body: "The plan is revised each week, and across months as cycles and labs respond." },
+      { title: "Daily check-in", body: "The plan is revised daily, and across months as cycles and labs respond." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water with cinnamon; 5–6 soaked almonds and 2 walnuts" },
@@ -350,7 +350,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "What is the best diet for PCOS?", a: "A low-glycaemic, adequate-protein, anti-inflammatory plan built from whole Indian foods — millets, pulses, vegetables, curd, eggs, fish, nuts and good fats — with refined sugar and refined flour sharply reduced. It must be personalised to your labs." },
       { q: "How long does a PCOS diet take to show results?", a: "Energy and sugar cravings often improve in 2–3 weeks. Cycle regularity, skin and hair changes usually take 3–6 months of consistent eating. Lean PCOS responds on a similar timeline." },
       { q: "I have lean PCOS — do I still need a diet plan?", a: "Yes. Lean PCOS still involves insulin and inflammation even when weight is normal. The plan then focuses on glycaemic control, protein and anti-inflammatory foods rather than weight loss." },
-      { q: "Is the PCOS diet plan available online?", a: "Yes. PCOS is one of the most commonly managed conditions through online consultation — assessment by video, plan in writing, weekly reviews on call." },
+      { q: "Is the PCOS diet plan available online?", a: "Yes. PCOS is one of the most commonly managed conditions through online consultation — assessment by video, plan in writing, daily check-ins on call." },
     ],
     relatedLinks: [
       { label: "PCOS / PCOD treatment", href: "/treatment/pcod-pcos.php", note: "Clinical overview of PCOS management" },
@@ -409,7 +409,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "HbA1c, fasting and post-meal sugars, medication, medical history, routine and food habits are reviewed." },
       { title: "Diabetic diet chart", body: "An Indian meal plan calibrated for glycaemic load, portion control and meal spacing." },
       { title: "Daily control", body: "Follow the plan from your kitchen; fasting and post-meal readings begin to steady within weeks." },
-      { title: "Quarterly review", body: "Weekly follow-ups refine the plan; HbA1c is reviewed each three-month cycle." },
+      { title: "Quarterly review", body: "Daily follow-ups refine the plan; HbA1c is reviewed each three-month cycle." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water with soaked methi seeds; 5–6 soaked almonds" },
@@ -426,7 +426,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "Can diabetics eat rice and roti?", a: "Yes, in controlled portions and the right pairings. Rice is taken in a small measured quantity with protein and vegetables; high-fibre grains and millets are used alongside. Portion size and pairing matter more than banning a food." },
       { q: "Does a diet plan replace diabetes medication?", a: "No. The diet plan works alongside your doctor and any prescribed medication. As blood sugar improves, your doctor may review your medication — that decision belongs to your treating physician." },
       { q: "Is this plan suitable for pre-diabetes?", a: "Yes, and pre-diabetes is one of the best times to act. Disciplined eating at this stage can change the trajectory of the condition and, for many, delay or avoid progression to type-2 diabetes." },
-      { q: "Can I follow the diabetes diet plan online?", a: "Yes. Diabetes is routinely managed through online consultation — share your HbA1c and sugar reports as photographs, consult by video, and receive the plan in writing with weekly reviews." },
+      { q: "Can I follow the diabetes diet plan online?", a: "Yes. Diabetes is routinely managed through online consultation — share your HbA1c and sugar reports as photographs, consult by video, and receive the plan in writing with daily check-ins." },
     ],
     relatedLinks: [
       { label: "Diabetes treatment", href: "/treatment/diabetes.php", note: "Clinical overview of diabetes management" },
@@ -485,7 +485,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "TSH, T3, T4 and related labs, your diagnosis, medication, symptoms and food habits are reviewed." },
       { title: "Thyroid diet chart", body: "An Indian meal plan supplying thyroid-supporting nutrients, matched to hypo- or hyperthyroidism." },
       { title: "Steady the metabolism", body: "Follow the plan from your kitchen; energy and digestion typically ease over the first weeks." },
-      { title: "Review with labs", body: "Weekly follow-ups refine the plan; thyroid labs are reviewed each cycle alongside your doctor's." },
+      { title: "Review with labs", body: "Daily follow-ups refine the plan; thyroid labs are reviewed each cycle alongside your doctor's." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water; thyroid medication on an empty stomach, then a 45–60 minute gap before food" },
@@ -502,7 +502,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "What foods are good for the thyroid?", a: "Foods supplying iodine, selenium, zinc, iron and vitamin D — such as fish, eggs, dairy, nuts and seeds, whole pulses and leafy vegetables. The precise emphasis depends on whether you have hypo- or hyperthyroidism and on your blood work." },
       { q: "Why is it so hard to lose weight with hypothyroidism?", a: "Hypothyroidism slows metabolism, so the body burns fewer calories at rest. Weight loss is genuinely slower — which is why the plan is calibrated, patient and sustainable rather than aggressive, and revised against your labs." },
       { q: "Should I avoid all goitrogenic foods?", a: "Not entirely. Foods like cabbage, cauliflower and soya have a modest effect, largely reduced by cooking, and they carry real nutritional value. The plan manages quantity and preparation rather than banning whole vegetable families — guided by your case." },
-      { q: "Can the thyroid diet plan be done online?", a: "Yes. Share your TSH, T3 and T4 reports as photographs, consult by video, and receive the plan in writing with weekly reviews — the same process as an in-clinic engagement." },
+      { q: "Can the thyroid diet plan be done online?", a: "Yes. Share your TSH, T3 and T4 reports as photographs, consult by video, and receive the plan in writing with daily check-ins — the same process as an in-clinic engagement." },
     ],
     relatedLinks: [
       { label: "Thyroid treatment", href: "/treatment/thyroid.php", note: "Clinical overview of thyroid management" },
@@ -561,7 +561,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "Your lipid profile, medical history, medication, family history and food habits are reviewed together." },
       { title: "Heart-healthy plan", body: "An Indian diet chart built for soluble fibre, the right fats, and reduced refined carbohydrate." },
       { title: "Everyday eating", body: "Follow the plan from your own kitchen — the changes are to oil, portions and pairings, not to whole cuisines." },
-      { title: "Review with labs", body: "Weekly follow-ups refine the plan; the lipid profile is reviewed each two-to-three-month cycle." },
+      { title: "Review with labs", body: "Daily follow-ups refine the plan; the lipid profile is reviewed each two-to-three-month cycle." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water; 1 tsp soaked flaxseed and 2 walnuts" },
@@ -578,7 +578,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "Which foods lower cholesterol in an Indian diet?", a: "Oats and barley, whole pulses and legumes, flaxseed and walnuts, mustard or rice-bran oil in measured amounts, garlic, methi, plenty of vegetables, and fish for non-vegetarians. Soluble fibre and the right fats do the work." },
       { q: "What is the biggest dietary mistake that raises cholesterol?", a: "For most Indian households it is cooking oil — the type used, repeated reheating, and the sheer quantity that goes into everyday cooking — together with deep-fried snacks and vanaspati. Correcting this is often the single largest lever." },
       { q: "How do I lower high triglycerides specifically?", a: "Triglycerides respond mainly to refined carbohydrate, sugar and alcohol rather than dietary fat. If triglycerides are your main concern, the plan focuses on cutting sugar, sweets, refined flour and sugary drinks." },
-      { q: "Is the cholesterol diet plan available online?", a: "Yes. Share your lipid profile as a photograph, consult by video, and receive the plan in writing with weekly reviews — the same process as an in-clinic engagement." },
+      { q: "Is the cholesterol diet plan available online?", a: "Yes. Share your lipid profile as a photograph, consult by video, and receive the plan in writing with daily check-ins — the same process as an in-clinic engagement." },
     ],
     relatedLinks: [
       { label: "Cholesterol / Lipid Profile treatment", href: "/treatment/lipid-profile-cholesterol.php", note: "Clinical overview" },
@@ -637,7 +637,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "Your readings, medication, weight, medical history and current eating patterns are reviewed in detail." },
       { title: "Low-sodium plan", body: "An Indian diet chart that cuts hidden sodium and builds the nutrients that protect against hypertension." },
       { title: "Everyday eating", body: "Follow the plan from your own kitchen — achaar and namkeen out, vegetables and fruit in, salt brought under control." },
-      { title: "Weekly review", body: "Follow-ups refine the plan as your readings respond, in coordination with your doctor's monitoring." },
+      { title: "Daily check-in", body: "Follow-ups refine the plan as your readings respond, in coordination with your doctor's monitoring." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds" },
@@ -654,7 +654,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "Which Indian foods raise blood pressure?", a: "Achaar, papad, namkeen and fried snacks, packaged and processed foods, sauces and seasonings, and excess table salt — all high in sodium. Most of the problem sodium is hidden in these, not in the cooking salt alone." },
       { q: "Can a diet plan replace blood pressure medication?", a: "No. The diet plan works alongside your doctor and prescribed medication. As readings improve, your doctor may review your medication — that decision belongs to your treating physician." },
       { q: "How quickly can diet lower blood pressure?", a: "Many people see readings respond within a few weeks of consistent low-sodium, potassium-rich eating, especially when combined with modest weight loss. The plan is reviewed against your readings as they change." },
-      { q: "Is the high blood pressure diet plan available online?", a: "Yes. Consult by video, share your readings and history, and receive the plan in writing with weekly reviews — identical in depth to an in-clinic engagement." },
+      { q: "Is the high blood pressure diet plan available online?", a: "Yes. Consult by video, share your readings and history, and receive the plan in writing with daily check-ins — identical in depth to an in-clinic engagement." },
     ],
     relatedLinks: [
       { label: "High Blood Pressure treatment", href: "/treatment/high-blood-pressure.php", note: "Clinical overview of hypertension" },
@@ -713,7 +713,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "Your liver reports, weight, medical history, blood sugar and food habits are reviewed together." },
       { title: "Liver-focused plan", body: "An Indian diet chart cutting sugar and refined carbohydrate, with a calibrated weight-loss target." },
       { title: "Steady progress", body: "Follow the plan from your own kitchen; weight and energy begin to shift in the first weeks." },
-      { title: "Review with labs", body: "Weekly follow-ups refine the plan; liver enzymes and weight are tracked across months." },
+      { title: "Review with labs", body: "Daily follow-ups refine the plan; liver enzymes and weight are tracked across months." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds and 2 walnuts" },
@@ -730,7 +730,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "What foods should I avoid with fatty liver?", a: "Refined sugar and sweets, sugary drinks and packaged juices, refined flour and maida products, deep-fried foods and ultra-processed snacks. Fructose and refined carbohydrate are particular drivers of liver fat." },
       { q: "Is weight loss necessary to treat fatty liver?", a: "For most people, yes — steady weight loss is the single most effective intervention. The plan combines fatty-liver-specific changes with sustainable, calibrated weight loss built on Indian meals." },
       { q: "How long does it take to improve fatty liver through diet?", a: "Diet-driven improvement often shows within a few months of consistent eating and weight loss. Your doctor confirms progress through liver enzymes and imaging." },
-      { q: "Is the fatty liver diet plan available online?", a: "Yes. Share your liver reports as photographs, consult by video, and receive the plan in writing with weekly reviews." },
+      { q: "Is the fatty liver diet plan available online?", a: "Yes. Share your liver reports as photographs, consult by video, and receive the plan in writing with daily check-ins." },
     ],
     relatedLinks: [
       { label: "Weight Loss Diet Plan", href: "/weight-loss-diet-plan", note: "Weight loss is the core of NAFLD reversal" },
@@ -789,7 +789,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "Your uric acid levels, gout history, medication, weight and food and drink habits are reviewed." },
       { title: "Low-purine plan", body: "An Indian diet chart that lowers purine load, builds hydration, and removes the main triggers." },
       { title: "Steady eating", body: "Follow the plan from your own kitchen — triggers out, water and uric-acid-friendly foods in." },
-      { title: "Weekly review", body: "Follow-ups refine the plan and pace any weight loss so it does not provoke a flare." },
+      { title: "Daily check-in", body: "Follow-ups refine the plan and pace any weight loss so it does not provoke a flare." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "2 glasses of water; 5–6 soaked almonds" },
@@ -806,7 +806,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "What foods help lower uric acid?", a: "Generous water intake, low-fat dairy, plenty of vegetables and most fruit (cherries are linked with fewer flares), whole grains and moderate coffee. A correctly built Indian vegetarian plate is naturally uric-acid-friendly for most people." },
       { q: "Can a vegetarian diet cause high uric acid?", a: "It is far less likely to than a meat-heavy diet — plant purines raise uric acid much less than animal ones. Sugar, fructose, alcohol and excess weight are common contributors even in vegetarians, and the plan addresses these." },
       { q: "Does losing weight lower uric acid?", a: "Steady weight loss helps lower uric acid — but crash dieting and rapid fasting can temporarily spike it and trigger a gout flare. The plan paces weight loss specifically to avoid this." },
-      { q: "Is the uric acid diet plan available online?", a: "Yes. Share your uric acid reports, consult by video, and receive the plan in writing with weekly reviews." },
+      { q: "Is the uric acid diet plan available online?", a: "Yes. Share your uric acid reports, consult by video, and receive the plan in writing with daily check-ins." },
     ],
     relatedLinks: [
       { label: "Uric Acid / Gout treatment", href: "/treatment/uric-acid.php", note: "Clinical overview" },
@@ -933,7 +933,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "Your life stage, cycle and hormonal history, labs, medical history and food habits are reviewed together." },
       { title: "Stage-specific plan", body: "An Indian-meal plan built for the stage you are in — PCOS, pregnancy, thyroid, menopause or general health." },
       { title: "Everyday eating", body: "Follow the plan from your own kitchen — nourishing, not restrictive, built around real food." },
-      { title: "Weekly review", body: "The plan is reviewed and revised as your body, labs and life stage change." },
+      { title: "Daily check-in", body: "The plan is reviewed and revised as your body, labs and life stage change." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds and 2 walnuts" },
@@ -950,7 +950,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "Can a dietitian help with PCOS and irregular periods?", a: "Yes. PCOS and irregular cycles are among the most diet-responsive concerns. Insulin, inflammation and weight all influence the hormonal picture, and a calibrated plan addresses the underlying mechanism." },
       { q: "Do you provide pregnancy and post-partum nutrition?", a: "Yes — both are core to the practice. Pregnancy nutrition supports mother and baby through each trimester; post-partum nutrition supports recovery, breastfeeding and a realistic return to health." },
       { q: "Why are iron and calcium deficiencies so common in women?", a: "Menstrual loss, pregnancy, breastfeeding and often inadequate dietary intake combine to make iron, calcium and vitamin D deficiencies widespread among Indian women. A women's nutrition plan deliberately builds these nutrients in and corrects confirmed deficiencies." },
-      { q: "Is the consultation available online?", a: "Yes. Women's nutrition is managed online for clients across India and abroad — video assessment, written plan, weekly reviews." },
+      { q: "Is the consultation available online?", a: "Yes. Women's nutrition is managed online for clients across India and abroad — video assessment, written plan, daily check-ins." },
     ],
     relatedLinks: [
       { label: "PCOS Diet Plan", href: "/pcos-diet-plan", note: "Managing PCOS through diet" },
@@ -1016,7 +1016,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { title: "Assessment", body: "Your delivery, recovery, breastfeeding status, labs, current weight and routine are reviewed with care." },
       { title: "Post-partum plan", body: "A nourishing Indian-meal plan that supports recovery and feeding while bringing weight down steadily." },
       { title: "Gentle progress", body: "Follow the plan from home — simple meals, sensible snacks, no aggressive restriction." },
-      { title: "Weekly review", body: "The plan is revised as recovery progresses and, where relevant, as breastfeeding changes." },
+      { title: "Daily check-in", body: "The plan is revised as recovery progresses and, where relevant, as breastfeeding changes." },
     ],
     sampleDay: [
       { time: "7:00 AM", meal: "On waking", items: "Warm water; 5–6 soaked almonds, 2 walnuts and 2 dates" },
@@ -1033,7 +1033,7 @@ export const LANDING_PAGES: Record<string, LandingPage> = {
       { q: "Can I lose weight while breastfeeding?", a: "Yes, safely — but the plan must supply enough energy and nutrients to protect your milk supply and your own stores. Weight comes down through gentle, steady changes, never sharp restriction." },
       { q: "Why should I avoid crash dieting after pregnancy?", a: "Crash dieting in the post-partum period can reduce milk supply, slow healing and leave an already-tired mother more depleted. Sustainable, nourishing weight loss protects both recovery and feeding." },
       { q: "How long does it take to lose pregnancy weight?", a: "It took nine months to gain; losing it well takes time too. A steady, sustainable rate — without compromising recovery or breastfeeding — is the goal, rather than a fast drop." },
-      { q: "Is the post-partum plan available online?", a: "Yes — and most new mothers prefer it. Video assessment, written plan and weekly reviews mean no clinic travel with a newborn." },
+      { q: "Is the post-partum plan available online?", a: "Yes — and most new mothers prefer it. Video assessment, written plan and daily check-ins mean no clinic travel with a newborn." },
     ],
     relatedLinks: [
       { label: "Pregnancy Diet", href: "/pregnancy-diet.php", note: "Trimester-wise pregnancy nutrition" },

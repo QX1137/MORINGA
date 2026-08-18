@@ -56,7 +56,7 @@ export function BlogPage({ blog, related }: Props) {
 
   const breadcrumb = breadcrumbSchema([
     { name: "Home", url: SITE.url },
-    { name: "Journal", url: `${SITE.url}/blog.php` },
+    { name: "Blogs", url: `${SITE.url}/blog.php` },
     { name: blog.h1 || blog.title, url: `${SITE.url}${blog.phpPath}` },
   ]);
   // Schema.org `image` must be absolute. Hero may be a local /photography/...
@@ -90,7 +90,7 @@ export function BlogPage({ blog, related }: Props) {
             <nav aria-label="Breadcrumb" className="flex items-center gap-3">
               <Link href="/" className="hover:text-clay transition">Home</Link>
               <span className="opacity-50">/</span>
-              <Link href="/blog.php" className="hover:text-clay transition">Journal</Link>
+              <Link href="/blog.php" className="hover:text-clay transition">Blogs</Link>
               <span className="opacity-50">/</span>
               <span className="text-clay truncate max-w-[60vw] sm:max-w-none">Entry No. {String(entryNo).padStart(2, "0")}</span>
             </nav>
@@ -127,7 +127,7 @@ export function BlogPage({ blog, related }: Props) {
         <div className="max-w-3xl mx-auto px-6 lg:px-8 py-10 md:py-16">
           <div className="text-eyebrow text-clay mb-5 flex items-center gap-3">
             <span className="block h-px w-10 bg-clay" />
-            Journal · Entry {String(entryNo).padStart(2, "0")}
+            Blogs · Entry {String(entryNo).padStart(2, "0")}
           </div>
 
           <h1
@@ -186,7 +186,7 @@ export function BlogPage({ blog, related }: Props) {
             <footer className="mt-14 pt-8 border-t border-clay/30">
               <div className="text-eyebrow text-clay mb-3">Filed under</div>
               <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-warm-700 font-mono">
-                <span>Journal</span>
+                <span>Blogs</span>
                 <span className="opacity-40">·</span>
                 <span>Vol. {PERSON.yearsExperience}</span>
                 <span className="opacity-40">·</span>
@@ -197,8 +197,8 @@ export function BlogPage({ blog, related }: Props) {
                 <span>{readMins} min read</span>
               </div>
 
-              {/* Prev / Next navigation — keeps readers inside the journal */}
-              <nav className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 pt-6 border-t border-[#d8c8a8]/60" aria-label="Journal navigation">
+              {/* Prev / Next navigation — keeps readers inside the blog */}
+              <nav className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 pt-6 border-t border-[#d8c8a8]/60" aria-label="Blogs navigation">
                 {prevEntry ? (
                   <Link href={prevEntry.phpPath} className="group">
                     <div className="text-eyebrow text-warm-500 mb-2">← Previously · Entry {String(issueIndex).padStart(2, "0")}</div>
@@ -325,7 +325,7 @@ export function BlogPage({ blog, related }: Props) {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-eyebrow text-clay mb-3 flex items-center gap-3">
               <span className="block h-px w-10 bg-clay" />
-              From the journal
+              From the blog
             </div>
             <h2 className="font-display text-2xl md:text-3xl font-medium text-ink leading-tight mb-10">
               More to <em className="italic-clay">read</em>.

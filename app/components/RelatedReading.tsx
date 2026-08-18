@@ -17,7 +17,7 @@ const CLUSTER_LABEL: Record<Exclude<Cluster, "home">, string> = {
   treatment: "Condition",
   service: "Programme",
   recipe: "Recipe",
-  blog: "Journal",
+  blog: "Blogs",
   location: "Locality",
 };
 
@@ -53,7 +53,7 @@ export function RelatedReading({
           </div>
           <div className="md:col-span-7 md:flex md:items-end">
             <p className="text-warm-700 leading-relaxed">
-              Each protocol page connects to the recipes, journal essays and conditions that overlap with it. Follow the threads — every line in this practice routes to two or three others.
+              Each protocol page connects to the recipes, blog essays and conditions that overlap with it. Follow the threads — every line in this practice routes to two or three others.
             </p>
           </div>
         </div>

@@ -127,23 +127,6 @@ export default function HomePage() {
                 <MoringaMark className="size-8 text-clay opacity-70" />
               </div>
             </figure>
-
-            {/* Small ambient inset — botanical close-up */}
-            <figure className="hidden md:block ml-auto max-w-[180px]">
-              <div className="relative aspect-square overflow-hidden border border-clay/40">
-                <Image
-                  src={PHOTOS.moringaLeaves.url}
-                  alt={PHOTOS.moringaLeaves.alt}
-                  fill
-                  className="object-cover"
-                  style={{ filter: "saturate(0.92) contrast(1.02)" }}
-                  sizes="180px"
-                />
-              </div>
-              <figcaption className="mt-2 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500 text-right">
-                Moringa oleifera · {PHOTOS.moringaLeaves.credit.photographer}
-              </figcaption>
-            </figure>
           </div>
 
           {/* 3 — Pitch + CTAs */}

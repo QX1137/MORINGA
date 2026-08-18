@@ -9,7 +9,7 @@ const NAV = [
   { label: "Conditions", href: "/treatment.php" },
   { label: "About", href: "/priyatama-srivastava.php" },
   { label: "Packages", href: "/package.php" },
-  { label: "Journal", href: "/blog.php" },
+  { label: "Blogs", href: "/blog.php" },
   { label: "Contact", href: "/contact.php" },
 ];
 

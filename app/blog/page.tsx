@@ -11,7 +11,7 @@ import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schem
 import { heroForBlog } from "@/lib/photo-strategy";
 
 export const metadata: Metadata = {
-  title: "Journal | Go Moringa | Nutri Diet Clinic In Gurgaon",
+  title: "Blogs | Go Moringa | Nutri Diet Clinic In Gurgaon",
   description: "Expert diet tips, healthy eating guides, and clinical nutrition advice from Dt. Priyatama Srivastava and Go Moringa.",
   alternates: { canonical: "/blog.php" },
 };
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function BlogIndex() {
   const breadcrumb = breadcrumbSchema([
     { name: "Home", url: SITE.url },
-    { name: "Journal", url: `${SITE.url}/blog.php` },
+    { name: "Blogs", url: `${SITE.url}/blog.php` },
   ]);
   const schemas = [localBusinessSchema(), personSchema(), breadcrumb];
 
@@ -38,7 +38,7 @@ export default function BlogIndex() {
             <nav aria-label="Breadcrumb">
               <Link href="/" className="hover:text-clay transition">Home</Link>
               <span className="mx-3 opacity-50">/</span>
-              <span className="text-clay">Journal</span>
+              <span className="text-clay">Blogs</span>
             </nav>
             <span className="hidden md:inline">{BLOGS.length} articles · clinical nutrition writing</span>
           </div>
@@ -47,7 +47,7 @@ export default function BlogIndex() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-14 md:pt-20 pb-10">
           <div className="text-eyebrow text-clay mb-5 flex items-center gap-3">
             <span className="block h-px w-10 bg-clay" />
-            Journal · Issue 01
+            Blogs · Issue 01
           </div>
           <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.98]" style={{ fontSize: "clamp(2.4rem, 5.5vw, 4.5rem)" }}>
             The journal of <em className="italic-clay">a working clinic</em>.

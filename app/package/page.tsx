@@ -9,16 +9,17 @@ import { breadcrumbSchema, localBusinessSchema, personSchema } from "@/lib/schem
 
 export const metadata: Metadata = {
   title: "Diet Package Pricing | Go Moringa Diet Clinic Gurgaon",
-  description: "Diet plan packages at Go Moringa — 1, 3, 6, and 12 month options for India and worldwide clients. Customised by Dt. Priyatama Srivastava.",
+  description: "Diet plan packages at Go Moringa — 1, 3, 6, 9, and 12 month options for India and worldwide clients. Customised by Dt. Priyatama Srivastava.",
   alternates: { canonical: "/package.php" },
 };
 
 type Pkg = { duration: string; priceIN: string; priceINTL: string; popular?: boolean };
 const PACKAGES: Pkg[] = [
-  { duration: "1 Month", priceIN: "5,999", priceINTL: "7,500" },
-  { duration: "3 Months", priceIN: "13,999", priceINTL: "17,000", popular: true },
-  { duration: "6 Months", priceIN: "25,999", priceINTL: "30,000" },
-  { duration: "12 Months", priceIN: "40,000", priceINTL: "50,000" },
+  { duration: "1 Month", priceIN: "6,000", priceINTL: "7,500" },
+  { duration: "3 Months", priceIN: "14,000", priceINTL: "17,000", popular: true },
+  { duration: "6 Months", priceIN: "26,000", priceINTL: "30,000" },
+  { duration: "9 Months", priceIN: "36,000", priceINTL: "40,000" },
+  { duration: "12 Months", priceIN: "48,000", priceINTL: "50,000" },
 ];
 
 const INCLUDED = [
@@ -52,7 +53,7 @@ export default function PackagePage() {
               <span className="mx-3 opacity-50">/</span>
               <span className="text-clay">Package</span>
             </nav>
-            <span className="hidden md:inline">Programme durations · 1 · 3 · 6 · 12 months</span>
+            <span className="hidden md:inline">Programme durations · 1 · 3 · 6 · 9 · 12 months</span>
           </div>
         </div>
 
@@ -63,7 +64,7 @@ export default function PackagePage() {
             <span className="block h-px w-10 bg-clay" />
           </div>
           <h1 className="font-display tracking-[-0.02em] font-medium text-ink leading-[0.98] mx-auto max-w-4xl" style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)" }}>
-            Four programme <em className="italic-clay">durations</em>.
+            Five programme <em className="italic-clay">durations</em>.
           </h1>
           <p className="mt-6 text-lg text-warm-700 max-w-2xl mx-auto leading-relaxed">
             Longer programmes give better per-month value — because sustained results need time.
@@ -81,7 +82,7 @@ export default function PackagePage() {
           <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-8">
             Pricing <em className="italic-clay">in INR</em>.
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {PACKAGES.map((p, i) => (
               <article key={p.duration} className={`relative p-7 border ${p.popular ? "border-clay" : "border-[#d8c8a8]/70"} flex flex-col`}>
                 {p.popular && (
@@ -119,7 +120,7 @@ export default function PackagePage() {
           <h2 className="font-display text-3xl md:text-4xl font-medium text-ink leading-tight mb-8">
             Pricing <em className="italic-clay">for international clients</em>.
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {PACKAGES.map((p, i) => (
               <article key={p.duration} className="p-7 border border-[#d8c8a8]/70 bg-paper flex flex-col">
                 <div className="text-eyebrow text-warm-500 mb-2 font-mono">No. {String(i + 1).padStart(2, "0")}</div>

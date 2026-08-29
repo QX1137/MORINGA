@@ -254,14 +254,14 @@ export default function HomePage() {
               <div className="relative aspect-[1290/1219] overflow-hidden photo-frame bg-paper">
                 <Image
                   src={REAL.weightLossThali}
-                  alt="Go Moringa weight-loss thali — a balanced Indian plate: protein-rich dal, fibre-rich salad, sprouts, low-calorie sabzi, multigrain roti and gut-friendly curd, each component labelled"
+                  alt="Go Moringa healthy thali — a balanced Indian plate: protein-rich dal, fibre-rich salad, sprouts, low-calorie sabzi, multigrain roti and gut-friendly curd, each component labelled"
                   fill
                   className="object-cover"
                   sizes="(min-width: 768px) 40vw, 90vw"
                 />
               </div>
               <figcaption className="mt-3 text-[10px] uppercase tracking-[0.18em] font-mono text-warm-500">
-                A Go Moringa weight-loss thali — balanced, not restrictive
+                A Go Moringa healthy thali — balanced, not restrictive
               </figcaption>
             </figure>
           </div>
